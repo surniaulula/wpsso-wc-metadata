@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 					if ( isset( $_POST[ $metadata_key ] ) ) {
 
-						$value = trim( wc_clean( $_POST[ $metadata_key ] ) );
+						$value = trim( wc_clean( wp_unslash( $_POST[ $metadata_key ] ) ) );
 
 						if ( '' === $value ) {
 							$value = null;
@@ -195,7 +195,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 					if ( isset( $_POST[ $metadata_key . '_variable' ][ $id ] ) ) {
 
-						$value = trim( wc_clean( $_POST[ $metadata_key . '_variable' ][ $id ] ) );
+						$value = trim( wc_clean( wp_unslash( $_POST[ $metadata_key . '_variable' ][ $id ] ) ) );
 
 						if ( '' === $value ) {
 							$value = null;
