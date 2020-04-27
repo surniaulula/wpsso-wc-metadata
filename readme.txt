@@ -14,7 +14,7 @@ Tested Up To: 5.4
 WC Tested Up To: 4.0.1
 Stable Tag: 1.0.0
 
-GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth (cm), and Volume (ml) for WooCommerce Products and Variations.
+GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.
 
 == Description ==
 
