@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'wpsso' => array(
 							'class'       => 'Wpsso',
 							'name'        => 'WPSSO Core',
-							'min_version' => '7.2.0-rc.1',
+							'min_version' => '7.2.0',
 						),
 					),
 
@@ -68,6 +68,12 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 				return $locale_cache;
 			}
 
+			$dim_unit    = WpssoSchema::get_data_unit_text( 'depth' );
+			$dim_unit_wc = get_option( 'woocommerce_dimension_unit' );
+			$dim_unit_1x = wc_get_dimension( 1, $dim_unit, $dim_unit_wc );
+
+			$vol_unit = WpssoSchema::get_data_unit_text( 'volume' );
+
 			/**
 			 * Metadata options will be down in the order listed here.
 			 */
@@ -79,7 +85,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Part number',
 						'wcmd_label'  => 'MPN',
@@ -96,7 +102,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => 'Book number',
 						'wcmd_label'  => 'ISBN',
@@ -113,7 +119,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'   => array(
+					'def' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '14-digit bar code',
 						'wcmd_label'  => 'GTIN-14',
@@ -130,7 +136,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '13-digit bar code',
 						'wcmd_label'  => 'EAN',
@@ -147,7 +153,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '12-digit bar code',
 						'wcmd_label'  => 'UPC',
@@ -164,7 +170,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '8-digit bar code',
 						'wcmd_label'  => 'GTIN-8',
@@ -181,7 +187,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Bar code',
 						'wcmd_label'  => 'GTIN',
@@ -192,19 +198,18 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_depth_value' => array(
-					'label'     => _x( 'Product Depth', 'option label', 'wpsso-wc-metadata' ),
-					'type'      => 'text',
-					'data_type' => 'decimal',
-					'fmt_args'  => array(
-						WpssoSchema::get_data_unit_text( 'depth' ),
-					),
-					'action' => array(
+					'label'       => _x( 'Product Depth', 'option label', 'wpsso-wc-metadata' ),
+					'type'        => 'text',
+					'data_type'   => 'decimal',
+					'unit_1x'     => $dim_unit_1x,
+					'printf_args' => array( $dim_unit_wc ),
+					'action'      => array(
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
-						'wcmd_holder' => 'Depth',
+						'wcmd_holder' => 'Depth in %s',
 						'wcmd_label'  => 'Depth (%s)',
 						'plugin_cf'   => '_wpsso_product_depth_value',
 					),
@@ -213,19 +218,17 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_volume_value' => array(
-					'label'     => _x( 'Product Volume', 'option label', 'wpsso-wc-metadata' ),
-					'type'      => 'text',
-					'data_type' => 'decimal',
-					'fmt_args'  => array(
-						WpssoSchema::get_data_unit_text( 'volume' ),
-					),
-					'action' => array(
+					'label'       => _x( 'Product Volume', 'option label', 'wpsso-wc-metadata' ),
+					'type'        => 'text',
+					'data_type'   => 'decimal',
+					'printf_args' => array( $vol_unit ),
+					'action'      => array(
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
 					),
-					'def'    => array(
+					'def' => array(
 						'wcmd_enable' => 0,
-						'wcmd_holder' => 'Volume',
+						'wcmd_holder' => 'Volume in %s',
 						'wcmd_label'  => 'Volume (%s)',
 						'plugin_cf'   => '_wpsso_product_volume_value',
 					),
