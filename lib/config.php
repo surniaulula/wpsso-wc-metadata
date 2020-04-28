@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'wpsso' => array(
 							'class'       => 'Wpsso',
 							'name'        => 'WPSSO Core',
-							'min_version' => '7.2.0-b.1',
+							'min_version' => '7.2.0-rc.1',
 						),
 					),
 
