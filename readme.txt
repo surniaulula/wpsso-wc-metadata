@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-**Easily include these additional WooCommerce product information fields:**
+Easily include the following information fields in the WooCommerce "Product data" metabox and in the purchase page "Additional information" section:
 
 * GTIN
 * GTIN-8
@@ -30,18 +30,18 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 * Depth
 * Volume
 
-The SSO &gt; WooCommerce Metadata settings allow you to enable (or disable) information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
+The SSO &gt; WooCommerce Metadata settings allow you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
 
-The enabled product information fields are seamlessly added to the WooCommerce product editing metabox (aka "Product data") for products and their variations.
+The enabled WooCommerce product information fields are seamlessly added to the WooCommerce product editing metabox (aka "Product data") for products and their variations.
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags:
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled product information fields:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties:
+The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product information fields:
 
 * Schema Product:
 	* mpn
