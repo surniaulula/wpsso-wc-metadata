@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
-Tags: woocommerce, gtin, upc, ean, mpn, isbn, metadata, attribute, product, custom field
+Tags: woocommerce, gtin, upc, ean, mpn, isbn, metadata, attribute, information, product, custom field
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-**Easily add one or more these WooCommerce product input fields:**
+**Easily include these additional WooCommerce product information fields:**
 
 * GTIN
 * GTIN-8
@@ -27,12 +27,32 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 * GTIN-14
 * ISBN
 * MPN
-* Depth (cm)
-* Volume (ml)
+* Depth
+* Volume
 
-An SSO &gt; WooCommerce Metadata settings page allows you to easily enable (or disable) each input field, along with customizing its label and placeholder for each installed WordPress language / locale.
+The SSO &gt; WooCommerce Metadata settings allow you to enable (or disable) information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
 
-The enabled input fields are seamlessly added to the WooCommerce product editing metabox for simple products and product variations.
+The enabled product information fields are seamlessly added to the WooCommerce product editing metabox (aka "Product data") for products and their variations.
+
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags:
+
+* product:ean
+* product:isbn
+* product:mfr_part_no
+* product:upc
+
+The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties:
+
+* Schema Product:
+	* mpn
+	* gtin14
+	* gtin13
+	* gtin12
+	* gtin8
+	* gtin
+	* productID (isbn)
+	* depth
+	* volume
 
 <h3>WPSSO Core Plugin Required</h3>
 
