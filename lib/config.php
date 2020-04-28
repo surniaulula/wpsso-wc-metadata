@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.0.0-dev.1',	// Plugin version.
+					'version'     => '1.0.0-dev.2',	// Plugin version.
 					'opt_version' => '5',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Metadata for WooCommerce',
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'wpsso' => array(
 							'class'       => 'Wpsso',
 							'name'        => 'WPSSO Core',
-							'min_version' => '7.2.0-dev.1',
+							'min_version' => '7.2.0-dev.2',
 						),
 					),
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_variation_options_pricing' => true,
 					),
 					'def'    => array(
-						'wcmd_enable' => 1,
+						'wcmd_enable' => 0,
 						'wcmd_holder' => '13-digit bar code',
 						'wcmd_label'  => 'EAN',
 						'plugin_cf'   => '_wpsso_product_gtin13',
@@ -148,7 +148,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_variation_options_pricing' => true,
 					),
 					'def'    => array(
-						'wcmd_enable' => 1,
+						'wcmd_enable' => 0,
 						'wcmd_holder' => '12-digit bar code',
 						'wcmd_label'  => 'UPC',
 						'plugin_cf'   => '_wpsso_product_gtin12',
@@ -182,7 +182,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_variation_options_pricing' => true,
 					),
 					'def'    => array(
-						'wcmd_enable' => 0,
+						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Bar code',
 						'wcmd_label'  => 'GTIN',
 						'plugin_cf'   => '_wpsso_product_gtin',
