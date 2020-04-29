@@ -91,10 +91,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-dev.3 (2020/04/28)**
+**Version 1.0.0-dev.4 (2020/04/28)**
 
 * **New Features**
-	* Version 1.0.0-dev.3 release.
+	* Version 1.0.0-dev.4 release.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -108,7 +108,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.0-dev.3 =
+= 1.0.0-dev.4 =
 
-(2020/04/28) Version 1.0.0-dev.3 release.
+(2020/04/28) Version 1.0.0-dev.4 release.
 
