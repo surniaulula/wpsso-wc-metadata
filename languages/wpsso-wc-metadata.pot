@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Metadata for WooCommerce 1.0.0-dev.3\n"
+"Project-Id-Version: WPSSO Metadata for WooCommerce 1.0.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Input Placeholder"
 msgstr ""
 
-#: lib/woocommerce.php:90 lib/woocommerce.php:190
+#: lib/woocommerce.php:96 lib/woocommerce.php:199
 msgid "%1$s refers to %2$s."
 msgstr ""
 

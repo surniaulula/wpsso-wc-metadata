@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
-				foreach ( $cfg[ 'def' ] as $opt_pre => $val ) {
+				foreach ( $cfg[ 'defaults' ] as $opt_pre => $val ) {
 
 					$def_opts[ $opt_pre . '_' . $md_key ] = $val;
 				}

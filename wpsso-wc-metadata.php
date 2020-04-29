@@ -15,7 +15,7 @@
  * Requires At Least: 4.2
  * Tested Up To: 5.4
  * WC Tested Up To: 4.0.1
- * Version: 1.0.0-dev.3
+ * Version: 1.0.0-dev.4
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -212,7 +212,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				 */
 				if ( ! isset( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 
-					foreach ( $cfg[ 'def' ] as $opt_prefix => $val ) {
+					foreach ( $cfg[ 'defaults' ] as $opt_prefix => $val ) {
 						$this->p->options[ $opt_key ] = $val;
 					}
 
@@ -222,7 +222,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				 */
 				} elseif ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 
-					foreach ( $cfg[ 'opt' ] as $opt_prefix => $val ) {
+					foreach ( $cfg[ 'options' ] as $opt_prefix => $val ) {
 
 						$opt_key = $opt_prefix . '_' . $md_suffix;
 
@@ -241,7 +241,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 					if ( empty( $this->p->options[ $opt_key ] ) ) {
 
-						$this->p->options[ $opt_key ] = $cfg[ 'def' ][ 'plugin_cf' ];
+						$this->p->options[ $opt_key ] = $cfg[ 'defaults' ][ 'plugin_cf' ];
 					}
 				}
 			}

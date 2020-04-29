@@ -16,8 +16,8 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.0.0-dev.3',	// Plugin version.
-					'opt_version' => '5',		// Increment when changing default option values.
+					'version'     => '1.0.0-dev.4',	// Plugin version.
+					'opt_version' => '6',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Metadata for WooCommerce',
 					'desc'        => 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.',
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'wpsso' => array(
 							'class'       => 'Wpsso',
 							'name'        => 'WPSSO Core',
-							'min_version' => '7.3.0-dev.3',
+							'min_version' => '7.3.0-dev.4',
 						),
 					),
 
@@ -68,9 +68,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 				return $locale_cache;
 			}
 
-			$dim_unit    = WpssoSchema::get_data_unit_text( 'depth' );
-			$dim_unit_wc = get_option( 'woocommerce_dimension_unit' );
-			$dim_unit_1x = wc_get_dimension( 1, $dim_unit, $dim_unit_wc );
+			$dim_unit       = WpssoSchema::get_data_unit_text( 'depth' );
+			$dim_unit_wc    = get_option( 'woocommerce_dimension_unit' );
+			$dim_unit_wc_1x = wc_get_dimension( 1, $dim_unit, $dim_unit_wc );
 
 			$vol_unit = WpssoSchema::get_data_unit_text( 'volume' );
 
@@ -79,121 +79,121 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 			 */
 			$local_cache = array(
 				'product_mfr_part_no' => array(
-					'label'  => _x( 'Product MPN', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product MPN', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Part number',
 						'wcmd_label'  => 'MPN',
 						'plugin_cf'   => '_wpsso_product_mfr_part_no',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_isbn' => array(
-					'label'  => _x( 'Product ISBN', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product ISBN', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => 'Book number',
 						'wcmd_label'  => 'ISBN',
 						'plugin_cf'   => '_wpsso_product_isbn',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_gtin14' => array(
-					'label'  => _x( 'Product GTIN-14', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product GTIN-14', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '14-digit bar code',
 						'wcmd_label'  => 'GTIN-14',
 						'plugin_cf'   => '_wpsso_product_gtin14',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_gtin13' => array(
-					'label'  => _x( 'Product GTIN-13 (EAN)', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product GTIN-13 (EAN)', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '13-digit bar code',
 						'wcmd_label'  => 'EAN',
 						'plugin_cf'   => '_wpsso_product_gtin13',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_gtin12' => array(
-					'label'  => _x( 'Product GTIN-12 (UPC)', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product GTIN-12 (UPC)', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '12-digit bar code',
 						'wcmd_label'  => 'UPC',
 						'plugin_cf'   => '_wpsso_product_gtin12',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_gtin8' => array(
-					'label'  => _x( 'Product GTIN-8', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product GTIN-8', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '8-digit bar code',
 						'wcmd_label'  => 'GTIN-8',
 						'plugin_cf'   => '_wpsso_product_gtin8',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
 				'product_gtin' => array(
-					'label'  => _x( 'Product GTIN', 'option label', 'wpsso-wc-metadata' ),
-					'type'   => 'text',
-					'action' => array(
+					'label'   => _x( 'Product GTIN', 'option label', 'wpsso-wc-metadata' ),
+					'type'    => 'text',
+					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Bar code',
 						'wcmd_label'  => 'GTIN',
 						'plugin_cf'   => '_wpsso_product_gtin',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
@@ -201,19 +201,19 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'label'       => _x( 'Product Depth', 'option label', 'wpsso-wc-metadata' ),
 					'type'        => 'text',
 					'data_type'   => 'decimal',
-					'unit_1x'     => $dim_unit_1x,
+					'unit_wc_1x'  => $dim_unit_wc_1x,
 					'printf_args' => array( $dim_unit_wc ),
-					'action'      => array(
+					'actions'     => array(
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => 'Depth in %s',
 						'wcmd_label'  => 'Depth (%s)',
 						'plugin_cf'   => '_wpsso_product_depth_value',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
@@ -222,17 +222,17 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'type'        => 'text',
 					'data_type'   => 'decimal',
 					'printf_args' => array( $vol_unit ),
-					'action'      => array(
+					'actions'     => array(
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
 					),
-					'def' => array(
+					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => 'Volume in %s',
 						'wcmd_label'  => 'Volume (%s)',
 						'plugin_cf'   => '_wpsso_product_volume_value',
 					),
-					'opt' => array(
+					'options' => array(
 						'plugin_attr' => '',
 					),
 				),
