@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-Easily include additional metadata fields in the WooCommerce "*Product data*" metabox and "*Additional information*" purchase page section:
+Easily include additional metadata fields in the WooCommerce "**Product data**" metabox and "**Additional information**" purchase page section:
 
 * GTIN
 * GTIN-8
@@ -30,13 +30,13 @@ Easily include additional metadata fields in the WooCommerce "*Product data*" me
 * Depth
 * Volume
 
-The information shown under the "*Additional information*" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.
+The information shown under the "**Additional information**" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.
 
 The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
-Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "*Product data*" metabox) for both simple products and products with variations.
+Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "**Product data**" metabox) for both simple products and products with variations.
 
-The WPSSO Metadata for WooCommerce add-on also adds a "*Fluid volume unit*" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+The WPSSO Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * millilitre
 * centilitre
