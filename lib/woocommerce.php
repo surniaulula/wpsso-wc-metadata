@@ -68,15 +68,15 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			$fl_vol_units = WpssoUtilWooCommerce::get_fluid_volume_units();
 
 			$fl_vol_settings = array(
-				'title'    => __( 'Fluid volume unit', 'wpsso-wc-metadata' ),
-				'desc'     => __( 'This controls what unit you will define fluid volumes in.', 'wpsso-wc-metadata' ),
 				'id'       => 'woocommerce_fluid_volume_unit',
 				'class'    => 'wc-enhanced-select',
 				'css'      => 'min-width:300px;',
-				'default'  => 'ml',
+				'title'    => __( 'Fluid volume unit', 'wpsso-wc-metadata' ),
 				'type'     => 'select',
 				'options'  => $fl_vol_units,
+				'default'  => 'ml',
 				'desc_tip' => true,
+				'desc'     => __( 'This controls what unit you will define fluid volumes in.', 'wpsso-wc-metadata' ),
 			);
 
 			$dim_pos = 0;
@@ -122,14 +122,17 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
 
 					woocommerce_wp_text_input( array(
-						'name'        => $metadata_key,
-						'id'          => $metadata_key,
-						'label'       => $label_transl,
-						'placeholder' => $holder_transl,
-						'type'        => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
-						'data_type'   => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
-						'desc_tip'    => empty( $desc_transl ) ? false : true,
-						'description' => $desc_transl,
+						'name'              => $metadata_key,
+						'id'                => $metadata_key,
+						'class'             => isset( $cfg[ 'class' ] ) ? $cfg[ 'class' ] : null,
+						'style'             => isset( $cfg[ 'style' ] ) ? $cfg[ 'style' ] : null,
+						'label'             => $label_transl,
+						'placeholder'       => $holder_transl,
+						'type'              => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
+						'data_type'         => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
+						'desc_tip'          => empty( $desc_transl ) ? false : true,
+						'description'       => $desc_transl,
+						'custom_attributes' => isset( $cfg[ 'custom_attrs' ] ) ? $cfg[ 'custom_attrs' ] : '',
 					) );
 				}
 			}
@@ -222,16 +225,19 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					}
 
 					woocommerce_wp_text_input( array(
-						'wrapper_class' => 'form-row ' . ( $row_input_num === 1 ? 'form-row-first' : 'form-row-last' ),
-						'value'         => $var_meta_val,
-						'name'          => $metadata_key . '_variable[' . $loop . ']',
-						'id'            => $metadata_key . '_variable_' . $loop,
-						'label'         => $label_transl,
-						'placeholder'   => $holder_transl,
-						'type'          => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
-						'data_type'     => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
-						'desc_tip'      => empty( $desc_transl ) ? false : true,
-						'description'   => $desc_transl,
+						'wrapper_class'     => 'form-row ' . ( $row_input_num === 1 ? 'form-row-first' : 'form-row-last' ),
+						'value'             => $var_meta_val,
+						'name'              => $metadata_key . '_variable[' . $loop . ']',
+						'id'                => $metadata_key . '_variable_' . $loop,
+						'class'             => isset( $cfg[ 'class' ] ) ? $cfg[ 'class' ] : null,
+						'style'             => isset( $cfg[ 'style' ] ) ? $cfg[ 'style' ] : null,
+						'label'             => $label_transl,
+						'placeholder'       => $holder_transl,
+						'type'              => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
+						'data_type'         => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
+						'desc_tip'          => empty( $desc_transl ) ? false : true,
+						'description'       => $desc_transl,
+						'custom_attributes' => isset( $cfg[ 'custom_attrs' ] ) ? $cfg[ 'custom_attrs' ] : '',
 					) );
 				}
 			}
