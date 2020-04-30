@@ -37,7 +37,12 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			if ( is_admin() ) {
 
 				/**
-				 * Product.
+				 * Product settings.
+				 */
+				add_filter( 'woocommerce_products_general_settings', array( $this, 'filter_products_general_settings' ), 10, 1 );
+
+				/**
+				 * Product data.
 				 */
 				add_action( 'woocommerce_product_options_sku', array( $this, 'show_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_product_options_dimensions', array( $this, 'show_metadata_options' ), -1000, 0 );
@@ -58,6 +63,35 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			}
 		}
 
+		public function filter_products_general_settings( $settings ) {
+
+			$volume = array(
+				'title'    => __( 'Fluid volume unit', 'woocommerce' ),
+				'desc'     => __( 'This controls what unit you will define fluid volumes in.', 'woocommerce' ),
+				'id'       => 'woocommerce_fluid_volume_unit',
+				'class'    => 'wc-enhanced-select',
+				'css'      => 'min-width:300px;',
+				'default'  => 'ml',
+				'type'     => 'select',
+				'options'  => WpssoUtilWooCommerce::get_fluid_volume_units(),
+				'desc_tip' => true,
+			);
+
+			$dim_pos = 0;
+
+			foreach ( $settings as $pos => $val ) {
+				if ( isset( $val[ 'id' ] ) && 'woocommerce_dimension_unit' === $val[ 'id' ] ) {
+					$dim_pos = $pos;
+				}
+			}
+
+			if ( $dim_pos ) {	// Just in case.
+				array_splice( $settings, $dim_pos + 1, 0, array( $volume ) );
+			}
+
+			return $settings;
+		}
+
 		public function show_metadata_options() {
 
 			if ( $this->p->debug->enabled ) {
@@ -76,14 +110,14 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_label_' . $md_suffix, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_holder_' . $md_suffix, $this->p->options );
-					$cf_fragments  = $this->p->msgs->get_cf_tooltip_fragments( $md_suffix );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
+					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
+					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
+					$unit_text     = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
 
-					if ( ! empty( $cfg[ 'printf_args' ] ) ) {
-						$label_transl  = vsprintf( $label_transl, $cfg[ 'printf_args' ] );
-						$holder_transl = vsprintf( $holder_transl, $cfg[ 'printf_args' ] );
-					}
+					$label_transl  = sprintf( $label_transl, $unit_text );
+					$holder_transl = sprintf( $holder_transl, $unit_text );
+					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_text );
 
 					woocommerce_wp_text_input( array(
 						'name'        => $metadata_key,
@@ -92,9 +126,8 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 						'placeholder' => $holder_transl,
 						'type'        => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
 						'data_type'   => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
-						'desc_tip'    => isset( $cf_fragments[ 1 ] ) ? true : false,
-						'description' => isset( $cf_fragments[ 1 ] ) ? sprintf( __( '%1$s refers to %2$s.', 'wpsso-wc-metadata' ),
-							$label_transl, $cf_fragments[ 1 ] ) : '',
+						'desc_tip'    => empty( $desc_transl ) ? false : true,
+						'description' => $desc_transl,
 					) );
 				}
 			}
@@ -163,17 +196,17 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_label_' . $md_suffix, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_holder_' . $md_suffix, $this->p->options );
-					$cf_fragments  = $this->p->msgs->get_cf_tooltip_fragments( $md_suffix );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
+					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
+					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
+					$unit_text     = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
 					$var_obj       = $this->p->util->wc->get_product( $variation->ID );
 					$var_meta_val  = $var_obj->get_meta( $metadata_key, $single = true );
 					$row_input_num = $row_input_num >= $row_input_max ? 1 : $row_input_num + 1;
 
-					if ( ! empty( $cfg[ 'printf_args' ] ) ) {
-						$label_transl  = vsprintf( $label_transl, $cfg[ 'printf_args' ] );
-						$holder_transl = vsprintf( $holder_transl, $cfg[ 'printf_args' ] );
-					}
+					$label_transl  = sprintf( $label_transl, $unit_text );
+					$holder_transl = sprintf( $holder_transl, $unit_text );
+					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_text );
 
 					if ( '' === $var_meta_val ) {
 
@@ -195,9 +228,8 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 						'placeholder'   => $holder_transl,
 						'type'          => isset( $cfg[ 'type' ] ) ? $cfg[ 'type' ] : 'text',
 						'data_type'     => isset( $cfg[ 'data_type' ] ) ? $cfg[ 'data_type' ] : '',
-						'desc_tip'      => isset( $cf_fragments[ 1 ] ) ? true : false,
-						'description'   => isset( $cf_fragments[ 1 ] ) ? sprintf( __( '%1$s refers to %2$s.', 'wpsso-wc-metadata' ),
-							$label_transl, $cf_fragments[ 1 ] ) : '',
+						'desc_tip'      => empty( $desc_transl ) ? false : true,
+						'description'   => $desc_transl,
 					) );
 				}
 			}
@@ -268,10 +300,19 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
 
-					$label_transl   = SucomUtil::get_key_value( 'wcmd_label_' . $md_suffix, $this->p->options );
-					$prod_meta_val  = $product->get_meta( $metadata_key, $single = true );
+					$prod_meta_val = $product->get_meta( $metadata_key, $single = true );
 
 					if ( '' !== $prod_meta_val ) {
+
+						$label_transl = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_suffix, $this->p->options );
+						$unit_text    = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
+
+						$label_transl  = sprintf( $label_transl, $unit_text );
+						$prod_meta_val = $prod_meta_val . ' ' . $unit_text;
+
+						if ( ! empty( $cfg[ 'insert_after' ] ) ) {
+							SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
+						}
 
 						$product_attributes[ $md_suffix ] = array(
 							'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
@@ -345,7 +386,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			$metadata_key = apply_filters( 'wpsso_wc_metadata_plugin_cf_' . $md_suffix, $metadata_key );
 
-			if ( ! empty( $cfg[ 'unit_wc_1x' ] ) ) {
+			if ( isset( $cfg[ 'unit_wc_1x' ] ) ) {
 				$metadata_key .= '_unit_wc';
 			}
 

@@ -69,19 +69,21 @@ if ( ! class_exists( 'WpssoWcMdSubmenuWcMdGeneral' ) && class_exists( 'WpssoAdmi
 					$table_rows[] = '' . 
 						'<th></th>' .
 						'<th class="xshort option_col"><h3>' . __( 'Enable', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="medium option_col"><h3>' . __( 'Metadata Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="wide option_col"><h3>' . __( 'Input Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>';
+						'<th class="medium option_col"><h3>' . __( 'Input Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="medium option_col"><h3>' . __( 'Input Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="wide option_col"><h3>' . __( 'Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
 
 					$md_config = WpssoWcMdConfig::get_md_config();
 
 					foreach ( $md_config as $md_suffix => $cfg ) {
 
-						$table_rows[ 'wcmd_label_' . $md_suffix ] = '' . 
+						$table_rows[ 'wcmd_input_label_' . $md_suffix ] = '' . 
 						$this->form->get_th_html_locale( _x( $cfg[ 'label' ], 'option label', 'wpsso-wc-metadata' ),
-							$css_class = '', $css_id = 'wcmd_label_' . $md_suffix ) . 
+							$css_class = '', $css_id = 'wcmd_input_label_' . $md_suffix ) . 
 						'<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_enable_' . $md_suffix ) . '</td>' .
-						'<td class="medium">' . $this->form->get_input_locale( 'wcmd_label_' . $md_suffix, $css_class = 'medium' ) . '</td>' .
-						'<td class="wide">' . $this->form->get_input_locale( 'wcmd_holder_' . $md_suffix, $css_class = 'medium' ) . '</td>';
+						'<td class="medium">' . $this->form->get_input_locale( 'wcmd_input_label_' . $md_suffix, $css_class = 'medium' ) . '</td>' .
+						'<td class="medium">' . $this->form->get_input_locale( 'wcmd_input_holder_' . $md_suffix, $css_class = 'medium' ) . '</td>' .
+						'<td class="wide">' . $this->form->get_input_locale( 'wcmd_info_label_' . $md_suffix, $css_class = 'wide' ) . '</td>';
 					}
 
 					break;

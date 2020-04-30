@@ -66,13 +66,13 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 
 			switch ( $base_key ) {
 
-				case ( false !== strpos( $base_key, 'wcmd_label_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_input_label_' ) ? true : false ):
 
 					return 'not_blank';
 
 					break;
 
-				case ( false !== strpos( $base_key, 'wcmd_holder_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_input_holder_' ) ? true : false ):
 
 					return 'one_line';
 
@@ -109,9 +109,9 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 
 			switch ( $msg_key ) {
 
-				case ( false !== strpos( $msg_key, 'tooltip-wcmd_label_' ) ? true : false ):
+				case ( false !== strpos( $msg_key, 'tooltip-wcmd_input_label_' ) ? true : false ):
 
-					$text .= __( 'Enable or disable the additional WooCommerce product metadata, modify its information label, and customize its input placeholder (the placeholder can also be blank).', 'wpsso-wc-metadata' );
+					$text .= __( 'Enable or disable additional information fields, modify the input label, input placeholder (can also be blank), and the information label.', 'wpsso-wc-metadata' );
 
 					break;
 			}

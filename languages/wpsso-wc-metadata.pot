@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Metadata for WooCommerce 1.0.0-dev.5\n"
+"Project-Id-Version: WPSSO Metadata for WooCommerce 1.0.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -13,56 +13,97 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/config.php:82
+#: lib/config.php:84
 msgctxt "option label"
 msgid "Product MPN"
 msgstr ""
 
-#: lib/config.php:102
+#: lib/config.php:85
+msgid "%1$s refers to a Manufacturer Part Number (MPN)."
+msgstr ""
+
+#: lib/config.php:106
 msgctxt "option label"
 msgid "Product ISBN"
 msgstr ""
 
-#: lib/config.php:122
+#: lib/config.php:107
+msgid "%1$s refers to an ISBN code (aka International Standard Book Number)."
+msgstr ""
+
+#: lib/config.php:128
 msgctxt "option label"
 msgid "Product GTIN-14"
 msgstr ""
 
-#: lib/config.php:142
+#: lib/config.php:129
+msgid "%1$s refers to a product GTIN-14 code (aka ITF-14 code)."
+msgstr ""
+
+#: lib/config.php:150
 msgctxt "option label"
 msgid "Product GTIN-13 (EAN)"
 msgstr ""
 
-#: lib/config.php:162
+#: lib/config.php:151
+msgid ""
+"%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/"
+"UCC-13)."
+msgstr ""
+
+#: lib/config.php:172
 msgctxt "option label"
 msgid "Product GTIN-12 (UPC)"
 msgstr ""
 
-#: lib/config.php:182
+#: lib/config.php:173
+msgid ""
+"%1$s refers to a product GTIN-12 code (12-digit GS1 identification key "
+"composed of a UPC company prefix, item reference, and check digit)."
+msgstr ""
+
+#: lib/config.php:194
 msgctxt "option label"
 msgid "Product GTIN-8"
 msgstr ""
 
-#: lib/config.php:202
+#: lib/config.php:195
+msgid "%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN)."
+msgstr ""
+
+#: lib/config.php:216
 msgctxt "option label"
 msgid "Product GTIN"
 msgstr ""
 
-#: lib/config.php:222
+#: lib/config.php:217
+msgid ""
+"%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or "
+"GTIN-14)."
+msgstr ""
+
+#: lib/config.php:238
 msgctxt "option label"
 msgid "Product Depth"
 msgstr ""
 
-#: lib/config.php:245
+#: lib/config.php:239
+msgid "%1$s refers to a product depth (in %2$s)."
+msgstr ""
+
+#: lib/config.php:264
 msgctxt "option label"
-msgid "Product Volume"
+msgid "Product Fluid Volume"
+msgstr ""
+
+#: lib/config.php:265
+msgid "%1$s refers to a product volume (in %2$s)."
 msgstr ""
 
 #: lib/filters.php:114
 msgid ""
-"Enable or disable the additional WooCommerce product metadata, modify its "
-"information label, and customize its input placeholder (the placeholder can "
-"also be blank)."
+"Enable or disable additional information fields, modify the input label, "
+"input placeholder (can also be blank), and the information label."
 msgstr ""
 
 #: lib/gettext-config.php:6
@@ -87,15 +128,23 @@ msgid "Enable"
 msgstr ""
 
 #: lib/submenu/wcmd-general.php:72
-msgid "Metadata Label"
+msgid "Input Label"
 msgstr ""
 
 #: lib/submenu/wcmd-general.php:73
 msgid "Input Placeholder"
 msgstr ""
 
-#: lib/woocommerce.php:96 lib/woocommerce.php:199
-msgid "%1$s refers to %2$s."
+#: lib/submenu/wcmd-general.php:74
+msgid "Information Label"
+msgstr ""
+
+#: lib/woocommerce.php:69
+msgid "Fluid volume unit"
+msgstr ""
+
+#: lib/woocommerce.php:70
+msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
 #: wpsso-wc-metadata.php:123
