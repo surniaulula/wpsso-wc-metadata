@@ -38,16 +38,17 @@
 <p>The WPSSO Metadata for WooCommerce add-on also adds a "<strong>Fluid volume unit</strong>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
 
 <ul>
-<li>millilitre</li>
-<li>centilitre</li>
-<li>liter</li>
-<li>kiloliter</li>
-<li>teaspoon</li>
-<li>tablespoon</li>
-<li>fluid ounce</li>
-<li>US pint</li>
-<li>US quart</li>
-<li>US gallon</li>
+<li>ml</li>
+<li>cl</li>
+<li>l</li>
+<li>kl</li>
+<li>US tsp</li>
+<li>US tbsp</li>
+<li>US fl oz</li>
+<li>US cup</li>
+<li>US pt</li>
+<li>US qt</li>
+<li>US gal</li>
 </ul>
 
 <p>The <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> will automatically include the following Open Graph product meta tags for enabled product metadata:</p>

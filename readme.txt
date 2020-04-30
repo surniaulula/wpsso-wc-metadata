@@ -38,16 +38,17 @@ Enabled product metadata fields are added seamlessly to the WooCommerce product 
 
 The WPSSO Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
-* millilitre
-* centilitre
-* liter
-* kiloliter
-* teaspoon
-* tablespoon
-* fluid ounce
-* US pint
-* US quart
-* US gallon
+* ml
+* cl
+* l
+* kl
+* US tsp
+* US tbsp
+* US fl oz
+* US cup
+* US pt
+* US qt
+* US gal
 
 The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following Open Graph product meta tags for enabled product metadata:
 
