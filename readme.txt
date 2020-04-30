@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-Easily include the following information fields in the WooCommerce "Product data" metabox and in the purchase page "Additional information" section:
+Easily include the following information in the WooCommerce "Product data" metabox and "Additional information" purchase page section:
 
 * GTIN
 * GTIN-8
@@ -32,31 +32,31 @@ Easily include the following information fields in the WooCommerce "Product data
 
 Adds a WooCommerce &gt; Settings &gt; Products &gt; Fluid volume unit option:
 
-* ml (millilitre)
-* cl (centilitre)
-* l (liter)
-* kl (kiloliter)
-* tsp (teaspoon)
-* tbsp (tablespoon)
-* fl oz (fluid ounce)
-* pt (US pint)
-* qt (US quart)
-* gal (US gallon)
+* millilitre
+* centilitre
+* liter
+* kiloliter
+* teaspoon
+* tablespoon
+* fluid ounce
+* US pint
+* US quart
+* US gallon
 
-The information fields shown under the "Additional information" section on the WooCommerce purchase page change as different variations are selected, just like the default Weight and Dimensions information added by WooCommerce.
+The information shown under the "Additional information" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.
 
-The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
+The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
-The enabled information fields are added seamlessly to the WooCommerce product editing page (aka the "Product data" metabox) for products and their variations.
+The enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "Product data" metabox) for simple products and product variations.
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled information fields:
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled information fields:
+The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product metadata:
 
 * Schema Product:
 	* mpn
@@ -73,7 +73,7 @@ The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-j
 
 WPSSO Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
-Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration modules in the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
+Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
 == Installation ==
 
