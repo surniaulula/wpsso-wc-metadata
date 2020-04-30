@@ -56,7 +56,7 @@ The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product metadata:
+The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product metadata:
 
 * Schema Product:
 	* mpn
