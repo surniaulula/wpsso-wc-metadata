@@ -50,7 +50,7 @@
 <li>US gallon</li>
 </ul>
 
-<p>The <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> will automatically include the following product meta tags for enabled product metadata:</p>
+<p>The <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> will automatically include the following Open Graph product meta tags for enabled product metadata:</p>
 
 <ul>
 <li>product:ean</li>
@@ -59,7 +59,7 @@
 <li>product:upc</li>
 </ul>
 
-<p>The <a href="https://wordpress.org/plugins/wpsso-schema-json-ld/">Schema JSON-LD Markup add-on</a> will automatically include the following properties for enabled product metadata:</p>
+<p>The <a href="https://wordpress.org/plugins/wpsso-schema-json-ld/">Schema JSON-LD Markup add-on</a> will automatically include the following Schema properties for enabled product metadata:</p>
 
 <ul>
 <li>Schema Product:

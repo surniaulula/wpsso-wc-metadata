@@ -49,14 +49,14 @@ The WPSSO Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" op
 * US quart
 * US gallon
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled product metadata:
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following Open Graph product meta tags for enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product metadata:
+The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following Schema properties for enabled product metadata:
 
 * Schema Product:
 	* mpn
