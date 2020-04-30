@@ -203,6 +203,15 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 		public function wpsso_init_check_options() {
 
+			if ( ! $this->have_min_version ) {
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: have_min_version is false' );
+				}
+
+				return;	// Stop here.
+			}
+
 			$md_config = WpssoWcMdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
@@ -213,6 +222,9 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				if ( ! isset( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 
 					foreach ( $cfg[ 'defaults' ] as $opt_prefix => $val ) {
+
+						$opt_key = $opt_prefix . '_' . $md_suffix;
+
 						$this->p->options[ $opt_key ] = $val;
 					}
 
