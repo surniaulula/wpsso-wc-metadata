@@ -91,6 +91,11 @@ Additional product information for Open Graph meta tags and Schema Product prope
 
 == Screenshots ==
 
+01. Information shown under the "Additional information" section changes as different variations are selected.
+02. Enabled product metadata fields are added seamlessly under the product inventory tab.
+03. Enabled depth and volume metadata fields are added seamlessly under the product shipping tab.
+04. Enabled product metadata fields are added seamlessly under the product variations tab.
+
 == Changelog ==
 
 <h3 class="top">Version Numbering</h3>
