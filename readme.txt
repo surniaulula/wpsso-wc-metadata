@@ -30,7 +30,20 @@ Easily include the following information fields in the WooCommerce "Product data
 * Depth
 * Volume
 
-The SSO &gt; WooCommerce Metadata settings allow you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
+Adds a WooCommerce &gt; Settings &gt; Products &gt; Fluid volume unit option:
+
+* ml (millilitre)
+* cl (centilitre)
+* l (liter)
+* kl (kiloliter)
+* tsp (teaspoon)
+* tbsp (tablespoon)
+* fl oz (fluid ounce)
+* pt (US pint)
+* qt (US quart)
+* gal (US gallon)
+
+The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
 
 The enabled WooCommerce product information fields are seamlessly added to the WooCommerce product editing metabox (aka "Product data") for products and their variations.
 
@@ -91,10 +104,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-dev.5 (2020/04/29)**
+**Version 1.0.0-dev.6 (2020/04/29)**
 
 * **New Features**
-	* Version 1.0.0-dev.5 release.
+	* Version 1.0.0-dev.6 release.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -108,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.0-dev.5 =
+= 1.0.0-dev.6 =
 
-(2020/04/29) Version 1.0.0-dev.5 release.
+(2020/04/29) Version 1.0.0-dev.6 release.
 
