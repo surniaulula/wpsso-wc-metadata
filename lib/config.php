@@ -62,19 +62,25 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 
 		public static function get_md_config() {
 
-			static $locale_cache = null;
+			static $local_cache = null;
 
-			if ( null !== $locale_cache ) {
-				return $locale_cache;
+			if ( null !== $local_cache ) {
+				return $local_cache;
 			}
 
-			$dim_unit       = WpssoSchema::get_data_unit_text( 'depth' );
-			$dim_unit_wc    = get_option( 'woocommerce_dimension_unit', $dim_unit );
-			$dim_unit_wc_1x = WpssoUtilWooCommerce::get_dimension( 1, $dim_unit, $dim_unit_wc );
+			/**
+			 * WpssoSchema::get_data_unit_text() returns a https://schema.org/unitText value (for example, 'cm', 'ml',
+			 * 'kg', etc.).
+			 */
+			$dim_unit_text     = WpssoSchema::get_data_unit_text( 'depth' );
+			$dim_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dim_unit_text );
+			$dim_unit_wc_label = WpssoUtilWooCommerce::get_dimension_label( $dim_unit_wc_text );
+			$dim_unit_wc_1x    = WpssoUtilWooCommerce::get_dimension( 1, $dim_unit_text, $dim_unit_wc_text );
 
-			$fl_vol_unit       = WpssoSchema::get_data_unit_text( 'fluid_volume' );
-			$fl_vol_unit_wc    = get_option( 'woocommerce_fluid_volume_unit', $fl_vol_unit );
-			$fl_vol_unit_wc_1x = WpssoUtilWooCommerce::get_fluid_volume( 1, $fl_vol_unit, $fl_vol_unit_wc );
+			$fl_vol_unit_text     = WpssoSchema::get_data_unit_text( 'fluid_volume' );
+			$fl_vol_unit_wc_text  = get_option( 'woocommerce_fluid_volume_unit', $fl_vol_unit_text );
+			$fl_vol_unit_wc_label = WpssoUtilWooCommerce::get_fluid_volume_label( $fl_vol_unit_wc_text );
+			$fl_vol_unit_wc_1x    = WpssoUtilWooCommerce::get_fluid_volume( 1, $fl_vol_unit_text, $fl_vol_unit_wc_text );
 
 			/**
 			 * Metadata options will be down in the order listed here.
@@ -126,7 +132,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 				),
 				'product_gtin14' => array(
 					'label'   => _x( 'Product GTIN-14', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN-14 code (aka ITF-14 code).', 'wpsso-wc-metadata' ),
+					'desc'    => __( '%1$s refers to a product GTIN-14 code (aka ITF-14).', 'wpsso-wc-metadata' ),
 					'type'    => 'text',
 					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
@@ -239,7 +245,8 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'desc'         => __( '%1$s refers to a product depth (in %2$s).', 'wpsso-wc-metadata' ),
 					'type'         => 'text',
 					'data_type'    => 'decimal',
-					'unit_text'    => $dim_unit_wc,
+					'unit_text'    => $dim_unit_wc_text,
+					'unit_label'   => $dim_unit_wc_label,
 					'unit_wc_1x'   => $dim_unit_wc_1x === 1 ? null : $dim_unit_wc_1x,
 					'insert_after' => 'dimensions',	// Used by 'woocommerce_display_product_attributes' filter.
 					'actions'      => array(
@@ -262,10 +269,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 				),
 				'product_fluid_volume_value' => array(
 					'label'        => _x( 'Product Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product volume (in %2$s).', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product fluid volume (in %2$s).', 'wpsso-wc-metadata' ),
 					'type'         => 'text',
 					'data_type'    => 'decimal',
-					'unit_text'    => $fl_vol_unit_wc,
+					'unit_text'    => $fl_vol_unit_wc_text,
+					'unit_label'   => $fl_vol_unit_wc_label,
 					'unit_wc_1x'   => $fl_vol_unit_wc_1x === 1 ? null : $fl_vol_unit_wc_1x,
 					'insert_after' => 'weight',	// Used by 'woocommerce_display_product_attributes' filter.
 					'actions'      => array(

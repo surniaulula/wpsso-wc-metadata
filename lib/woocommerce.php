@@ -65,15 +65,17 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 		public function filter_products_general_settings( $settings ) {
 
-			$volume = array(
-				'title'    => __( 'Fluid volume unit', 'woocommerce' ),
-				'desc'     => __( 'This controls what unit you will define fluid volumes in.', 'woocommerce' ),
+			$fl_vol_units = WpssoUtilWooCommerce::get_fluid_volume_units();
+
+			$fl_vol_settings = array(
+				'title'    => __( 'Fluid volume unit', 'wpsso-wc-metadata' ),
+				'desc'     => __( 'This controls what unit you will define fluid volumes in.', 'wpsso-wc-metadata' ),
 				'id'       => 'woocommerce_fluid_volume_unit',
 				'class'    => 'wc-enhanced-select',
 				'css'      => 'min-width:300px;',
 				'default'  => 'ml',
 				'type'     => 'select',
-				'options'  => WpssoUtilWooCommerce::get_fluid_volume_units(),
+				'options'  => $fl_vol_units,
 				'desc_tip' => true,
 			);
 
@@ -86,7 +88,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			}
 
 			if ( $dim_pos ) {	// Just in case.
-				array_splice( $settings, $dim_pos + 1, 0, array( $volume ) );
+				array_splice( $settings, $dim_pos + 1, 0, array( $fl_vol_settings ) );
 			}
 
 			return $settings;
@@ -113,11 +115,11 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
 					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
-					$unit_text     = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
+					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 
-					$label_transl  = sprintf( $label_transl, $unit_text );
-					$holder_transl = sprintf( $holder_transl, $unit_text );
-					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_text );
+					$label_transl  = sprintf( $label_transl, $unit_transl );
+					$holder_transl = sprintf( $holder_transl, $unit_transl );
+					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
 
 					woocommerce_wp_text_input( array(
 						'name'        => $metadata_key,
@@ -199,14 +201,14 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
 					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
-					$unit_text     = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
+					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$var_obj       = $this->p->util->wc->get_product( $variation->ID );
 					$var_meta_val  = $var_obj->get_meta( $metadata_key, $single = true );
 					$row_input_num = $row_input_num >= $row_input_max ? 1 : $row_input_num + 1;
 
-					$label_transl  = sprintf( $label_transl, $unit_text );
-					$holder_transl = sprintf( $holder_transl, $unit_text );
-					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_text );
+					$label_transl  = sprintf( $label_transl, $unit_transl );
+					$holder_transl = sprintf( $holder_transl, $unit_transl );
+					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
 
 					if ( '' === $var_meta_val ) {
 
@@ -305,10 +307,10 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					if ( '' !== $prod_meta_val ) {
 
 						$label_transl = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_suffix, $this->p->options );
-						$unit_text    = isset( $cfg[ 'unit_text' ] ) ? $cfg[ 'unit_text' ] : '';
+						$unit_transl  = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 
-						$label_transl  = sprintf( $label_transl, $unit_text );
-						$prod_meta_val = $prod_meta_val . ' ' . $unit_text;
+						$label_transl  = sprintf( $label_transl, $unit_transl );
+						$prod_meta_val = $prod_meta_val . ' ' . $unit_transl;
 
 						if ( ! empty( $cfg[ 'insert_after' ] ) ) {
 							SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
