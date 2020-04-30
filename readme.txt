@@ -45,7 +45,7 @@ Adds a WooCommerce &gt; Settings &gt; Products &gt; Fluid volume unit option:
 
 The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
 
-The enabled WooCommerce product information fields are seamlessly added to the WooCommerce product editing metabox (aka "Product data") for products and their variations.
+The enabled WooCommerce product information fields are added seamlessly to the WooCommerce product editing page (aka the "Product data" metabox) for products and their variations.
 
 The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled product information fields:
 
@@ -63,13 +63,15 @@ The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-j
 	* gtin12
 	* gtin8
 	* gtin
-	* productID (isbn)
+	* productID isbn
 	* depth
-	* volume
+	* additionalProperty fluid_volume
 
 <h3>WPSSO Core Plugin Required</h3>
 
 WPSSO Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+
+Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration modules in the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
 == Installation ==
 
@@ -104,10 +106,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-dev.6 (2020/04/29)**
+**Version 1.0.0-dev.7 (2020/04/30)**
 
 * **New Features**
-	* Version 1.0.0-dev.6 release.
+	* Version 1.0.0-dev.7 release.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -117,11 +119,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v7.2.0.
+	* WPSSO Core v7.3.0-dev.7.
 
 == Upgrade Notice ==
 
-= 1.0.0-dev.6 =
+= 1.0.0-dev.7 =
 
-(2020/04/29) Version 1.0.0-dev.6 release.
+(2020/04/30) Version 1.0.0-dev.7 release.
 
