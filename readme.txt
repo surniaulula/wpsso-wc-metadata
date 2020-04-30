@@ -10,7 +10,7 @@ Tags: woocommerce, gtin, upc, ean, mpn, isbn, metadata, attribute, information, 
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
-Tested Up To: 5.4
+Tested Up To: 5.4.1
 WC Tested Up To: 4.0.1
 Stable Tag: 1.0.0
 
@@ -91,10 +91,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.0.0-dev.4 (2020/04/29)**
+**Version 1.0.0-dev.5 (2020/04/29)**
 
 * **New Features**
-	* Version 1.0.0-dev.4 release.
+	* Version 1.0.0-dev.5 release.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -108,7 +108,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.0.0-dev.4 =
+= 1.0.0-dev.5 =
 
-(2020/04/29) Version 1.0.0-dev.4 release.
+(2020/04/29) Version 1.0.0-dev.5 release.
 
