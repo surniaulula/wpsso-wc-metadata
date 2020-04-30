@@ -210,15 +210,15 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					$holder_transl = sprintf( $holder_transl, $unit_transl );
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
 
-					if ( '' === $var_meta_val ) {
+					/**
+					 * Maybe use the main product metadata value in the placeholder.
+					 */
+					$prod_id       = $var_obj->get_parent_id();
+					$prod_obj      = $this->p->util->wc->get_product( $prod_id );
+					$prod_meta_val = $prod_obj->get_meta( $metadata_key, $single = true );
 
-						$prod_id       = $var_obj->get_parent_id();
-						$prod_obj      = $this->p->util->wc->get_product( $prod_id );
-						$prod_meta_val = $prod_obj->get_meta( $metadata_key, $single = true );
-
-						if ( '' !== $prod_meta_val ) {
-							$holder_transl = $prod_meta_val;
-						}
+					if ( '' !== $prod_meta_val ) {
+						$holder_transl = $prod_meta_val;
 					}
 
 					woocommerce_wp_text_input( array(
