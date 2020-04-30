@@ -16,7 +16,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.0.0-dev.4',	// Plugin version.
+					'version'     => '1.0.0-dev.5',	// Plugin version.
 					'opt_version' => '6',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Metadata for WooCommerce',
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'wpsso' => array(
 							'class'       => 'Wpsso',
 							'name'        => 'WPSSO Core',
-							'min_version' => '7.3.0-dev.4',
+							'min_version' => '7.3.0-dev.5',
 						),
 					),
 
@@ -85,6 +85,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
 					'defaults' => array(
 						'wcmd_enable' => 1,
 						'wcmd_holder' => 'Part number',
@@ -101,6 +104,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
@@ -119,6 +125,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '14-digit bar code',
@@ -135,6 +144,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
@@ -153,6 +165,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '12-digit bar code',
@@ -170,6 +185,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => '8-digit bar code',
@@ -186,6 +204,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable' => 1,
@@ -207,6 +228,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
 					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
 					'defaults' => array(
 						'wcmd_enable' => 0,
 						'wcmd_holder' => 'Depth in %s',
@@ -225,6 +249,9 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					'actions'     => array(
 						'woocommerce_product_options_dimensions'   => true,
 						'woocommerce_variation_options_dimensions' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable' => 0,

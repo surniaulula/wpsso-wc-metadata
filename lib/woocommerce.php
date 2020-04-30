@@ -52,7 +52,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			} else {
 
-				add_filter( 'woocommerce_display_product_attributes', array( $this, 'filter_product_attributes' ), 10, 2 );
+				add_filter( 'woocommerce_display_product_attributes', array( $this, 'filter_display_product_attributes' ), 10, 2 );
 
 				add_action( 'woocommerce_variable_add_to_cart', array( $this, 'enqueue_script_add_to_cart_variation' ), 10, 0 );
 			}
@@ -64,13 +64,13 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$action = current_action();	// Since WP v3.9.
+			$action_name = current_action();	// Since WP v3.9.
 
 			$md_config = WpssoWcMdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
-				if ( empty( $cfg[ 'actions' ][ $action ] ) ) {
+				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
 					continue;
 				}
 
@@ -151,13 +151,13 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			$row_input_num = 0;
 			$row_input_max = 2;
 
-			$action = current_action();	// Since WP v3.9.
+			$action_name = current_action();	// Since WP v3.9.
 
 			$md_config = WpssoWcMdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
-				if ( empty( $cfg[ 'actions' ][ $action ] ) ) {
+				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
 					continue;
 				}
 
@@ -252,13 +252,19 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			}
 		}
 
-		public function filter_product_attributes( $product_attributes, $product ) {
+		public function filter_display_product_attributes( $product_attributes, $product ) {
 
-			$action = current_action();	// Since WP v3.9.
+			$filter_name = current_filter();
+
+			$product_id = $this->p->util->wc->get_product_id( $product );
 
 			$md_config = WpssoWcMdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
+
+				if ( empty( $cfg[ 'filters' ][ $filter_name ] ) ) {
+					continue;
+				}
 
 				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
 
@@ -268,21 +274,21 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 					if ( '' !== $prod_meta_val ) {
 
 						$product_attributes[ $md_suffix ] = array(
-							'label' => $label_transl,
-							'value' => $prod_meta_val,
+							'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
+							'value' => '<span class="wcmd_vars_metadata_value">' . $prod_meta_val . '</span>',
 						);
 					}
 				}
 			}
 
 			wp_localize_script( $handle = 'wpsso-wcmd-add-to-cart-variation',
-				$object_name = 'wpsso_wcmd_variations_metadata',
-					$l10n = $this->get_product_variations_metadata( $product ) );
+				$object_name = 'wcmd_vars_metadata_prod_id_' . $product_id,
+					$l10n = $this->get_vars_metadata( $product ) );
 
 			return $product_attributes;
 		}
 
-		public function get_product_variations_metadata( $product ) {
+		private function get_vars_metadata( $product ) {
 
 			$md_config = WpssoWcMdConfig::get_md_config();
 
