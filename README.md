@@ -15,7 +15,7 @@
 
 <h2>Description</h2>
 
-<p>Easily include additional metadata fields in the WooCommerce "Product data" metabox and "Additional information" purchase page section:</p>
+<p>Easily include additional metadata fields in the WooCommerce "<em>Product data</em>" metabox and "<em>Additional information</em>" purchase page section:</p>
 
 <ul>
 <li>GTIN</li>
@@ -29,13 +29,13 @@
 <li>Volume</li>
 </ul>
 
-<p>The information shown under the "Additional information" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.</p>
+<p>The information shown under the "<em>Additional information</em>" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.</p>
 
-<p>The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).</p>
+<p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).</p>
 
-<p>Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "Product data" metabox) for both simple products and products with variations.</p>
+<p>Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "<em>Product data</em>" metabox) for both simple products and products with variations.</p>
 
-<p>The WPSSO Metadata for WooCommerce add-on also adds a "Fluid volume unit" option in the WooCommerce &gt; Settings &gt; Products settings page:</p>
+<p>The WPSSO Metadata for WooCommerce add-on also adds a "<em>Fluid volume unit</em>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
 
 <ul>
 <li>millilitre</li>
