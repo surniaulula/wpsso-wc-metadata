@@ -43,18 +43,20 @@ Adds a WooCommerce &gt; Settings &gt; Products &gt; Fluid volume unit option:
 * qt (US quart)
 * gal (US gallon)
 
-The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for each WordPress language (aka locale).
+The information fields shown under the "Additional information" section on the WooCommerce purchase page change as different variations are selected, just like the default Weight and Dimensions information added by WooCommerce.
 
-The enabled WooCommerce product information fields are added seamlessly to the WooCommerce product editing page (aka the "Product data" metabox) for products and their variations.
+The SSO &gt; WooCommerce Metadata settings page allows you to enable or disable information fields with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled product information fields:
+The enabled information fields are added seamlessly to the WooCommerce product editing page (aka the "Product data" metabox) for products and their variations.
+
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following product meta tags for enabled information fields:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled product information fields:
+The [Schema JSON-LD Markup add-on]((https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following properties for enabled information fields:
 
 * Schema Product:
 	* mpn
