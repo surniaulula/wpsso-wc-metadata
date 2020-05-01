@@ -1,12 +1,12 @@
-=== Metadata for WooCommerce | WPSSO Add-on ===
-Plugin Name: WPSSO Metadata for WooCommerce
+=== Product Metadata for WooCommerce | WPSSO Add-on ===
+Plugin Name: WPSSO Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
 Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
-Tags: woocommerce, gtin, upc, ean, mpn, isbn, metadata, attribute, information, product, custom field
+Tags: woocommerce, gtin, upc, ean, mpn, isbn, attribute, information, product, custom field, metadata
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
@@ -36,7 +36,7 @@ The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disabl
 
 Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "**Product data**" metabox) for both simple products and products with variations.
 
-The WPSSO Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+The WPSSO Product Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -72,7 +72,7 @@ The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-js
 
 <h3>WPSSO Core Plugin Required</h3>
 
-WPSSO Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
 Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
@@ -80,8 +80,8 @@ Additional product information for Open Graph meta tags and Schema Product prope
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
-* [Uninstall the WPSSO Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
+* [Install the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
+* [Uninstall the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 

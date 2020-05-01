@@ -1,7 +1,7 @@
-<h1>Metadata for WooCommerce</h1><h3>WPSSO Add-on</h3>
+<h1>Product Metadata for WooCommerce</h1><h3>WPSSO Add-on</h3>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Metadata for WooCommerce</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Product Metadata for WooCommerce</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.6 or newer</td></tr>
@@ -10,7 +10,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>4.0.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>woocommerce, gtin, upc, ean, mpn, isbn, metadata, attribute, information, product, custom field</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>woocommerce, gtin, upc, ean, mpn, isbn, attribute, information, product, custom field, metadata</td></tr>
 </table>
 
 <h2>Description</h2>
@@ -35,7 +35,7 @@
 
 <p>Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "<strong>Product data</strong>" metabox) for both simple products and products with variations.</p>
 
-<p>The WPSSO Metadata for WooCommerce add-on also adds a "<strong>Fluid volume unit</strong>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
+<p>The WPSSO Product Metadata for WooCommerce add-on also adds a "<strong>Fluid volume unit</strong>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
 
 <ul>
 <li>ml</li>
@@ -80,7 +80,7 @@
 
 <h3>WPSSO Core Plugin Required</h3>
 
-<p>WPSSO Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
+<p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
 <p>Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.</p>
 
@@ -90,8 +90,8 @@
 <h3 class="top">Install and Uninstall</h3>
 
 <ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/">Install the WPSSO Metadata for WooCommerce add-on</a>.</li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/">Uninstall the WPSSO Metadata for WooCommerce add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/">Install the WPSSO Product Metadata for WooCommerce add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/">Uninstall the WPSSO Product Metadata for WooCommerce add-on</a>.</li>
 </ul>
 
 
