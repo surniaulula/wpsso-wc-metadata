@@ -1,4 +1,4 @@
-=== Product Metadata (GTIN, UPC, EAN, ISBN, MPN) for WooCommerce | WPSSO Add-on ===
+=== Product Metadata (GTIN, UPC, EAN, ISBN, MPN and More) for WooCommerce | WPSSO Add-on ===
 Plugin Name: WPSSO Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
