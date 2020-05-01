@@ -1,8 +1,8 @@
-# Copyright (C) 2020 WPSSO Metadata for WooCommerce
-# This file is distributed under the same license as the WPSSO Metadata for WooCommerce package.
+# Copyright (C) 2020 WPSSO Product Metadata for WooCommerce
+# This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Metadata for WooCommerce 1.0.0\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -160,7 +160,7 @@ msgid ""
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Metadata for WooCommerce"
+msgid "WPSSO Product Metadata for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
