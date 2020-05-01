@@ -19,7 +19,7 @@ msgid "Product MPN"
 msgstr ""
 
 #: lib/config.php:91
-msgid "%1$s refers to a Manufacturer Part Number (MPN)."
+msgid "%1$s refers to a product Manufacturer Part Number (MPN)."
 msgstr ""
 
 #: lib/config.php:112

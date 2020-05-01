@@ -88,7 +88,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 			$local_cache = array(
 				'product_mfr_part_no' => array(
 					'label'   => _x( 'Product MPN', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a Manufacturer Part Number (MPN).', 'wpsso-wc-metadata' ),
+					'desc'    => __( '%1$s refers to a product Manufacturer Part Number (MPN).', 'wpsso-wc-metadata' ),
 					'type'    => 'text',
 					'actions' => array(
 						'woocommerce_product_options_sku'       => true,
