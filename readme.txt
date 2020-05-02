@@ -32,7 +32,7 @@ Easily include additional metadata fields in the WooCommerce "**Product data**" 
 
 The information shown under the "**Additional information**" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.
 
-The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
+The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with simple checkboxes**, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
 Enabled product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
 
