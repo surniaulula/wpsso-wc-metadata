@@ -34,9 +34,9 @@ The information shown under the "**Additional information**" section on the WooC
 
 The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with simple checkboxes, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
-Enabled product metadata fields are added seamlessly to the WooCommerce product editing pages (aka the "**Product data**" metabox) for both simple products and products with variations.
+Enabled product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
 
-The WPSSO Product Metadata for WooCommerce add-on also adds a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+The WPSSO Product Metadata for WooCommerce add-on also includes a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -50,14 +50,14 @@ The WPSSO Product Metadata for WooCommerce add-on also adds a "**Fluid volume un
 * US qt
 * US gal
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following Open Graph product meta tags for enabled product metadata:
+The [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/) will automatically include the following Open Graph product meta tags for enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following Schema properties for enabled product metadata:
+The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema-json-ld/free/) will automatically include the following Schema properties for enabled product metadata:
 
 * Schema Product:
 	* mpn
@@ -72,7 +72,7 @@ The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-js
 
 <h3>WPSSO Core Plugin Required</h3>
 
-WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
 
 Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
