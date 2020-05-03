@@ -26,7 +26,7 @@ Easily include additional metadata fields in the WooCommerce "**Product data**" 
 * GTIN-13 (EAN)
 * GTIN-14
 * ISBN
-* MPN
+* MPN (Manufacturer Part Number)
 * Depth
 * Volume
 
