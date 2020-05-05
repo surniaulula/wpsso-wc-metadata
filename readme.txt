@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.1.0-rc.1 (2020/05/05)**
+**Version 1.1.0 (2020/05/05)**
 
 * **New Features**
 	* None.
@@ -146,7 +146,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.1.0-rc.1 =
+= 1.1.0 =
 
 (2020/05/05) Added dependency check for the WooCommerce plugin.
 
