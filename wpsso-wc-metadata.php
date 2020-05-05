@@ -14,8 +14,8 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
- * WC Tested Up To: 4.0.1
- * Version: 1.0.0
+ * WC Tested Up To: 4.1.0
+ * Version: 1.1.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		/**
 		 * Reference Variables (config, options, modules, etc.).
 		 */
-		private $have_min_version = true;	// Have minimum wpsso version.
+		private $have_wpsso_min = true;	// Have WPSSO Core minimum version.
 
 		private static $instance;
 
@@ -98,17 +98,20 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		 */
 		public static function show_required_notices() {
 
+			$missing_requirements = self::missing_requirements();	// Returns false or array of missing requirements.
+
+			if ( ! $missing_requirements ) {
+				return;	// Stop here.
+			}
+
 			$info = WpssoWcMdConfig::$cf[ 'plugin' ][ 'wpssowcmd' ];
 
-			foreach ( $info[ 'req' ] as $ext => $req_info ) {
+			$notice_msg = __( 'The %1$s add-on requires the %2$s plugin &mdash; install and activate the plugin or <a href="%3$s">deactivate this add-on</a>.',
+				'wpsso-wc-metadata' );
 
-				if ( isset( $req_info[ 'class' ] ) ) {	// Just in case.
+			self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
 
-					if ( class_exists( $req_info[ 'class' ] ) ) {
-						continue;	// Requirement satisfied.
-					}
-
-				} else continue;	// Nothing to check.
+			foreach ( $missing_requirements as $ext => $req_info ) {
 
 				$deactivate_url = html_entity_decode( wp_nonce_url( add_query_arg( array(
 					'action'        => 'deactivate',
@@ -118,14 +121,46 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 					's'             => '',
 				), admin_url( 'plugins.php' ) ), 'deactivate-plugin_' . $info[ 'base' ] ) );
 
-				self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
-
-				$notice_msg = __( 'The %1$s add-on requires the %2$s plugin &mdash; install and activate the plugin or <a href="%3$s">deactivate this add-on</a>.', 'wpsso-wc-metadata' );
-
 				echo '<div class="notice notice-error error"><p>';
+
 				echo sprintf( $notice_msg, $info[ 'name' ], $req_info[ 'name' ], $deactivate_url );
+
 				echo '</p></div>';
 			}
+		}
+
+		public static function missing_requirements() {
+
+			static $local_cache = null;
+
+			if ( null !== $local_cache ) {
+				return $local_cache;
+			}
+
+			$info = WpssoWcMdConfig::$cf[ 'plugin' ][ 'wpssowcmd' ];
+
+			$local_cache = array();
+
+			foreach ( $info[ 'req' ] as $ext => $req_info ) {
+
+				if ( isset( $req_info[ 'class' ] ) ) {
+
+					if ( class_exists( $req_info[ 'class' ] ) ) {
+						continue;	// Requirement satisfied.
+					}
+
+				} else {
+					continue;	// Nothing to check.
+				}
+
+				$local_cache[ $ext ] = $req_info;
+			}
+
+			if ( empty( $local_cache ) ) {
+				$local_cache = false;
+			}
+
+			return $local_cache;
 		}
 
 		/**
@@ -155,7 +190,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 			if ( version_compare( $plugin_version, $req_info[ 'min_version' ], '<' ) ) {
 
-				$this->have_min_version = false;
+				$this->have_wpsso_min = false;
 
 				return $cf;
 			}
@@ -168,7 +203,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		 */
 		public function wpsso_get_avail( $avail ) {
 
-			if ( ! $this->have_min_version ) {
+			if ( ! $this->have_wpsso_min ) {
 
 				$avail[ 'p_ext' ][ 'wcmd' ] = false;	// Signal that this extension / add-on is not available.
 
@@ -188,12 +223,16 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( ! $this->have_min_version ) {
+			if ( ! $this->have_wpsso_min ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'exiting early: have_min_version is false' );
+					$this->p->debug->log( 'exiting early: have_wpsso_min is false' );
 				}
 
+				return;	// Stop here.
+			}
+
+			if ( self::missing_requirements() ) {	// Returns false or array of missing requirements.
 				return;	// Stop here.
 			}
 
@@ -203,12 +242,16 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 		public function wpsso_init_check_options() {
 
-			if ( ! $this->have_min_version ) {
+			if ( ! $this->have_wpsso_min ) {
 
 				if ( $this->p->debug->enabled ) {
-					$this->p->debug->log( 'exiting early: have_min_version is false' );
+					$this->p->debug->log( 'exiting early: have_wpsso_min is false' );
 				}
 
+				return;	// Stop here.
+			}
+
+			if ( self::missing_requirements() ) {	// Returns false or array of missing requirements.
 				return;	// Stop here.
 			}
 
@@ -268,7 +311,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				$this->p->debug->mark();
 			}
 
-			if ( ! $this->have_min_version ) {
+			if ( ! $this->have_wpsso_min ) {
 
 				$this->min_version_notice();	// Show minimum version notice.
 
