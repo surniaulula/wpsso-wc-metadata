@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
 Tested Up To: 5.4.1
-WC Tested Up To: 4.0.1
+WC Tested Up To: 4.1.0
 Stable Tag: 1.0.0
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.
@@ -114,6 +114,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.1.0-dev.1 (2020/05/05)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added dependency check for the WooCommerce plugin.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
+	* WPSSO Core v7.3.0.
+
 **Version 1.0.0 (2020/05/01)**
 
 * **New Features**
@@ -130,6 +145,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v7.3.0.
 
 == Upgrade Notice ==
+
+= 1.1.0-dev.1 =
+
+(2020/05/05) Added dependency check for the WooCommerce plugin.
 
 = 1.0.0 =
 
