@@ -32,13 +32,15 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					 */
 					'req' => array(
 						'wpsso' => array(
-							'class'       => 'Wpsso',
-							'name'        => 'WPSSO Core',
-							'min_version' => '7.3.0',
+							'class'         => 'Wpsso',
+							'name'          => 'WPSSO Core',
+							'min_version'   => '7.3.0',
+							'version_const' => 'WPSSO_VERSION',
 						),
 						'woocommerce' => array(
-							'class' => 'WooCommerce',
-							'name'  => 'WooCommerce',
+							'class'         => 'WooCommerce',
+							'name'          => 'WooCommerce',
+							'version_const' => 'WC_VERSION',
 						),
 					),
 
