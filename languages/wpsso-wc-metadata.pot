@@ -147,13 +147,13 @@ msgstr ""
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
-#: wpsso-wc-metadata.php:141
+#: wpsso-wc-metadata.php:282
 msgid ""
 "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please "
 "activate the missing plugin."
 msgstr ""
 
-#: wpsso-wc-metadata.php:143
+#: wpsso-wc-metadata.php:285
 msgid ""
 "The %1$s version %2$s add-on requires the %3$s version %4$s plugin or newer "
 "(version %5$s is currently installed)."

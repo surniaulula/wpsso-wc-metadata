@@ -66,23 +66,23 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 			$this->reg = new WpssoWcMdRegister();		// Activate, deactivate, uninstall hooks.
 
 			/**
-			 * Check for required plugins and show notices.
+			 * WPSSO filter hooks.
 			 */
-			add_action( 'all_admin_notices', array( __CLASS__, 'show_required_notices' ) );
+			add_filter( 'wpsso_get_config', array( __CLASS__, 'wpsso_get_config' ), 10, 2 );
+			add_filter( 'wpsso_get_avail', array( __CLASS__, 'wpsso_get_avail' ), 10, 1 );
 
 			/**
-			 * Add WPSSO filter hooks.
-			 */
-			add_filter( 'wpsso_get_config', array( $this, 'wpsso_get_config' ), 10, 2 );	// Checks core version and merges config array.
-			add_filter( 'wpsso_get_avail', array( $this, 'wpsso_get_avail' ), 10, 1 );
-
-			/**
-			 * Add WPSSO action hooks.
+			 * WPSSO action hooks.
 			 */
 			add_action( 'wpsso_init_textdomain', array( __CLASS__, 'wpsso_init_textdomain' ) );
 			add_action( 'wpsso_init_objects', array( $this, 'wpsso_init_objects' ), 10 );
 			add_action( 'wpsso_init_check_options', array( $this, 'wpsso_init_check_options' ), 10 );
 			add_action( 'wpsso_init_plugin', array( $this, 'wpsso_init_plugin' ), 10 );
+
+			/**
+			 * WordPress action hooks.
+			 */
+			add_action( 'all_admin_notices', array( __CLASS__, 'maybe_show_notices' ) );
 		}
 
 		public static function &get_instance() {
@@ -95,99 +95,33 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		}
 
 		/**
-		 * Check for required plugins and show notices.
+		 * Checks the core plugin version and merges the extension / add-on config array.
 		 */
-		public static function show_required_notices() {
+		public static function wpsso_get_config( $cf, $plugin_version = 0 ) {
 
-			if ( self::$notices_shown ) {	// Nothing to do.
-				return;
+			if ( self::get_missing_requirements() ) {	// Returns false or an array of missing requirements.
+
+				return $cf;	// Stop here.
 			}
 
-			$missing_reqs = self::get_missing_requirements();	// Returns false or an array of missing requirements.
-
-			if ( ! $missing_reqs ) {
-
-				return;	// Stop here.
-			}
-
-			foreach ( $missing_reqs as $key => $req_info ) {
-
-				if ( ! empty( $req_info[ 'notice' ] ) ) {
-
-					echo '<div class="notice notice-error error"><p>';
-					echo $req_info[ 'notice' ];
-					echo '</p></div>';
-				}
-			}
+			return SucomUtil::array_merge_recursive_distinct( $cf, WpssoWcMdConfig::$cf );
 		}
 
 		/**
-		 * Returns false or an array of the missing requirements (ie. 'wpsso', 'woocommerce', etc.).
+		 * The 'wpsso_get_avail' filter is run after the $check property is defined.
 		 */
-		public static function get_missing_requirements() {
+		public static function wpsso_get_avail( $avail ) {
 
-			static $local_cache = null;
+			if ( self::get_missing_requirements() ) {		// Returns false or an array of missing requirements.
 
-			if ( null !== $local_cache ) {
-				return $local_cache;
+				$avail[ 'p_ext' ][ self::$p_ext ] = false;	// Signal that this extension / add-on is not available.
+
+				return $avail;
 			}
 
-			$local_cache = array();
+			$avail[ 'p_ext' ][ self::$p_ext ] = true;		// Signal that this extension / add-on is available.
 
-			self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
-
-			$info = WpssoWcMdConfig::$cf[ 'plugin' ][ self::$ext ];
-
-			$notice_missing_transl = __( 'The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin.', 'wpsso-wc-metadata' );
-
-			$notice_version_transl = __( 'The %1$s version %2$s add-on requires the %3$s version %4$s plugin or newer (version %5$s is currently installed).', 'wpsso-wc-metadata' );
-
-			foreach ( $info[ 'req' ] as $key => $req_info ) {
-
-				if ( ! empty( $req_info[ 'home' ] ) ) {
-					$req_name = '<a href="' . $req_info[ 'home' ] . '">' . $req_info[ 'name' ] . '</a>';
-				} else {
-					$req_name = $req_info[ 'name' ];
-				}
-
-				if ( ! empty( $req_info[ 'class' ] ) ) {
-
-					if ( ! class_exists( $req_info[ 'class' ] ) ) {
-
-						$req_info[ 'notice' ] = sprintf( $notice_missing_transl, $info[ 'name' ], $info[ 'version' ], $req_name );
-					}
-				}
-
-
-				if ( ! empty( $req_info[ 'version_const' ] ) ) {
-
-					if ( defined( $req_info[ 'version_const' ] ) ) {
-
-						$req_info[ 'version' ] = constant( $req_info[ 'version_const' ] );
-
-						if ( ! empty( $req_info[ 'min_version' ] ) ) {
-
-							if ( version_compare( $req_info[ 'version' ], $req_info[ 'min_version' ], '<' ) ) {
-
-								$req_info[ 'notice' ] = sprintf( $notice_version_transl, $info[ 'name' ], $info[ 'version' ],
-									$req_name, $req_info[ 'min_version' ], $req_info[ 'version' ] );
-							}
-						}
-					}
-				}
-
-				if ( ! empty( $req_info[ 'notice' ] ) ) {
-
-					$local_cache[ $key ] = $req_info;
-				}
-			}
-
-			if ( empty( $local_cache ) ) {
-
-				$local_cache = false;
-			}
-
-			return $local_cache;
+			return $avail;
 		}
 
 		/**
@@ -206,36 +140,6 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 			load_plugin_textdomain( 'wpsso-wc-metadata', false, 'wpsso-wc-metadata/languages/' );
 		}
 
-		/**
-		 * Checks the core plugin version and merges the extension / add-on config array.
-		 */
-		public function wpsso_get_config( $cf, $plugin_version = 0 ) {
-
-			if ( self::get_missing_requirements() ) {	// Returns false or an array of missing requirements.
-
-				return $cf;	// Stop here.
-			}
-
-			return SucomUtil::array_merge_recursive_distinct( $cf, WpssoWcMdConfig::$cf );
-		}
-
-		/**
-		 * The 'wpsso_get_avail' filter is run after the $check property is defined.
-		 */
-		public function wpsso_get_avail( $avail ) {
-
-			if ( self::get_missing_requirements() ) {	// Returns false or an array of missing requirements.
-
-				$avail[ 'p_ext' ][ self::$p_ext ] = false;	// Signal that this extension / add-on is not available.
-
-				return $avail;
-			}
-
-			$avail[ 'p_ext' ][ self::$p_ext ] = true;		// Signal that this extension / add-on is available.
-
-			return $avail;
-		}
-
 		public function wpsso_init_objects() {
 
 			$this->p =& Wpsso::get_instance();
@@ -245,6 +149,10 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 			}
 
 			if ( self::get_missing_requirements() ) {	// Returns false or an array of missing requirements.
+
+				if ( $this->p->debug->enabled ) {
+					$this->p->debug->log( 'exiting early: have missing requirements' );
+				}
 
 				return;	// Stop here.
 			}
@@ -328,6 +236,101 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 			}
 
 			self::$notices_shown = true;
+		}
+
+		public static function maybe_show_notices() {
+
+			if ( self::$notices_shown ) {	// Nothing to do.
+				return;
+			}
+
+			$missing_reqs = self::get_missing_requirements();	// Returns false or an array of missing requirements.
+
+			if ( ! $missing_reqs ) {
+
+				return;	// Stop here.
+			}
+
+			foreach ( $missing_reqs as $key => $req_info ) {
+
+				if ( ! empty( $req_info[ 'notice' ] ) ) {
+
+					echo '<div class="notice notice-error error"><p>';
+					echo $req_info[ 'notice' ];
+					echo '</p></div>';
+				}
+			}
+		}
+
+		/**
+		 * Returns false or an array of the missing requirements (ie. 'wpsso', 'woocommerce', etc.).
+		 */
+		private static function get_missing_requirements() {
+
+			static $local_cache = null;
+
+			if ( null !== $local_cache ) {
+				return $local_cache;
+			}
+
+			$local_cache = array();
+
+			self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
+
+			$info = WpssoWcMdConfig::$cf[ 'plugin' ][ self::$ext ];
+
+			$notice_missing_transl = __( 'The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin.',
+				'wpsso-wc-metadata' );
+
+			$notice_version_transl = __( 'The %1$s version %2$s add-on requires the %3$s version %4$s plugin or newer (version %5$s is currently installed).',
+				'wpsso-wc-metadata' );
+
+			foreach ( $info[ 'req' ] as $key => $req_info ) {
+
+				if ( ! empty( $req_info[ 'home' ] ) ) {
+					$req_name = '<a href="' . $req_info[ 'home' ] . '">' . $req_info[ 'name' ] . '</a>';
+				} else {
+					$req_name = $req_info[ 'name' ];
+				}
+
+				if ( ! empty( $req_info[ 'class' ] ) ) {
+
+					if ( ! class_exists( $req_info[ 'class' ] ) ) {
+
+						$req_info[ 'notice' ] = sprintf( $notice_missing_transl, $info[ 'name' ], $info[ 'version' ], $req_name );
+					}
+				}
+
+
+				if ( ! empty( $req_info[ 'version_const' ] ) ) {
+
+					if ( defined( $req_info[ 'version_const' ] ) ) {
+
+						$req_info[ 'version' ] = constant( $req_info[ 'version_const' ] );
+
+						if ( ! empty( $req_info[ 'min_version' ] ) ) {
+
+							if ( version_compare( $req_info[ 'version' ], $req_info[ 'min_version' ], '<' ) ) {
+
+								$req_info[ 'notice' ] = sprintf( $notice_version_transl, $info[ 'name' ], $info[ 'version' ],
+									$req_name, $req_info[ 'min_version' ], $req_info[ 'version' ] );
+							}
+						}
+					}
+				}
+
+				if ( ! empty( $req_info[ 'notice' ] ) ) {
+
+					$local_cache[ $key ] = $req_info;
+				}
+			}
+
+			if ( empty( $local_cache ) ) {
+
+				$local_cache = false;
+			}
+
+			return $local_cache;
 		}
 	}
 
