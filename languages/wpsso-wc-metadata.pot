@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.2.0-dev.4\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.2.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -147,13 +147,13 @@ msgstr ""
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
-#: wpsso-wc-metadata.php:298
+#: wpsso-wc-metadata.php:299
 msgid ""
 "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please "
 "activate the missing plugin."
 msgstr ""
 
-#: wpsso-wc-metadata.php:301
+#: wpsso-wc-metadata.php:302
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."
