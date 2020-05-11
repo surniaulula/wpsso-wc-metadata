@@ -34,9 +34,11 @@ The information shown under the "**Additional information**" section on the WooC
 
 The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with simple checkboxes**, along with customizing the labels and placeholders for different WordPress languages (aka locales).
 
-Enabled product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
+Product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
 
-The WPSSO Product Metadata for WooCommerce add-on also includes a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+Product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from the front-end and from the WooCommerce product editing page.
+
+The WPSSO Product Metadata for WooCommerce add-on also includes a new "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -114,6 +116,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.3.0-dev.1 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added search capability for product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from the front-end and from the WooCommerce product editing page.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new lib/filters-search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
+	* WPSSO Core v7.4.0.
+
 **Version 1.2.0 (2020/05/09)**
 
 * **New Features**
@@ -160,6 +177,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v7.3.0.
 
 == Upgrade Notice ==
+
+= 1.3.0-dev.1 =
+
+(TBD) None.
 
 = 1.2.0 =
 
