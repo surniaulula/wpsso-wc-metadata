@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 						'<th class="xshort option_col"><h3>' . __( 'Enable', 'wpsso-wc-metadata' ) . '</h3></th>' .
 						'<th class="medium option_col"><h3>' . __( 'Input Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
 						'<th class="medium option_col"><h3>' . __( 'Input Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="wide option_col"><h3>' . __( 'Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
+						'<th class="wide option_col"><h3>' . __( 'Additional Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
 
 					$md_config = WpssoWcmdConfig::get_md_config();
 
