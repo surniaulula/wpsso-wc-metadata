@@ -33,7 +33,7 @@
 
 <p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to <strong>enable or disable product metadata with simple checkboxes</strong>, along with customizing the labels and placeholders for different WordPress languages (aka locales).</p>
 
-<p>Product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "<strong>Product data</strong>" metabox) for both simple products and products with variations.</p>
+<p>Product metadata fields are added seamlessly to the WooCommerce product editing page (in the WooCommerce "<strong>Product data</strong>" metabox) for both simple products and products with variations.</p>
 
 <p><strong>Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from both the front-end and from the WooCommerce Products page.</strong></p>
 
