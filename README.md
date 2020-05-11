@@ -10,7 +10,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>4.1.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>woocommerce, gtin, mpn, upc, ean, isbn, manufacturer part number, attribute, information, product, custom field, metadata</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>woocommerce, gtin, mpn, upc, ean, isbn, manufacturer part number, global identifier, attribute, information, product, custom field, meta data</td></tr>
 </table>
 
 <h2>Description</h2>
@@ -84,7 +84,7 @@
 
 <p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/free/">WPSSO Core plugin</a>.</p>
 
-<p>Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.</p>
+<p>Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.</p>
 
 
 <h2>Installation</h2>

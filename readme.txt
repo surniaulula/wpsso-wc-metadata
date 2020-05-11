@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
-Tags: woocommerce, gtin, mpn, upc, ean, isbn, manufacturer part number, attribute, information, product, custom field, metadata
+Tags: woocommerce, gtin, mpn, upc, ean, isbn, manufacturer part number, global identifier, attribute, information, product, custom field, meta data
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
@@ -76,7 +76,7 @@ The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema
 
 WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
 
-Additional product information for Open Graph meta tags and Schema Product properties requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
+Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
 == Installation ==
 
