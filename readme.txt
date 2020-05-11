@@ -12,7 +12,7 @@ Requires PHP: 5.6
 Requires At Least: 4.2
 Tested Up To: 5.4.1
 WC Tested Up To: 4.1.0
-Stable Tag: 1.3.0
+Stable Tag: 1.3.1
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.
 
@@ -116,7 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.3.0 (2020/05/11)**
+**Version 1.3.1 (2020/05/11)**
 
 * **New Features**
 	* None.
@@ -178,7 +178,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.3.0 =
+= 1.3.1 =
 
 (2020/05/11) Added search capability for product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 
