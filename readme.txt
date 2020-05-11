@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added a new lib/filters-search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter to extend the WordPress and WooCommerce search features.
+	* Added a new lib/search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter to extend the WordPress and WooCommerce search features.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
