@@ -36,7 +36,7 @@ The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disa
 
 Product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
 
-Product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from the front-end and from the WooCommerce product editing page.
+Product ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from both the front-end and from the WooCommerce Products page.
 
 The WPSSO Product Metadata for WooCommerce add-on also includes a new "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
@@ -116,12 +116,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.3.0-dev.1 (TBD)**
+**Version 1.3.0-rc.1 (2020/05/11)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added search capability for product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from the front-end and from the WooCommerce product editing page.
+	* Added search capability for product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -178,9 +178,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.3.0-dev.1 =
+= 1.3.0-rc.1 =
 
-(TBD) None.
+(2020/05/11) Added search capability for product ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 
 = 1.2.0 =
 

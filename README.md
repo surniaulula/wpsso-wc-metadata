@@ -35,7 +35,7 @@
 
 <p>Product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "<strong>Product data</strong>" metabox) for both simple products and products with variations.</p>
 
-<p>Product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from the front-end and from the WooCommerce product editing page.</p>
+<p>Product ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from both the front-end and from the WooCommerce Products page.</p>
 
 <p>The WPSSO Product Metadata for WooCommerce add-on also includes a new "<strong>Fluid volume unit</strong>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
 
