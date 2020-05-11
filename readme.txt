@@ -36,7 +36,7 @@ The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disa
 
 Product metadata fields are added seamlessly to the WooCommerce product editing page (aka the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
 
-**Product global identifier field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from both the front-end and from the WooCommerce Products page.**
+**Product global identifier field values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from both the front-end and from the WooCommerce Products page.**
 
 The WPSSO Product Metadata for WooCommerce add-on also includes a new "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
@@ -121,11 +121,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added search capability for product global identifier field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
+	* Added search capability for product global identifier field values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added a new lib/filters-search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter.
+	* Added a new lib/filters-search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter to extend the WordPress and WooCommerce search features.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.3.0 =
 
-(2020/05/11) Added search capability for product global identifier field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
+(2020/05/11) Added search capability for product global identifier field values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 
 = 1.2.0 =
 
