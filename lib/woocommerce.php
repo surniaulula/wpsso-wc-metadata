@@ -2,16 +2,16 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2017-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
+if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
-	class WpssoWcMdWooCommerce {
+	class WpssoWcmdWooCommerce {
 
 		private $p;
 
@@ -102,7 +102,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			$action_name = current_action();	// Since WP v3.9.
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -140,7 +140,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 		public function save_metadata_options( $product ) {
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -191,7 +191,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			$action_name = current_action();	// Since WP v3.9.
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -249,7 +249,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			$have_update = false;
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -298,7 +298,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 			$product_id = $this->p->util->wc->get_product_id( $product );
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -339,7 +339,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 
 		private function get_vars_metadata( $product ) {
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			$ret = array();
 
@@ -382,7 +382,7 @@ if ( ! class_exists( 'WpssoWcMdWooCommerce' ) ) {
 			wp_enqueue_script( 'wpsso-wcmd-add-to-cart-variation' );
 		}
 
-		private function get_enabled_metadata_key( $md_suffix, $cfg = array() ) {
+		public function get_enabled_metadata_key( $md_suffix, $cfg = array() ) {
 
 			if ( empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 				return null;

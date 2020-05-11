@@ -2,18 +2,19 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2017-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
+if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
-	class WpssoWcMdFilters {
+	class WpssoWcmdFilters {
 
 		private $p;
+		private $search;	// WpssoWcmdFiltersSearch class object.
 
 		public function __construct( &$plugin ) {
 
@@ -33,6 +34,15 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
+
+			/**
+			 * Instantiate the WpssoWcmdFiltersSearch class object.
+			 */
+			if ( ! class_exists( 'WpssoWcmdFiltersSearch' ) ) {
+				require_once WPSSOWCMD_PLUGINDIR . 'lib/filters-search.php';
+			}
+
+			$this->search = new WpssoWcmdFiltersSearch( $plugin );
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'option_type'  => 2,
@@ -54,13 +64,17 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 				$md_suffix = substr( $base_key, strlen( 'plugin_cf_' ) );
 
 				if ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+
 					return 'not_blank';
 				}
 			}
 
 			if ( ! empty( $type ) ) {	// Already have a type.
+
 				return $type;
+
 			} elseif ( 0 !== strpos( $base_key, 'wcmd_' ) ) {	// Only handle our own options.
+
 				return $type;
 			}
 
@@ -88,7 +102,7 @@ if ( ! class_exists( 'WpssoWcMdFilters' ) ) {
 				$this->p->debug->mark();
 			}
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_key => $cfg ) {
 

@@ -2,16 +2,16 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2014-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMdRegister' ) ) {
+if ( ! class_exists( 'WpssoWcmdRegister' ) ) {
 
-	class WpssoWcMdRegister {
+	class WpssoWcmdRegister {
 
 		public function __construct() {
 
@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoWcMdRegister' ) ) {
 				 */
 				if ( class_exists( 'WpssoUtilReg' ) ) {	// Since WPSSO v6.13.1.
 
-					$version = WpssoWcMdConfig::$cf[ 'plugin' ][ 'wpssowcmd' ][ 'version' ];
+					$version = WpssoWcmdConfig::$cf[ 'plugin' ][ 'wpssowcmd' ][ 'version' ];
 
 					WpssoUtilReg::update_ext_version( 'wpssowcmd', $version );
 				}

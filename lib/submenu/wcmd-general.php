@@ -2,16 +2,16 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2014-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMdSubmenuWcMdGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
+if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmin' ) ) {
 
-	class WpssoWcMdSubmenuWcMdGeneral extends WpssoAdmin {
+	class WpssoWcmdSubmenuWcmdGeneral extends WpssoAdmin {
 
 		public function __construct( &$plugin, $id, $name, $lib, $ext ) {
 
@@ -73,7 +73,7 @@ if ( ! class_exists( 'WpssoWcMdSubmenuWcMdGeneral' ) && class_exists( 'WpssoAdmi
 						'<th class="medium option_col"><h3>' . __( 'Input Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
 						'<th class="wide option_col"><h3>' . __( 'Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
 
-					$md_config = WpssoWcMdConfig::get_md_config();
+					$md_config = WpssoWcmdConfig::get_md_config();
 
 					foreach ( $md_config as $md_suffix => $cfg ) {
 

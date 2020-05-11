@@ -2,21 +2,21 @@
 /**
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Copyright 2014-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
+if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 
-	class WpssoWcMdConfig {
+	class WpssoWcmdConfig {
 
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.2.0',	// Plugin version.
+					'version'     => '1.3.0-dev.1',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce',
@@ -99,10 +99,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 			 */
 			$local_cache = array(
 				'product_mfr_part_no' => array(
-					'label'   => _x( 'Product MPN', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product Manufacturer Part Number (MPN).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product MPN', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product Manufacturer Part Number (MPN).', 'wpsso-wc-metadata' ),
+					'searchable' => true,
+					'type'       => 'text',
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -121,10 +122,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_isbn' => array(
-					'label'   => _x( 'Product ISBN', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to an ISBN code (aka International Standard Book Number).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product ISBN', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to an ISBN code (aka International Standard Book Number).', 'wpsso-wc-metadata' ),
+					'searchable' => true,
+					'type'       => 'text',
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -143,10 +145,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_gtin14' => array(
-					'label'   => _x( 'Product GTIN-14', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN-14 code (aka ITF-14).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product GTIN-14', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product GTIN-14 code (aka ITF-14).', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'searchable' => true,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -165,10 +168,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_gtin13' => array(
-					'label'   => _x( 'Product GTIN-13 (EAN)', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product GTIN-13 (EAN)', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13).', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'searchable' => true,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -187,10 +191,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_gtin12' => array(
-					'label'   => _x( 'Product GTIN-12 (UPC)', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product GTIN-12 (UPC)', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit).', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'searchable' => true,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -209,10 +214,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_gtin8' => array(
-					'label'   => _x( 'Product GTIN-8', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product GTIN-8', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN).', 'wpsso-wc-metadata' ),
+					'searchable' => true,
+					'type'       => 'text',
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -231,10 +237,11 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 					),
 				),
 				'product_gtin' => array(
-					'label'   => _x( 'Product GTIN', 'option label', 'wpsso-wc-metadata' ),
-					'desc'    => __( '%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14).', 'wpsso-wc-metadata' ),
-					'type'    => 'text',
-					'actions' => array(
+					'label'      => _x( 'Product GTIN', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14).', 'wpsso-wc-metadata' ),
+					'searchable' => true,
+					'type'       => 'text',
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -345,7 +352,7 @@ if ( ! class_exists( 'WpssoWcMdConfig' ) ) {
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/register.php';
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/woocommerce.php';
 
-			add_filter( 'wpssowcmd_load_lib', array( 'WpssoWcMdConfig', 'load_lib' ), 10, 3 );
+			add_filter( 'wpssowcmd_load_lib', array( 'WpssoWcmdConfig', 'load_lib' ), 10, 3 );
 		}
 
 		public static function load_lib( $ret = false, $filespec = '', $classname = '' ) {

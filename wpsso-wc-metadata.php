@@ -15,7 +15,7 @@
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
  * WC Tested Up To: 4.1.0
- * Version: 1.2.0
+ * Version: 1.3.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -24,16 +24,16 @@
  *      {bugfix}        Backwards-compatible bug fixes or small improvements.
  *      {stage}.{level} Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  *
- * Copyright 2017-2020 Jean-Sebastien Morisset (https://wpsso.com/)
+ * Copyright 2020 Jean-Sebastien Morisset (https://wpsso.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcMd' ) ) {
+if ( ! class_exists( 'WpssoWcmd' ) ) {
 
-	class WpssoWcMd {
+	class WpssoWcmd {
 
 		/**
 		 * Wpsso plugin class object variable.
@@ -43,9 +43,9 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		/**
 		 * Library class object variables.
 		 */
-		public $filters;	// WpssoWcMdFilters
-		public $reg;		// WpssoWcMdRegister
-		public $wc;		// WpssoWcMdWooCommerce
+		public $filters;	// WpssoWcmdFilters
+		public $reg;		// WpssoWcmdRegister
+		public $wc;		// WpssoWcmdWooCommerce
 
 		/**
 		 * Reference Variables (config, options, modules, etc.).
@@ -59,11 +59,11 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 			require_once dirname( __FILE__ ) . '/lib/config.php';
 
-			WpssoWcMdConfig::set_constants( __FILE__ );
+			WpssoWcmdConfig::set_constants( __FILE__ );
 
-			WpssoWcMdConfig::require_libs( __FILE__ );	// Includes the register.php class library.
+			WpssoWcmdConfig::require_libs( __FILE__ );	// Includes the register.php class library.
 
-			$this->reg = new WpssoWcMdRegister();		// Activate, deactivate, uninstall hooks.
+			$this->reg = new WpssoWcmdRegister();		// Activate, deactivate, uninstall hooks.
 
 			/**
 			 * WPSSO filter hooks.
@@ -105,7 +105,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				return $cf;	// Stop here.
 			}
 
-			return SucomUtil::array_merge_recursive_distinct( $cf, WpssoWcMdConfig::$cf );
+			return SucomUtil::array_merge_recursive_distinct( $cf, WpssoWcmdConfig::$cf );
 		}
 
 		/**
@@ -158,8 +158,8 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				return;	// Stop here.
 			}
 
-			$this->filters = new WpssoWcMdFilters( $this->p );
-			$this->wc      = new WpssoWcMdWooCommerce( $this->p );
+			$this->filters = new WpssoWcmdFilters( $this->p );
+			$this->wc      = new WpssoWcmdWooCommerce( $this->p );
 		}
 
 		public function wpsso_init_check_options() {
@@ -169,7 +169,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 				return;	// Stop here.
 			}
 
-			$md_config = WpssoWcMdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -203,7 +203,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 					 * The custom field name may be changed from the default, but should not be empty for
 					 * enabled WooCommerce metadata.
 					 *
-					 * The WpssoWcMdFilters->filter_option_type() filter also returns 'not_blank' for enabled
+					 * The WpssoWcmdFilters->filter_option_type() filter also returns 'not_blank' for enabled
 					 * WooCommerce metadata custom fields in order to show an error notice.
 					 */
 					$opt_key = 'plugin_cf_' . $md_suffix;
@@ -294,7 +294,7 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 
 			self::wpsso_init_textdomain();	// If not already loaded, load the textdomain now.
 
-			$info = WpssoWcMdConfig::$cf[ 'plugin' ][ self::$ext ];
+			$info = WpssoWcmdConfig::$cf[ 'plugin' ][ self::$ext ];
 
 			$plugin_missing_transl = __( 'The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin.',
 				'wpsso-wc-metadata' );
@@ -353,5 +353,5 @@ if ( ! class_exists( 'WpssoWcMd' ) ) {
 		}
 	}
 
-	WpssoWcMd::get_instance();	// Self-instantiate.
+	WpssoWcmd::get_instance();	// Self-instantiate.
 }
