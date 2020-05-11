@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
-Tags: woocommerce, gtin, mpn, upc, ean, isbn, manufacturer part number, global identifier, attribute, information, product, custom field, meta data
+Tags: woocommerce, global identifier, gtin, mpn, upc, ean, isbn, manufacturer part number, attribute, information, product, custom field, meta data
 Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.2
