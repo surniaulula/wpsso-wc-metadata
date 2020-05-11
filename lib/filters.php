@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			$this->p->util->add_plugin_filters( $this, array( 
 				'option_type'  => 2,
 				'get_defaults' => 1,
-			) );
+			), 10000 );
 
 			if ( is_admin() ) {
 
