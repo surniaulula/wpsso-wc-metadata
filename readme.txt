@@ -116,7 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.3.0-rc.1 (2020/05/11)**
+**Version 1.3.0 (2020/05/11)**
 
 * **New Features**
 	* None.
@@ -178,7 +178,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.3.0-rc.1 =
+= 1.3.0 =
 
 (2020/05/11) Added search capability for product ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 
