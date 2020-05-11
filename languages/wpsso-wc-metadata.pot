@@ -100,7 +100,7 @@ msgstr ""
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr ""
 
-#: lib/filters.php:128
+#: lib/filters.php:118
 msgid ""
 "Enable or disable additional information fields, modify the input label, "
 "input placeholder (can also be blank), and the information label."
@@ -147,13 +147,13 @@ msgstr ""
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
-#: wpsso-wc-metadata.php:299
+#: wpsso-wc-metadata.php:301
 msgid ""
 "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please "
 "activate the missing plugin."
 msgstr ""
 
-#: wpsso-wc-metadata.php:302
+#: wpsso-wc-metadata.php:304
 msgid ""
 "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version "
 "%5$s is currently installed)."

@@ -350,6 +350,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/register.php';
+			require_once WPSSOWCMD_PLUGINDIR . 'lib/search.php';
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/woocommerce.php';
 
 			add_filter( 'wpssowcmd_load_lib', array( 'WpssoWcmdConfig', 'load_lib' ), 10, 3 );

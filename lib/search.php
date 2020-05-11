@@ -9,9 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcmdFiltersSearch' ) ) {
+if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
-	class WpssoWcmdFiltersSearch {
+	class WpssoWcmdSearch {
 
 		private $p;
 

@@ -45,6 +45,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 		 */
 		public $filters;	// WpssoWcmdFilters
 		public $reg;		// WpssoWcmdRegister
+		public $search;		// WpssoWcmdSearch
 		public $wc;		// WpssoWcmdWooCommerce
 
 		/**
@@ -159,6 +160,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 			}
 
 			$this->filters = new WpssoWcmdFilters( $this->p );
+			$this->search  = new WpssoWcmdSearch( $this->p );
 			$this->wc      = new WpssoWcmdWooCommerce( $this->p );
 		}
 

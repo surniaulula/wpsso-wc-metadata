@@ -14,7 +14,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 	class WpssoWcmdFilters {
 
 		private $p;
-		private $search;	// WpssoWcmdFiltersSearch class object.
 
 		public function __construct( &$plugin ) {
 
@@ -34,15 +33,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			if ( $this->p->debug->enabled ) {
 				$this->p->debug->mark();
 			}
-
-			/**
-			 * Instantiate the WpssoWcmdFiltersSearch class object.
-			 */
-			if ( ! class_exists( 'WpssoWcmdFiltersSearch' ) ) {
-				require_once WPSSOWCMD_PLUGINDIR . 'lib/filters-search.php';
-			}
-
-			$this->search = new WpssoWcmdFiltersSearch( $plugin );
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'option_type'  => 2,
