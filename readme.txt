@@ -121,7 +121,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added search capability for product metadata ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
+	* Added search capability for product global identifier field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.3.0 =
 
-(2020/05/11) Added search capability for product ID field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
+(2020/05/11) Added search capability for product global identifier field values (GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
 
 = 1.2.0 =
 
