@@ -46,10 +46,16 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				return;
 			}
 
+			/**
+			 * WordPress front-end and admin searches.
+			 */
 			if ( ! empty( $wp_query->is_search ) ) {
 
 				$wp_query->search_product_meta = array( 's' => isset( $wp_query->query[ 's' ] ) ? $wp_query->query[ 's' ] : '' );
 
+			/**
+			 * WooCommerce admin product search (ie. Products > All Products page > Search products button).
+			 */
 			} elseif ( ! empty( $wp_query->query[ 'product_search' ] ) ) {
 
 				$wp_query->search_product_meta = array( 's' => isset( $_GET[ 's' ] ) ? sanitize_text_field( $_GET[ 's' ] ) : '' );
