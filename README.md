@@ -15,6 +15,8 @@
 
 <h2>Description</h2>
 
+<h4>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations</h4>
+
 <p>Easily include additional metadata fields in the WooCommerce "<strong>Product data</strong>" metabox and "<strong>Additional information</strong>" purchase page section:</p>
 
 <ul>
