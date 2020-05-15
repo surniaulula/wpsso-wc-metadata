@@ -18,8 +18,6 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-= GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations =
-
 Easily include additional metadata fields in the WooCommerce "**Product data**" metabox and "**Additional information**" purchase page section:
 
 * GTIN
