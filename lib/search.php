@@ -47,18 +47,24 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			}
 
 			/**
-			 * WordPress front-end and admin searches.
+			 * Save the WordPress front-end and admin search query.
 			 */
 			if ( ! empty( $wp_query->is_search ) ) {
 
-				$wp_query->search_product_meta = array( 's' => isset( $wp_query->query[ 's' ] ) ? $wp_query->query[ 's' ] : '' );
+				$wp_query->saved_search_s = array(
+					's' => isset( $wp_query->query[ 's' ] ) ?
+						$wp_query->query[ 's' ] : '',
+				);
 
 			/**
-			 * WooCommerce admin product search (ie. Products > All Products page > Search products button).
+			 * Save the WooCommerce admin product search (ie. Products > All Products page > Search products button).
 			 */
 			} elseif ( ! empty( $wp_query->query[ 'product_search' ] ) ) {
 
-				$wp_query->search_product_meta = array( 's' => isset( $_GET[ 's' ] ) ? sanitize_text_field( $_GET[ 's' ] ) : '' );
+				$wp_query->saved_search_s = array(
+					's' => isset( $_GET[ 's' ] ) ?
+						sanitize_text_field( $_GET[ 's' ] ) : '',
+				);
 			}
 		}
 
@@ -68,18 +74,19 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 				return $search;
 
-			} elseif ( empty( $wp_query->search_product_meta[ 's' ] ) ) {
+			} elseif ( empty( $wp_query->saved_search_s[ 's' ] ) ) {
+
+				return $search;
+			}
+
+			$product_ids = $this->get_search_product_ids( $wp_query->saved_search_s[ 's' ] );	// Returns an array.
+
+			if ( empty( $product_ids ) ) {
 
 				return $search;
 			}
 
 			global $wpdb;
-
-			$product_ids = $this->get_search_product_ids( $wp_query->search_product_meta[ 's' ] );	// Returns an array.
-
-			if ( empty( $product_ids ) ) {
-				return $search;
-			}
 
 			$post_id_query = ' OR (' . $wpdb->posts . '.ID IN (' . implode( ', ', $product_ids ) . ')) ';
 
