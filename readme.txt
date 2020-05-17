@@ -78,7 +78,7 @@ WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WP
 
 Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
 
-<h3>Can you add more metadata fields?</h3>
+<h3>Can You Add More Metadata Fields?</h3>
 
 Absolutely. Assuming the product information isn't already available from WooCommerce, and fits in a [Schema Product property](https://schema.org/Product), [create a new topic in the plugin support forum](https://wordpress.org/support/plugin/wpsso-wc-metadata/) with the details (including the suggested Schema property name) and we'll have a look. ;-)
 
