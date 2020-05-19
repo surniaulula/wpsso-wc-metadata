@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volum
 
 == Description ==
 
-Easily include additional metadata fields in the WooCommerce "**Product data**" metabox and "**Additional information**" purchase page section:
+Easily include additional metadata fields in the WooCommerce "**Product data**" metabox and the purchase page "**Additional information**" section:
 
 * GTIN
 * GTIN-8
@@ -30,15 +30,21 @@ Easily include additional metadata fields in the WooCommerce "**Product data**" 
 * Depth
 * Volume
 
-The information shown under the "**Additional information**" section on the WooCommerce purchase page changes as different variations are selected, just like the default Weight and Dimensions information managed by WooCommerce.
+The information shown under the WooCommerce purchase page "**Additional information**" section changes as different variations are selected (or unselected).
 
-The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with simple checkboxes**, along with customizing the labels and placeholders for different WordPress languages (aka locales).
+The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with a simple checkbox**, along with customizing the label and placeholder for different languages (aka WordPress locales).
 
-Product metadata fields are added seamlessly to the WooCommerce product editing page (in the WooCommerce "**Product data**" metabox) for both simple products and products with variations.
+The product metadata fields are integrated seamlessly in the WooCommerce product editing page, for both simple products and product variations.
 
-**Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from both the front-end and from the WooCommerce Products page.**
+**Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from the front-end and the WooCommerce Products admin page.**
 
-The WPSSO Product Metadata for WooCommerce add-on also includes a new "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+<h3>Can You Add More Metadata Fields?</h3>
+
+Absolutely. Assuming the information can be included in a [Schema Product property value](https://schema.org/Product), [create a new topic in the plugin support forum](https://wordpress.org/support/plugin/wpsso-wc-metadata/) with the details (including the suggested Schema property name) and we'll have a look. ;-)
+
+<h3>Includes WooCommerce Fluid Volume Units</h3>
+
+The WPSSO Product Metadata for WooCommerce add-on also includes a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -52,6 +58,8 @@ The WPSSO Product Metadata for WooCommerce add-on also includes a new "**Fluid v
 * US qt
 * US gal
 
+<h3>Includes Meta Tags and Schema Markup</h3>
+
 The [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/) will automatically include the following Open Graph product meta tags for enabled product metadata:
 
 * product:ean
@@ -59,28 +67,23 @@ The [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/) will autom
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema-json-ld/free/) will automatically include the following Schema properties for enabled product metadata:
+The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema-json-ld/free/) will automatically include the following Schema Product and Offer properties for enabled product metadata:
 
-* Schema Product:
-	* mpn
-	* gtin14
-	* gtin13
-	* gtin12
-	* gtin8
-	* gtin
-	* productID isbn
-	* depth
-	* additionalProperty fluid_volume
+* mpn
+* gtin14
+* gtin13
+* gtin12
+* gtin8
+* gtin
+* productID isbn
+* depth
+* additionalProperty fluid_volume
 
 <h3>WPSSO Core Plugin Required</h3>
 
 WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
 
 Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
-
-<h3>Can You Add More Metadata Fields?</h3>
-
-Absolutely. Assuming the product information isn't already available from WooCommerce, and fits in a [Schema Product property](https://schema.org/Product), [create a new topic in the plugin support forum](https://wordpress.org/support/plugin/wpsso-wc-metadata/) with the details (including the suggested Schema property name) and we'll have a look. ;-)
 
 == Installation ==
 
