@@ -37,7 +37,7 @@
 
 <p><strong>Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are searchable from the front-end and the WooCommerce Products admin page.</strong></p>
 
-<h3>Can You Add More Metadata Fields?</h3>
+<h3>Can You Add More Product Metadata Fields?</h3>
 
 <p>Absolutely. Assuming the information can be included in a <a href="https://schema.org/Product">Schema Product property value</a>, <a href="https://wordpress.org/support/plugin/wpsso-wc-metadata/">create a new topic in the plugin support forum</a> with the details (including the suggested Schema property name) and we'll have a look. ;-)</p>
 
