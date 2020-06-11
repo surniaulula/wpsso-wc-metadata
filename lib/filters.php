@@ -74,13 +74,9 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 					return 'not_blank';
 
-					break;
-
 				case ( false !== strpos( $base_key, 'wcmd_input_holder_' ) ? true : false ):
 
 					return 'one_line';
-
-					break;
 			}
 
 			return $type;
