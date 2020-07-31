@@ -13,90 +13,90 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/config.php:103
+#: lib/config.php:105
 msgctxt "option label"
 msgid "Product MPN"
 msgstr ""
 
-#: lib/config.php:104
+#: lib/config.php:106
 msgid "%1$s refers to a product Manufacturer Part Number (MPN)."
 msgstr ""
 
-#: lib/config.php:126
+#: lib/config.php:128
 msgctxt "option label"
 msgid "Product ISBN"
 msgstr ""
 
-#: lib/config.php:127
+#: lib/config.php:129
 msgid "%1$s refers to an ISBN code (aka International Standard Book Number)."
 msgstr ""
 
-#: lib/config.php:149
+#: lib/config.php:151
 msgctxt "option label"
 msgid "Product GTIN-14"
 msgstr ""
 
-#: lib/config.php:150
+#: lib/config.php:152
 msgid "%1$s refers to a product GTIN-14 code (aka ITF-14)."
 msgstr ""
 
-#: lib/config.php:172
+#: lib/config.php:174
 msgctxt "option label"
 msgid "Product GTIN-13 (EAN)"
 msgstr ""
 
-#: lib/config.php:173
+#: lib/config.php:175
 msgid ""
 "%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/"
 "UCC-13)."
 msgstr ""
 
-#: lib/config.php:195
+#: lib/config.php:197
 msgctxt "option label"
 msgid "Product GTIN-12 (UPC)"
 msgstr ""
 
-#: lib/config.php:196
+#: lib/config.php:198
 msgid ""
 "%1$s refers to a product GTIN-12 code (12-digit GS1 identification key "
 "composed of a UPC company prefix, item reference, and check digit)."
 msgstr ""
 
-#: lib/config.php:218
+#: lib/config.php:220
 msgctxt "option label"
 msgid "Product GTIN-8"
 msgstr ""
 
-#: lib/config.php:219
+#: lib/config.php:221
 msgid "%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN)."
 msgstr ""
 
-#: lib/config.php:241
+#: lib/config.php:243
 msgctxt "option label"
 msgid "Product GTIN"
 msgstr ""
 
-#: lib/config.php:242
+#: lib/config.php:244
 msgid ""
 "%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or "
 "GTIN-14)."
 msgstr ""
 
-#: lib/config.php:264
+#: lib/config.php:266
 msgctxt "option label"
 msgid "Product Depth"
 msgstr ""
 
-#: lib/config.php:265
+#: lib/config.php:267
 msgid "%1$s refers to a product depth (in %2$s)."
 msgstr ""
 
-#: lib/config.php:291
+#: lib/config.php:293
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr ""
 
-#: lib/config.php:292
+#: lib/config.php:294
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr ""
 

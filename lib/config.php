@@ -52,8 +52,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					 */
 					'assets' => array(
 						'icons' => array(
-							'low'  => 'images/icon-128x128.png',
-							'high' => 'images/icon-256x256.png',
+							'1x' => 'images/icon-128x128.png',
+							'2x' => 'images/icon-256x256.png',
 						),
 					),
 
@@ -74,10 +74,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			static $local_cache = null;
 
 			if ( null !== $local_cache ) {
+
 				return $local_cache;
 			}
 
 			if ( ! class_exists( 'WpssoUtilWooCommerce' ) ) {	// Just in case.
+
 				return $local_cache = array();			// Must return an array.
 			}
 
