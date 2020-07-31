@@ -123,6 +123,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.4.0-dev.2 (2020/07/31)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Renamed the config array keys for icons URLs from 'low' and 'high' to '1x' and '2x'.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.2.
+	* WPSSO Core v7.15.0-dev.2.
+
 **Version 1.3.1 (2020/05/11)**
 
 * **New Features**
@@ -138,66 +153,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v4.2.
 	* WPSSO Core v7.5.0.
 
-**Version 1.2.0 (2020/05/09)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the required plugin check to (optionally) check the class name and a version constant.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.4.0.
-
-**Version 1.1.0 (2020/05/05)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added dependency check for the WooCommerce plugin.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.3.0.
-
-**Version 1.0.0 (2020/05/01)**
-
-* **New Features**
-	* Version 1.0.0 release.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.3.0.
-
 == Upgrade Notice ==
+
+= 1.4.0-dev.2 =
+
+(2020/07/31) Renamed the config array keys for icons URLs from 'low' and 'high' to '1x' and '2x'.
 
 = 1.3.1 =
 
 (2020/05/11) Added search capability for product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
-
-= 1.2.0 =
-
-(2020/05/09) Refactored the required plugin check to (optionally) check the class name and a version constant.
-
-= 1.1.0 =
-
-(2020/05/05) Added dependency check for the WooCommerce plugin.
-
-= 1.0.0 =
-
-(2020/05/01) Version 1.0.0 release.
 
