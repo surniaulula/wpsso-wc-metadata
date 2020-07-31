@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Metadata for WooCommerce 1.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2020-05-12 09:01-0700\n"
-"PO-Revision-Date: 2020-05-12 09:02-0700\n"
+"POT-Creation-Date: 2020-07-31 07:14-0700\n"
+"PO-Revision-Date: 2020-07-31 07:14-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,88 +14,88 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/config.php:102
+#: lib/config.php:103
 msgctxt "option label"
 msgid "Product MPN"
 msgstr "MPN du produit"
 
-#: lib/config.php:103
+#: lib/config.php:104
 msgid "%1$s refers to a product Manufacturer Part Number (MPN)."
 msgstr "%1$s fait référence à un numéro de pièce du fabricant (MPN) d'un produit."
 
-#: lib/config.php:125
+#: lib/config.php:126
 msgctxt "option label"
 msgid "Product ISBN"
 msgstr "ISBN du produit"
 
-#: lib/config.php:126
+#: lib/config.php:127
 msgid "%1$s refers to an ISBN code (aka International Standard Book Number)."
 msgstr "%1$s fait référence à un code ISBN (numéro international normalisé de livre)."
 
-#: lib/config.php:148
+#: lib/config.php:149
 msgctxt "option label"
 msgid "Product GTIN-14"
 msgstr "GTIN-14 du produit"
 
-#: lib/config.php:149
+#: lib/config.php:150
 msgid "%1$s refers to a product GTIN-14 code (aka ITF-14)."
 msgstr "%1$s fait référence à un code de produit GTIN-14 (ITF-14)."
 
-#: lib/config.php:171
+#: lib/config.php:172
 msgctxt "option label"
 msgid "Product GTIN-13 (EAN)"
 msgstr "GTIN-13 (EAN) du produit"
 
-#: lib/config.php:172
+#: lib/config.php:173
 msgid "%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13)."
 msgstr "%1$s fait référence à un code de produit GTIN-13 (codes ISBN à 13 chiffres ou EAN/UCC-13)."
 
-#: lib/config.php:194
+#: lib/config.php:195
 msgctxt "option label"
 msgid "Product GTIN-12 (UPC)"
 msgstr "GTIN-12 (UPC) du produit"
 
-#: lib/config.php:195
+#: lib/config.php:196
 msgid "%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit)."
 msgstr "%1$s fait référence à un code de produit GTIN-12 (clé d'identification GS1 à 12 chiffres composée d'un préfixe de société, d'une référence d'article, et d'un chiffre de contrôle)."
 
-#: lib/config.php:217
+#: lib/config.php:218
 msgctxt "option label"
 msgid "Product GTIN-8"
 msgstr "GTIN-8 du produit"
 
-#: lib/config.php:218
+#: lib/config.php:219
 msgid "%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN)."
 msgstr "%1$s fait référence à un code de produit GTIN-8 (EAN / UCC-8 ou EAN à 8 chiffres)."
 
-#: lib/config.php:240
+#: lib/config.php:241
 msgctxt "option label"
 msgid "Product GTIN"
 msgstr "GTIN du produit"
 
-#: lib/config.php:241
+#: lib/config.php:242
 msgid "%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14)."
 msgstr "%1$s fait référence à un code de produit GTIN (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, ou GTIN-14)."
 
-#: lib/config.php:263
+#: lib/config.php:264
 msgctxt "option label"
 msgid "Product Depth"
 msgstr "Profondeur du produit"
 
-#: lib/config.php:264
+#: lib/config.php:265
 msgid "%1$s refers to a product depth (in %2$s)."
 msgstr "%1$s fait référence à la profondeur d'un produit (en %2$s)."
 
-#: lib/config.php:290
+#: lib/config.php:291
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr "Volume fluide du produit"
 
-#: lib/config.php:291
+#: lib/config.php:292
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de fluide d'un produit (en %2$s)."
 
-#: lib/filters.php:118
+#: lib/filters.php:114
 msgid "Enable or disable additional information fields, modify the input label, input placeholder (can also be blank), and the information label."
 msgstr "Activez ou désactivez des champs d'informations supplémentaires, modifiez l'étiquette d'entrée, l'étiquette d'espace réservé (peut également être vide) et l'étiquette d'information."
 
