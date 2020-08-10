@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.5.0-dev.10\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.5.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -13,90 +13,90 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/config.php:109
+#: lib/config.php:110
 msgctxt "option label"
 msgid "Product MPN"
 msgstr ""
 
-#: lib/config.php:110
+#: lib/config.php:111
 msgid "%1$s refers to a product Manufacturer Part Number (MPN)."
 msgstr ""
 
-#: lib/config.php:132
+#: lib/config.php:133
 msgctxt "option label"
 msgid "Product ISBN"
 msgstr ""
 
-#: lib/config.php:133
+#: lib/config.php:134
 msgid "%1$s refers to an ISBN code (aka International Standard Book Number)."
 msgstr ""
 
-#: lib/config.php:155
+#: lib/config.php:156
 msgctxt "option label"
 msgid "Product GTIN-14"
 msgstr ""
 
-#: lib/config.php:156
+#: lib/config.php:157
 msgid "%1$s refers to a product GTIN-14 code (aka ITF-14)."
 msgstr ""
 
-#: lib/config.php:178
+#: lib/config.php:179
 msgctxt "option label"
 msgid "Product GTIN-13 (EAN)"
 msgstr ""
 
-#: lib/config.php:179
+#: lib/config.php:180
 msgid ""
 "%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/"
 "UCC-13)."
 msgstr ""
 
-#: lib/config.php:201
+#: lib/config.php:202
 msgctxt "option label"
 msgid "Product GTIN-12 (UPC)"
 msgstr ""
 
-#: lib/config.php:202
+#: lib/config.php:203
 msgid ""
 "%1$s refers to a product GTIN-12 code (12-digit GS1 identification key "
 "composed of a UPC company prefix, item reference, and check digit)."
 msgstr ""
 
-#: lib/config.php:224
+#: lib/config.php:225
 msgctxt "option label"
 msgid "Product GTIN-8"
 msgstr ""
 
-#: lib/config.php:225
+#: lib/config.php:226
 msgid "%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN)."
 msgstr ""
 
-#: lib/config.php:247
+#: lib/config.php:248
 msgctxt "option label"
 msgid "Product GTIN"
 msgstr ""
 
-#: lib/config.php:248
+#: lib/config.php:249
 msgid ""
 "%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or "
 "GTIN-14)."
 msgstr ""
 
-#: lib/config.php:270
+#: lib/config.php:271
 msgctxt "option label"
 msgid "Product Depth"
 msgstr ""
 
-#: lib/config.php:271
+#: lib/config.php:272
 msgid "%1$s refers to a product depth (in %2$s)."
 msgstr ""
 
-#: lib/config.php:297
+#: lib/config.php:298
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr ""
 
-#: lib/config.php:298
+#: lib/config.php:299
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr ""
 

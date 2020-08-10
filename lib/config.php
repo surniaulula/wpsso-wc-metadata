@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -16,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.5.0-dev.10',	// Plugin version.
+					'version'     => '1.5.0-b.1',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce',
@@ -43,7 +44,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.0.0-dev.10',
+							'min_version'   => '8.0.0-b.1',
 						),
 					),
 
@@ -337,6 +338,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static function set_constants( $plugin_file_path ) { 
 
 			if ( defined( 'WPSSOWCMD_VERSION' ) ) {	// Define constants only once.
+
 				return;
 			}
 
