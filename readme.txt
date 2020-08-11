@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0-rc.1 (2020/08/11)**
+**Version 1.5.0 (2020/08/11)**
 
 * **New Features**
 	* None.
@@ -136,45 +136,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.2.
-	* WPSSO Core v8.0.0-rc.1.
-
-**Version 1.4.0 (2020/08/02)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Tested with WordPress v5.5.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.15.0.
-
-**Version 1.3.1 (2020/05/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added search capability for product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) from both the front-end and from the WooCommerce Products page.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new lib/search.php library file which hooks the 'pre_get_posts' action and the 'posts_search' filter to extend the WordPress and WooCommerce search features.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.2.
-	* WPSSO Core v7.5.0.
+	* WPSSO Core v8.0.0.
 
 == Upgrade Notice ==
 
-= 1.5.0-rc.1 =
+= 1.5.0 =
 
 (2020/08/11) Added support for the new WpssoUtilMetabox class in WPSSO Core v8.0.0.
-
-= 1.4.0 =
-
-(2020/08/02) Tested with WordPress v5.5.
 
