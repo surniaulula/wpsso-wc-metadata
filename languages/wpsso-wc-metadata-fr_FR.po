@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Metadata for WooCommerce 1.4.0\n"
+"Project-Id-Version: WPSSO Metadata for WooCommerce 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2020-08-02 10:44-0700\n"
-"PO-Revision-Date: 2020-08-02 10:44-0700\n"
+"POT-Creation-Date: 2020-08-11 12:15-0700\n"
+"PO-Revision-Date: 2020-08-11 12:15-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,84 +14,84 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: lib/config.php:109
+#: lib/config.php:110
 msgctxt "option label"
 msgid "Product MPN"
 msgstr "MPN du produit"
 
-#: lib/config.php:110
+#: lib/config.php:111
 msgid "%1$s refers to a product Manufacturer Part Number (MPN)."
 msgstr "%1$s fait référence à un numéro de pièce du fabricant (MPN) d'un produit."
 
-#: lib/config.php:132
+#: lib/config.php:133
 msgctxt "option label"
 msgid "Product ISBN"
 msgstr "ISBN du produit"
 
-#: lib/config.php:133
+#: lib/config.php:134
 msgid "%1$s refers to an ISBN code (aka International Standard Book Number)."
 msgstr "%1$s fait référence à un code ISBN (numéro international normalisé de livre)."
 
-#: lib/config.php:155
+#: lib/config.php:156
 msgctxt "option label"
 msgid "Product GTIN-14"
 msgstr "GTIN-14 du produit"
 
-#: lib/config.php:156
+#: lib/config.php:157
 msgid "%1$s refers to a product GTIN-14 code (aka ITF-14)."
 msgstr "%1$s fait référence à un code de produit GTIN-14 (ITF-14)."
 
-#: lib/config.php:178
+#: lib/config.php:179
 msgctxt "option label"
 msgid "Product GTIN-13 (EAN)"
 msgstr "GTIN-13 (EAN) du produit"
 
-#: lib/config.php:179
+#: lib/config.php:180
 msgid "%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13)."
 msgstr "%1$s fait référence à un code de produit GTIN-13 (codes ISBN à 13 chiffres ou EAN/UCC-13)."
 
-#: lib/config.php:201
+#: lib/config.php:202
 msgctxt "option label"
 msgid "Product GTIN-12 (UPC)"
 msgstr "GTIN-12 (UPC) du produit"
 
-#: lib/config.php:202
+#: lib/config.php:203
 msgid "%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit)."
 msgstr "%1$s fait référence à un code de produit GTIN-12 (clé d'identification GS1 à 12 chiffres composée d'un préfixe de société, d'une référence d'article, et d'un chiffre de contrôle)."
 
-#: lib/config.php:224
+#: lib/config.php:225
 msgctxt "option label"
 msgid "Product GTIN-8"
 msgstr "GTIN-8 du produit"
 
-#: lib/config.php:225
+#: lib/config.php:226
 msgid "%1$s refers to a product GTIN-8 code (aka EAN/UCC-8 or 8-digit EAN)."
 msgstr "%1$s fait référence à un code de produit GTIN-8 (EAN / UCC-8 ou EAN à 8 chiffres)."
 
-#: lib/config.php:247
+#: lib/config.php:248
 msgctxt "option label"
 msgid "Product GTIN"
 msgstr "GTIN du produit"
 
-#: lib/config.php:248
+#: lib/config.php:249
 msgid "%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14)."
 msgstr "%1$s fait référence à un code de produit GTIN (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, ou GTIN-14)."
 
-#: lib/config.php:270
+#: lib/config.php:271
 msgctxt "option label"
 msgid "Product Depth"
 msgstr "Profondeur du produit"
 
-#: lib/config.php:271
+#: lib/config.php:272
 msgid "%1$s refers to a product depth (in %2$s)."
 msgstr "%1$s fait référence à la profondeur d'un produit (en %2$s)."
 
-#: lib/config.php:297
+#: lib/config.php:298
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr "Volume fluide du produit"
 
-#: lib/config.php:298
+#: lib/config.php:299
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de fluide d'un produit (en %2$s)."
 
@@ -138,11 +138,11 @@ msgstr "Unité de volume fluide"
 msgid "This controls what unit you will define fluid volumes in."
 msgstr "Cela détermine dans quelle unité vous définirez les volumes fluide."
 
-#: wpsso-wc-metadata.php:309
+#: wpsso-wc-metadata.php:330
 msgid "The %1$s version %2$s add-on requires the %3$s plugin &mdash; please activate the missing plugin."
 msgstr "L'ajout %1$s version %2$s nécessite l'extension %3$s &mdash; veuillez activer l'extension manquante."
 
-#: wpsso-wc-metadata.php:312
+#: wpsso-wc-metadata.php:343
 msgid "The %1$s version %2$s add-on requires %3$s version %4$s or newer (version %5$s is currently installed)."
 msgstr "L'ajout %1$s version %2$s nécessite %3$s version %4$s ou plus récente (la version %5$s est actuellement installée)."
 
