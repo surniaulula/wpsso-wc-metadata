@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -17,12 +18,10 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 		public function __construct( &$plugin ) {
 
-			/**
-			 * Just in case - prevent filters from being hooked and executed more than once.
-			 */
 			static $do_once = null;
 
 			if ( true === $do_once ) {
+
 				return;	// Stop here.
 			}
 
@@ -31,6 +30,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -85,6 +85,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 		public function filter_get_defaults( $def_opts ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -104,6 +105,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 		public function filter_messages_tooltip( $text, $msg_key ) {
 
 			if ( 0 !== strpos( $msg_key, 'tooltip-wcmd_' ) ) {	// Only handle our own tooltips.
+
 				return $text;
 			}
 
