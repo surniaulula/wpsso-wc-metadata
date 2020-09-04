@@ -1,4 +1,4 @@
-<h1>Product Metadata (GTIN, UPC, EAN, ISBN, MPN and More) for WooCommerce</h1><h3>WPSSO Add-on</h3>
+<h1>Product GTIN, UPC, EAN, ISBN, MPN and More for WooCommerce</h1><h3>WPSSO Add-on</h3>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Product Metadata for WooCommerce</td></tr>
