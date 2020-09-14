@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Metadata for WooCommerce 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2020-09-13 12:23-0700\n"
-"PO-Revision-Date: 2020-09-13 12:23-0700\n"
+"POT-Creation-Date: 2020-09-14 11:18-0700\n"
+"PO-Revision-Date: 2020-09-14 11:18-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,12 +14,12 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gettext/gettext-config.php:6 lib/gettext-config.php:6
+#: gettext/gettext-lib-config.php:6
 msgctxt "lib file description"
 msgid "WooCommerce Metadata"
 msgstr "Métadonnées WooCommerce"
 
-#: gettext/gettext-config.php:7 lib/gettext-config.php:7
+#: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid "GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations."
 msgstr "GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, profondeur et volume pour les produits et variantes WooCommerce."
