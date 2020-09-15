@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Metadata for WooCommerce 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2020-09-14 11:18-0700\n"
-"PO-Revision-Date: 2020-09-15 08:57-0700\n"
+"POT-Creation-Date: 2020-09-15 11:20-0700\n"
+"PO-Revision-Date: 2020-09-15 11:21-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -20,6 +20,11 @@ msgid "WooCommerce Metadata"
 msgstr "Métadonnées WooCommerce"
 
 #: gettext/gettext-lib-config.php:7
+msgctxt "plugin name"
+msgid "WPSSO Product Metadata for WooCommerce"
+msgstr "WPSSO métadonnées de produit WooCommerce"
+
+#: gettext/gettext-lib-config.php:8
 msgctxt "plugin description"
 msgid "GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations."
 msgstr "GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, profondeur et volume pour les produits et variantes WooCommerce."
@@ -148,7 +153,7 @@ msgstr "L'ajout %1$s version %2$s nécessite %3$s version %4$s ou plus récente 
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Product Metadata for WooCommerce"
-msgstr "WPSSO métadonnées de produit pour WooCommerce"
+msgstr "WPSSO métadonnées de produit WooCommerce"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wpsso.com/extend/plugins/wpsso-wc-metadata/"
