@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			static $do_once = null;
 
 			if ( true === $do_once ) {
+
 				return;	// Stop here.
 			}
 
@@ -28,6 +30,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -49,8 +52,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			if ( ! empty( $wp_query->is_search ) ) {
 
 				$wp_query->saved_search_s = array(
-					's' => isset( $wp_query->query[ 's' ] ) ?
-						$wp_query->query[ 's' ] : '',
+					's' => isset( $wp_query->query[ 's' ] ) ? $wp_query->query[ 's' ] : '',
 				);
 
 			/**
@@ -59,8 +61,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			} elseif ( ! empty( $wp_query->query[ 'product_search' ] ) ) {
 
 				$wp_query->saved_search_s = array(
-					's' => isset( $_GET[ 's' ] ) ?
-						sanitize_text_field( $_GET[ 's' ] ) : '',
+					's' => isset( $_GET[ 's' ] ) ? sanitize_text_field( $_GET[ 's' ] ) : '',
 				);
 			}
 		}
@@ -136,22 +137,28 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			$sql_meta_keys = $this->get_sql_meta_keys();
 
 			if ( empty( $sql_meta_keys ) ) {
+
 				return array();
 			}
 
 			$s = stripslashes( trim( $s  ) );
 
 			if ( empty( $s ) ) {
+
 				return array();
 			}
 
 			if ( preg_match_all( '/".*?("|$)|((?<=[\t ",+])|^)[^\t ",+]+/', $s, $matches ) ) {
+
 				$search_terms = $this->get_parsed_search_terms( $matches[ 0 ] );
+
 			} else {
+
 				$search_terms = array( $s );
 			}
 
 			if ( empty( $search_terms ) ) {
+
 				return array();
 			}
 
@@ -203,8 +210,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				 * Keep spaces when term is for exact match.
 				 */
 				if ( preg_match( '/^".+"$/', $term ) ) {
+
 				 	$term = trim( $term, "\"'" );
+
 				} else {
+
 					$term = trim( $term, "\"' " );
 				}
 
@@ -212,6 +222,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				 * Avoid single a-z and single dashes.
 				 */
 				if ( ! $term || ( 1 === strlen( $term ) && preg_match( '/^[a-z\-]$/i', $term ) ) ) {
+
 					continue;
 				}
 
