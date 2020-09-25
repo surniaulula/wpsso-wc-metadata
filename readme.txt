@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
 Tags: woocommerce, gtin, upc, ean, isbn, mpn, custom fields, global identifier, manufacturer part number, attribute, information, product
 Contributors: jsmoriss
 Requires PHP: 5.6
-Requires At Least: 4.2
+Requires At Least: 4.4
 Tested Up To: 5.5.1
 WC Tested Up To: 4.5.2
 Stable Tag: 1.5.1
