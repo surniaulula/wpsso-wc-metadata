@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 				if ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 
-					return 'not_blank';
+					return 'not_blank_quiet';
 				}
 			}
 

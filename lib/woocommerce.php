@@ -382,8 +382,11 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		public function get_enabled_metadata_key( $md_suffix, $cfg = array() ) {
 
 			if ( empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+
 				return null;
+
 			} elseif ( empty( $this->p->options[ 'plugin_cf_' . $md_suffix ] ) ) {
+
 				return null;
 			}
 
@@ -392,6 +395,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			$metadata_key = apply_filters( 'wpsso_wc_metadata_plugin_cf_' . $md_suffix, $metadata_key );
 
 			if ( isset( $cfg[ 'unit_wc_1x' ] ) ) {
+
 				$metadata_key .= '_unit_wc';
 			}
 
