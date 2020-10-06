@@ -132,11 +132,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Refactored the add-on class to extend WpssoAddOn.
+	* Added a new WpssoAddOn class in lib/abstracts/add-on.php.
+	* Added a new SucomAddOn class in lib/abstracts/com/add-on.php.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.7.
-	* WPSSO Core v8.5.0.
+	* WPSSO Core v8.8.0-dev.1.
 	* WooCommerce v3.6.4.
 
 **Version 1.5.1 (2020/09/15)**
@@ -156,6 +158,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.6.0-dev.1 =
+
+(TBD) Refactored the add-on class to extend WpssoAddOn.
 
 = 1.5.1 =
 
