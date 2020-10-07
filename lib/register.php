@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -93,6 +94,7 @@ if ( ! class_exists( 'WpssoWcmdRegister' ) ) {
 				restore_current_blog();
 
 			} else {
+
 				call_user_func_array( $method, array( $args ) );
 			}
 		}
@@ -113,10 +115,8 @@ if ( ! class_exists( 'WpssoWcmdRegister' ) ) {
 			}
 		}
 
-		private function deactivate_plugin() {
-		}
+		private function deactivate_plugin() {}
 
-		private static function uninstall_plugin() {
-		}
+		private static function uninstall_plugin() {}
 	}
 }

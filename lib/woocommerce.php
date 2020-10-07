@@ -6,6 +6,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
@@ -20,6 +21,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			static $do_once = null;
 
 			if ( true === $do_once ) {
+
 				return;	// Stop here.
 			}
 
@@ -28,6 +30,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			$this->p =& $plugin;
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -79,12 +82,15 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			$dim_pos = 0;
 
 			foreach ( $settings as $pos => $val ) {
+
 				if ( isset( $val[ 'id' ] ) && 'woocommerce_dimension_unit' === $val[ 'id' ] ) {
+
 					$dim_pos = $pos;
 				}
 			}
 
 			if ( $dim_pos ) {	// Just in case.
+
 				array_splice( $settings, $dim_pos + 1, 0, array( $fl_vol_settings ) );
 			}
 
@@ -94,6 +100,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		public function show_metadata_options() {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -104,6 +111,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
 				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
+
 					continue;
 				}
 
@@ -164,6 +172,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {
 
 							if ( null !== $value ) {
+
 								$value *= $cfg[ 'unit_wc_1x' ];
 							}
 						}
@@ -180,6 +189,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		public function show_metadata_options_variation( $loop, $variation_data, $variation ) {
 
 			if ( $this->p->debug->enabled ) {
+
 				$this->p->debug->mark();
 			}
 
@@ -193,6 +203,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
 				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
+
 					continue;
 				}
 
@@ -218,6 +229,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					$prod_meta_val = $prod_obj->get_meta( $metadata_key, $single = true );
 
 					if ( '' !== $prod_meta_val ) {
+
 						$holder_transl = $prod_meta_val;
 					}
 
@@ -259,6 +271,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						$value = trim( wc_clean( wp_unslash( $_POST[ $metadata_key . '_variable' ][ $id ] ) ) );
 
 						if ( '' === $value ) {
+
 							$value = null;
 						}
 					}
@@ -273,6 +286,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {
 
 							if ( null !== $value ) {
+
 								$value *= $cfg[ 'unit_wc_1x' ];
 							}
 						}
@@ -285,6 +299,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			}
 
 			if ( $have_update ) {
+
 				$variation->save_meta_data();
 			}
 		}
@@ -316,6 +331,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						$prod_meta_val = $prod_meta_val . ' ' . $unit_transl;
 
 						if ( ! empty( $cfg[ 'insert_after' ] ) ) {
+
 							SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
 						}
 
