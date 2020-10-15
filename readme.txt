@@ -32,7 +32,7 @@ Easily include additional metadata fields in the WooCommerce **Product data** me
 
 The information shown under the WooCommerce purchase page **Additional information** section changes as different variations are selected (or unselected).
 
-The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with a simple checkbox**, along with customizing the label and placeholder for different languages (aka WordPress locales).
+The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).
 
 The product metadata fields are integrated seamlessly in the WooCommerce product editing page, for both simple products and product variations.
 
@@ -84,6 +84,8 @@ The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema
 WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
 
 WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.
+
+See the [Better Schema for WooCommerce Products](https://wpsso.com/docs/plugins/wpsso/installation/better-schema-for-woocommerce/) article for more information.
 
 == Installation ==
 
