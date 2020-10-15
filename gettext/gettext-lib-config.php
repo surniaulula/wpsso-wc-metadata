@@ -5,4 +5,4 @@
  */
 _x( 'WooCommerce Metadata', 'lib file description', 'wpsso-wc-metadata' );
 _x( 'WPSSO Product Metadata for WooCommerce', 'plugin name', 'wpsso-wc-metadata' );
-_x( 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.', 'plugin description', 'wpsso-wc-metadata' );
+_x( 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.', 'plugin description', 'wpsso-wc-metadata' );

@@ -21,7 +21,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce',
-					'desc'        => 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.',
+					'desc'        => 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.',
 					'slug'        => 'wpsso-wc-metadata',
 					'base'        => 'wpsso-wc-metadata/wpsso-wc-metadata.php',
 					'update_auth' => '',		// No premium version.
