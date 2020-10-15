@@ -322,7 +322,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 			);
-		
+
 			$local_cache = apply_filters( 'wpsso_wc_metadata_config', $local_cache );
 
 			return $local_cache;

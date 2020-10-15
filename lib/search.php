@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 		}
 
 		public function action_pre_get_posts( $wp_query ) {
-		
+
 			if ( ! $wp_query->is_main_query() ) {
 
 				return;
@@ -167,7 +167,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			foreach ( $search_terms as $num => $term ) {
 
 				$db_query .= $num > 0 ? ' OR ' : '';
-				
+
 				$db_query .= 'meta_value=\'' . esc_sql( $term ) . '\'';
 			}
 
@@ -191,7 +191,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				if ( ! empty( $cfg[ 'searchable' ] ) ) {
 
 					if ( $metadata_key = $wcmd->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
-						
+
 						$sql_meta_keys[] = '\'' . esc_sql( $metadata_key ) . '\'';
 					}
 				}

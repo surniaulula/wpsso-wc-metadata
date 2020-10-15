@@ -23,7 +23,7 @@
 	};
 
 	VariationForm.prototype.onResetDisplayedVariation = function( event ) {
-	
+
 		var form          = event.data.variationForm;
 		var cssItemPrefix = '.woocommerce-product-attributes-item';
 		var cssItemValue  = cssItemPrefix + '__value .wcmd_vars_metadata_value';
