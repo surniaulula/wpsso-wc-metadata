@@ -14,11 +14,11 @@ Tested Up To: 5.5.1
 WC Tested Up To: 4.6.0
 Stable Tag: 1.5.1
 
-GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.
+GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
 
 == Description ==
 
-Easily include additional metadata fields in the WooCommerce "**Product data**" metabox and the purchase page "**Additional information**" section:
+Easily include additional metadata fields in the WooCommerce **Product data** metabox and the purchase page **Additional information** section:
 
 * GTIN
 * GTIN-8
@@ -30,7 +30,7 @@ Easily include additional metadata fields in the WooCommerce "**Product data**" 
 * Depth
 * Volume
 
-The information shown under the WooCommerce purchase page "**Additional information**" section changes as different variations are selected (or unselected).
+The information shown under the WooCommerce purchase page **Additional information** section changes as different variations are selected (or unselected).
 
 The *SSO &gt; WooCommerce Metadata* settings page allows you to **enable or disable product metadata with a simple checkbox**, along with customizing the label and placeholder for different languages (aka WordPress locales).
 
@@ -44,7 +44,7 @@ Absolutely. Assuming the information can be included in a [Schema Product proper
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
-The WPSSO Product Metadata for WooCommerce add-on also includes a "**Fluid volume unit**" option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+The WPSSO Product Metadata for WooCommerce add-on also includes a **Fluid volume unit** option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -83,7 +83,7 @@ The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema
 
 WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
 
-Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.
+WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.
 
 == Installation ==
 

@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Product Metadata for WooCommerce</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, Depth, and Volume for WooCommerce Products and Variations.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.5.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>5.6 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.4 or newer</td></tr>
@@ -15,7 +15,7 @@
 
 <h2>Description</h2>
 
-<p>Easily include additional metadata fields in the WooCommerce "<strong>Product data</strong>" metabox and the purchase page "<strong>Additional information</strong>" section:</p>
+<p>Easily include additional metadata fields in the WooCommerce <strong>Product data</strong> metabox and the purchase page <strong>Additional information</strong> section:</p>
 
 <ul>
 <li>GTIN</li>
@@ -29,7 +29,7 @@
 <li>Volume</li>
 </ul>
 
-<p>The information shown under the WooCommerce purchase page "<strong>Additional information</strong>" section changes as different variations are selected (or unselected).</p>
+<p>The information shown under the WooCommerce purchase page <strong>Additional information</strong> section changes as different variations are selected (or unselected).</p>
 
 <p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to <strong>enable or disable product metadata with a simple checkbox</strong>, along with customizing the label and placeholder for different languages (aka WordPress locales).</p>
 
@@ -43,7 +43,7 @@
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
-<p>The WPSSO Product Metadata for WooCommerce add-on also includes a "<strong>Fluid volume unit</strong>" option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
+<p>The WPSSO Product Metadata for WooCommerce add-on also includes a <strong>Fluid volume unit</strong> option in the <em>WooCommerce &gt; Settings &gt; Products</em> settings page:</p>
 
 <ul>
 <li>ml</li>
@@ -88,7 +88,7 @@
 
 <p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/free/">WPSSO Core plugin</a>.</p>
 
-<p>Additional product information for Open Graph meta tags and Schema Product properties (like product brand, color, condition, dimensions, material, size, weight, SKU, prices and currencies, sale start / end dates, sale prices, pre-tax prices, VAT prices, etc.) requires the WooCommerce integration module provided with the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.</p>
+<p>WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.</p>
 
 
 <h2>Installation</h2>
