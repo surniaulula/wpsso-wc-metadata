@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 			load_plugin_textdomain( 'wpsso-wc-metadata', false, 'wpsso-wc-metadata/languages/' );
 		}
 
-		public function init_objects( $is_admin, $doing_ajax, $doing_cron ) {
+		public function init_objects( $is_admin ) {
 
 			$this->p =& Wpsso::get_instance();
 
