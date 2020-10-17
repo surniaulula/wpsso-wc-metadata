@@ -12,7 +12,7 @@ Requires PHP: 5.6
 Requires At Least: 4.4
 Tested Up To: 5.5.1
 WC Tested Up To: 4.6.0
-Stable Tag: 1.5.1
+Stable Tag: 1.6.0
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
 
@@ -142,29 +142,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v8.8.0.
 	* WooCommerce v3.6.4.
 
-**Version 1.5.1 (2020/09/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the French plugin translations.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Moved extracted translation strings from lib/gettext-*.php files to a new gettext/ folder.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.4.
-	* WPSSO Core v8.5.0.
-	* WooCommerce v3.6.4.
-
 == Upgrade Notice ==
 
 = 1.6.0 =
 
 (2020/10/17) Refactored the add-on class to extend a new WpssoAddOn abstract class.
-
-= 1.5.1 =
-
-(2020/09/15) Updated the French plugin translations.
 
