@@ -85,7 +85,7 @@ WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WP
 
 WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.
 
-See the [Better Schema for WooCommerce Products](https://wpsso.com/docs/plugins/wpsso/installation/better-schema-for-woocommerce/) article for more information.
+See [better Schema for WooCommerce products](https://wpsso.com/docs/plugins/wpsso/installation/better-schema-for-woocommerce/) for more information on customizing the WPSSO Core plugin, the WPSSO Schema JSON-LD Markup add-on, and the WooCommerce plugin settings for better Schema markup and Google Rich Results.
 
 == Installation ==
 
