@@ -347,12 +347,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			/**
 			 * Define fixed constants.
 			 */
-			define( 'WPSSOWCMD_FILEPATH', $plugin_file );						
+			define( 'WPSSOWCMD_FILEPATH', $plugin_file );
 			define( 'WPSSOWCMD_PLUGINBASE', $info[ 'base' ] );	// Example: wpsso-wc-metadata/wpsso-wc-metadata.php.
 			define( 'WPSSOWCMD_PLUGINDIR', trailingslashit( realpath( dirname( $plugin_file ) ) ) );
 			define( 'WPSSOWCMD_PLUGINSLUG', $info[ 'slug' ] );	// Example: wpsso-wc-metadata.
 			define( 'WPSSOWCMD_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
-			define( 'WPSSOWCMD_VERSION', $info[ 'version' ] );						
+			define( 'WPSSOWCMD_VERSION', $info[ 'version' ] );
 		}
 
 		public static function require_libs( $plugin_file ) {

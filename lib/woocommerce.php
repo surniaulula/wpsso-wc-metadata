@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 				 */
 				add_action( 'woocommerce_product_options_sku', array( $this, 'show_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_product_options_dimensions', array( $this, 'show_metadata_options' ), -1000, 0 );
-				add_action( 'woocommerce_admin_process_product_object', array( $this, 'save_metadata_options'), -1000, 1 ); 
+				add_action( 'woocommerce_admin_process_product_object', array( $this, 'save_metadata_options'), -1000, 1 );
 
 				/**
 				 * Product variations.
