@@ -41,13 +41,13 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 	class WpssoWcmd extends WpssoAddOn {
 
-		public $filters;	// WpssoWcmdFilters class.
-		public $search;		// WpssoWcmdSearch class.
-		public $wc;		// WpssoWcmdWooCommerce class.
+		public $filters;	// WpssoWcmdFilters class object.
+		public $search;		// WpssoWcmdSearch class object.
+		public $wc;		// WpssoWcmdWooCommerce class object.
 
-		protected $p;
+		protected $p;	// Wpsso class object.
 
-		private static $instance = null;
+		private static $instance = null;	// WpssoWcmd class object.
 
 		public function __construct() {
 
