@@ -135,24 +135,24 @@ msgid ""
 "input placeholder (can also be blank), and the information label."
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:36
+#: lib/submenu/wcmd-general.php:38
 msgctxt "metabox title"
 msgid "WooCommerce Metadata"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:71
+#: lib/submenu/wcmd-general.php:73
 msgid "Enable"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:72
+#: lib/submenu/wcmd-general.php:74
 msgid "Input Label"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:73
+#: lib/submenu/wcmd-general.php:75
 msgid "Input Placeholder"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:74
+#: lib/submenu/wcmd-general.php:76
 msgid "Additional Information Label"
 msgstr ""
 
