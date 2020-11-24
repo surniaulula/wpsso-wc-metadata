@@ -63,7 +63,7 @@
 
 <h3>Includes Meta Tags and Schema Markup</h3>
 
-<p>The <a href="https://wpsso.com/extend/plugins/wpsso/free/">WPSSO Core plugin</a> will automatically include the following Open Graph product meta tags for enabled product metadata:</p>
+<p>The <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> will automatically include the following Open Graph product meta tags for enabled product metadata:</p>
 
 <ul>
 <li>product:ean</li>
@@ -72,7 +72,7 @@
 <li>product:upc</li>
 </ul>
 
-<p>The <a href="https://wpsso.com/extend/plugins/wpsso-schema-json-ld/free/">Schema JSON-LD Markup add-on</a> will automatically include the following Schema Product and Offer properties for enabled product metadata:</p>
+<p>The <a href="https://wordpress.org/plugins/wpsso-schema-json-ld/">Schema JSON-LD Markup add-on</a> will automatically include the following Schema Product and Offer properties for enabled product metadata:</p>
 
 <ul>
 <li>mpn</li>
@@ -88,11 +88,9 @@
 
 <h3>WPSSO Core Plugin Required</h3>
 
-<p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/free/">WPSSO Core plugin</a>.</p>
+<p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
-<p>WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.</p>
-
-<p>See the <a href="https://wpsso.com/docs/plugins/wpsso/installation/better-schema-for-woocommerce/">much better Schema for WooCommerce products</a> article for more information on customizing the WPSSO Core plugin, the WPSSO Schema JSON-LD Markup add-on, and the WooCommerce plugin settings for better Schema markup and Google Rich Results.</p>
+<p>WPSSO Core and its add-ons make sure your content looks best on social sites and in search results, no matter how your webpages are shared, re-shared, messaged, posted, embedded, or crawled.</p>
 
 
 <h2>Installation</h2>

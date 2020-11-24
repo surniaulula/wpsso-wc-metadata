@@ -62,14 +62,14 @@ The WPSSO Product Metadata for WooCommerce add-on also includes a **Fluid volume
 
 <h3>Includes Meta Tags and Schema Markup</h3>
 
-The [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/) will automatically include the following Open Graph product meta tags for enabled product metadata:
+The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following Open Graph product meta tags for enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema-json-ld/free/) will automatically include the following Schema Product and Offer properties for enabled product metadata:
+The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following Schema Product and Offer properties for enabled product metadata:
 
 * mpn
 * gtin14
@@ -83,11 +83,9 @@ The [Schema JSON-LD Markup add-on](https://wpsso.com/extend/plugins/wpsso-schema
 
 <h3>WPSSO Core Plugin Required</h3>
 
-WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wpsso.com/extend/plugins/wpsso/free/).
+WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
-WPSSO Core and its add-ons make sure your content looks great on social sites and in search results, no matter how your URLs are crawled, shared, re-shared, posted, or embedded.
-
-See the [much better Schema for WooCommerce products](https://wpsso.com/docs/plugins/wpsso/installation/better-schema-for-woocommerce/) article for more information on customizing the WPSSO Core plugin, the WPSSO Schema JSON-LD Markup add-on, and the WooCommerce plugin settings for better Schema markup and Google Rich Results.
+WPSSO Core and its add-ons make sure your content looks best on social sites and in search results, no matter how your webpages are shared, re-shared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
