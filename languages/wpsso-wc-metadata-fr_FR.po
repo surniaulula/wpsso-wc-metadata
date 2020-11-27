@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.6.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2020-10-17 11:42-0700\n"
-"PO-Revision-Date: 2020-10-17 11:42-0700\n"
+"POT-Creation-Date: 2020-11-27 10:21-0800\n"
+"PO-Revision-Date: 2020-11-27 10:21-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -14,11 +14,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:161
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:178
 msgid "The %1$s add-on requires the %2$s plugin &mdash; please activate the missing plugin."
 msgstr "L'ajout %1$s nécessite l'extension %2$s &mdash; veuillez activer l'extension manquante."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:179
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:196
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est actuellement installée)."
 
@@ -118,36 +118,36 @@ msgstr "Volume fluide du produit"
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de fluide d'un produit (en %2$s)."
 
-#: lib/filters.php:116
+#: lib/filters-messages.php:52
 msgid "Enable or disable additional information fields, modify the input label, input placeholder (can also be blank), and the information label."
 msgstr "Activez ou désactivez des champs d'informations supplémentaires, modifiez l'étiquette d'entrée, l'étiquette d'espace réservé (peut également être vide) et l'étiquette d'information."
 
-#: lib/submenu/wcmd-general.php:36
+#: lib/submenu/wcmd-general.php:38
 msgctxt "metabox title"
 msgid "WooCommerce Metadata"
 msgstr "Métadonnées WooCommerce"
 
-#: lib/submenu/wcmd-general.php:71
+#: lib/submenu/wcmd-general.php:73
 msgid "Enable"
 msgstr "Activer"
 
-#: lib/submenu/wcmd-general.php:72
+#: lib/submenu/wcmd-general.php:74
 msgid "Input Label"
 msgstr "Étiquette d’entrée"
 
-#: lib/submenu/wcmd-general.php:73
+#: lib/submenu/wcmd-general.php:75
 msgid "Input Placeholder"
 msgstr "Étiquette espace réservé"
 
-#: lib/submenu/wcmd-general.php:74
-msgid "Additional Information Label"
-msgstr "Étiquette d'informations supplémentaires"
+#: lib/submenu/wcmd-general.php:76
+msgid "Information Label"
+msgstr "Étiquette d'information"
 
-#: lib/woocommerce.php:74
+#: lib/woocommerce.php:67
 msgid "Fluid volume unit"
 msgstr "Unité de volume fluide"
 
-#: lib/woocommerce.php:79
+#: lib/woocommerce.php:72
 msgid "This controls what unit you will define fluid volumes in."
 msgstr "Cela détermine dans quelle unité vous définirez les volumes fluide."
 
