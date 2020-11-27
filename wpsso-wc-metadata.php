@@ -86,9 +86,9 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				return;	// Stop here.
 			}
 
-			$this->filters = new WpssoWcmdFilters( $this->p );
-			$this->search  = new WpssoWcmdSearch( $this->p );
-			$this->wc      = new WpssoWcmdWooCommerce( $this->p );
+			$this->filters = new WpssoWcmdFilters( $this->p, $this );
+			$this->search  = new WpssoWcmdSearch( $this->p, $this );
+			$this->wc      = new WpssoWcmdWooCommerce( $this->p, $this );
 		}
 
 		public function init_check_options() {

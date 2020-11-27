@@ -15,19 +15,12 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 	class WpssoWcmdSearch {
 
 		private $p;	// Wpsso class object.
+		private $a;     // WpssoWcmd class object.
 
 		public function __construct( &$plugin ) {
 
-			static $do_once = null;
-
-			if ( true === $do_once ) {
-
-				return;	// Stop here.
-			}
-
-			$do_once = true;
-
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
 			if ( $this->p->debug->enabled ) {
 

@@ -129,7 +129,7 @@ msgstr ""
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr ""
 
-#: lib/filters.php:116
+#: lib/filters-messages.php:52
 msgid ""
 "Enable or disable additional information fields, modify the input label, "
 "input placeholder (can also be blank), and the information label."
@@ -153,14 +153,14 @@ msgid "Input Placeholder"
 msgstr ""
 
 #: lib/submenu/wcmd-general.php:76
-msgid "Additional Information Label"
+msgid "Information Label"
 msgstr ""
 
-#: lib/woocommerce.php:74
+#: lib/woocommerce.php:67
 msgid "Fluid volume unit"
 msgstr ""
 
-#: lib/woocommerce.php:79
+#: lib/woocommerce.php:72
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 

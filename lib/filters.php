@@ -15,8 +15,10 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 	class WpssoWcmdFilters {
 
 		private $p;	// Wpsso class object.
+		private $a;     // WpssoWcmd class object.
+		private $msgs;	// WpssoWcmdFiltersMessages class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			static $do_once = null;
 
@@ -28,6 +30,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			$do_once = true;
 
 			$this->p =& $plugin;
+			$this->a =& $addon;
 
 			if ( $this->p->debug->enabled ) {
 
@@ -41,9 +44,9 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 			if ( is_admin() ) {
 
-				$this->p->util->add_plugin_filters( $this, array( 
-					'messages_tooltip' => 2,
-				) );
+				require_once WPSSOWCMD_PLUGINDIR . 'lib/filters-messages.php';
+
+				$this->msgs = new WpssoWcmdFiltersMessages( $plugin, $addon );
 			}
 		}
 
@@ -100,25 +103,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			}
 
 			return $def_opts;
-		}
-
-		public function filter_messages_tooltip( $text, $msg_key ) {
-
-			if ( 0 !== strpos( $msg_key, 'tooltip-wcmd_' ) ) {	// Only handle our own tooltips.
-
-				return $text;
-			}
-
-			switch ( $msg_key ) {
-
-				case ( false !== strpos( $msg_key, 'tooltip-wcmd_input_label_' ) ? true : false ):
-
-					$text .= __( 'Enable or disable additional information fields, modify the input label, input placeholder (can also be blank), and the information label.', 'wpsso-wc-metadata' );
-
-					break;
-			}
-
-			return $text;
 		}
 	}
 }
