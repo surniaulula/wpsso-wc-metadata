@@ -127,6 +127,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.7.0-dev.1 (2020/11/29)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Updated information and help messages in the SSO &gt; WooCommerce Metadata settings page.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.4.
+	* WPSSO Core v8.14.0.
+	* WooCommerce v3.6.4.
+
 **Version 1.6.1 (2020/10/17)**
 
 * **New Features**
@@ -145,6 +161,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.7.0-dev.1 =
+
+(2020/11/29) Updated information and help messages in the SSO &gt; WooCommerce Metadata settings page.
 
 = 1.6.1 =
 
