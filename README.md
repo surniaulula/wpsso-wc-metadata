@@ -37,7 +37,9 @@
 
 <p>The product metadata fields are integrated seamlessly in the WooCommerce product editing page, for both simple products and product variations.</p>
 
-<p><strong>Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from the front-end and the WooCommerce Products admin page.</strong></p>
+<p>Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from the front-end and the WooCommerce Products admin page.</p>
+
+<p>Provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume properties to the <a href="https://wordpress.org/plugins/wpsso-schema-json-ld/">Schema JSON-LD Markup add-on</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
 
 <h3>Can You Add More Product Metadata Fields?</h3>
 
