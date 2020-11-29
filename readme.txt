@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.7.0-rc.1 (2020/11/29)**
+**Version 1.7.0 (2020/11/29)**
 
 * **New Features**
 	* None.
@@ -162,7 +162,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.7.0-rc.1 =
+= 1.7.0 =
 
 (2020/11/29) Updated information and help messages in the SSO &gt; WooCommerce Metadata settings page.
 
