@@ -181,7 +181,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 				if ( ! empty( $cfg[ 'searchable' ] ) ) {
 
-					if ( $metadata_key = $this->a->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+					if ( $metadata_key = $this->a->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 						$sql_meta_keys[] = '\'' . esc_sql( $metadata_key ) . '\'';
 					}

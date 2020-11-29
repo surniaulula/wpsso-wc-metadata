@@ -108,7 +108,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					continue;
 				}
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
 					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$value = null;
 
@@ -151,6 +151,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						$value = trim( wc_clean( wp_unslash( $_POST[ $metadata_key ] ) ) );
 
 						if ( '' === $value ) {
+
 							$value = null;
 						}
 					}
@@ -162,7 +163,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						/**
 						 * Get a new metakey without the '_unit_wc' suffix.
 						 */
-						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {
+						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {	// Always returns a string.
 
 							if ( null !== $value ) {
 
@@ -200,7 +201,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					continue;
 				}
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
 					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
@@ -255,7 +256,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$value = null;
 
@@ -276,7 +277,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 						/**
 						 * Get a new metakey without the '_unit_wc' suffix.
 						 */
-						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {
+						if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix ) ) {	// Always returns a string.
 
 							if ( null !== $value ) {
 
@@ -312,7 +313,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					continue;
 				}
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$prod_meta_val = $product->get_meta( $metadata_key, $single = true );
 
@@ -352,7 +353,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
-				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$available_vars = $this->p->util->wc->get_available_variations( $product );	// Always returns an array.
 
