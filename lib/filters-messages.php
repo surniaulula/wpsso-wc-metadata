@@ -33,9 +33,33 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array( 
+					'messages_info'     => 2,
 					'messages_tooltip'  => 2,
 				) );
 			}
+		}
+
+		public function filter_messages_info( $text, $msg_key ) {
+
+			if ( 0 !== strpos( $msg_key, 'info-wcmd-' ) ) {	// Only handle our own tooltips.
+
+				return $text;
+			}
+
+			switch ( $msg_key ) {
+
+				case 'info-wcmd-custom-fields':
+
+					$text .= '<blockquote class="top-info">';
+
+					$text .= __( 'Enabled WooCommerce metadata fields are included in the WooCommerce product data metabox and shown under the Additional information tab on the product page.', 'wpsso-wc-metadata' );
+
+					$text .= '</blockquote>';
+
+					break;
+			}
+
+			return $text;
 		}
 
 		public function filter_messages_tooltip( $text, $msg_key ) {
@@ -47,9 +71,16 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				case ( false !== strpos( $msg_key, 'tooltip-wcmd_input_label_' ) ? true : false ):
+				case ( 0 === strpos( $msg_key, 'tooltip-wcmd_input_label_' ) ? true : false ):
 
-					$text .= __( 'Enable or disable additional information fields, modify the input label, input placeholder (can also be blank), and the information label.', 'wpsso-wc-metadata' );
+					$text .= __( 'Enable (or disable) this WooCommerce metadata field, modify the input field label, input field placeholder, and the information label shown on the product page.', 'wpsso-wc-metadata' ) . ' ';
+
+					$opt_key = 'plugin_cf_' . substr( $msg_key, 25 );
+
+					if ( ! empty( $this->p->options[ $opt_key ] ) ) {
+
+						$text .= sprintf( __( 'The WooCommerce metadata field value is saved in the WooCommerce product or variation %s custom field name (aka metadata name).', 'wpsso-wc-metadata' ),  '<code>' . $this->p->options[ $opt_key ] . '</code>' );
+					}
 
 					break;
 			}

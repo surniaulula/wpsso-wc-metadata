@@ -68,6 +68,8 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 
 				case 'wcmd-general':
 
+					$table_rows[] = '<td colspan="5">' . $this->p->msgs->get( 'info-wcmd-custom-fields' ) . '</td>';
+
 					$table_rows[] = '' . 
 						'<th></th>' .
 						'<th class="xshort option_col"><h3>' . __( 'Enable', 'wpsso-wc-metadata' ) . '</h3></th>' .

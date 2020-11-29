@@ -173,8 +173,6 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 		private function get_sql_meta_keys() {
 
-			$wcmd =& WpssoWcmd::get_instance();
-
 			$md_config = WpssoWcmdConfig::get_md_config();
 
 			$sql_meta_keys = array();
@@ -183,7 +181,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 				if ( ! empty( $cfg[ 'searchable' ] ) ) {
 
-					if ( $metadata_key = $wcmd->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
+					if ( $metadata_key = $this->a->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {
 
 						$sql_meta_keys[] = '\'' . esc_sql( $metadata_key ) . '\'';
 					}

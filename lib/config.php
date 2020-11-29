@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '1.6.1',	// Plugin version.
+					'version'     => '1.7.0-dev.1',	// Plugin version.
 					'opt_version' => '10',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce',
@@ -44,7 +44,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '8.13.0',
+							'min_version'   => '8.14.0',
 						),
 					),
 
@@ -188,7 +188,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
-						'wcmd_enable' => 0,
+						'wcmd_enable'       => 0,
 						'wcmd_info_label'   => 'EAN',
 						'wcmd_input_holder' => '13-digit bar code',
 						'wcmd_input_label'  => 'EAN',

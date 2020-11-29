@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.6.1\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.7.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
@@ -129,10 +129,24 @@ msgstr ""
 msgid "%1$s refers to a product fluid volume (in %2$s)."
 msgstr ""
 
-#: lib/filters-messages.php:52
+#: lib/filters-messages.php:55
 msgid ""
-"Enable or disable additional information fields, modify the input label, "
-"input placeholder (can also be blank), and the information label."
+"Enabled WooCommerce metadata fields are included in the WooCommerce product "
+"data metabox and shown under the Additional information tab on the product "
+"page."
+msgstr ""
+
+#: lib/filters-messages.php:76
+msgid ""
+"Enable (or disable) this WooCommerce metadata field, modify the input field "
+"label, input field placeholder, and the information label shown on the "
+"product page."
+msgstr ""
+
+#: lib/filters-messages.php:82
+msgid ""
+"The WooCommerce metadata field value is saved in the WooCommerce product or "
+"variation %s custom field name (aka metadata name)."
 msgstr ""
 
 #: lib/submenu/wcmd-general.php:38
@@ -140,19 +154,19 @@ msgctxt "metabox title"
 msgid "WooCommerce Metadata"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:73
+#: lib/submenu/wcmd-general.php:75
 msgid "Enable"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:74
+#: lib/submenu/wcmd-general.php:76
 msgid "Input Label"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:75
+#: lib/submenu/wcmd-general.php:77
 msgid "Input Placeholder"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:76
+#: lib/submenu/wcmd-general.php:78
 msgid "Information Label"
 msgstr ""
 
