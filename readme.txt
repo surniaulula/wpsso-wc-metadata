@@ -127,12 +127,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.7.1 (2020/11/30)**
+**Version 1.8.0 (2020/11/30)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Included the `$addon` argument for library class constructors.
 * **Bugfixes**
 	* Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
 * **Developer Notes**
@@ -178,9 +178,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.7.1 =
+= 1.8.0 =
 
-(2020/11/30) Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
+(2020/11/30) Included the `$addon` argument for library class constructors. Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
 
 = 1.7.0 =
 
