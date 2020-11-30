@@ -127,6 +127,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.7.1 (2020/11/30)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v5.6.
+	* WordPress v4.4.
+	* WPSSO Core v8.14.0.
+	* WooCommerce v3.6.4.
+
 **Version 1.7.0 (2020/11/29)**
 
 * **New Features**
@@ -161,6 +177,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.7.1 =
+
+(2020/11/30) Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
 
 = 1.7.0 =
 
