@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
-		public function __construct( &$plugin ) {
+		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
