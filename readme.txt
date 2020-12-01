@@ -132,11 +132,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Included the `$addon` argument for library class constructors.
+	* None.
 * **Bugfixes**
 	* Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
 * **Developer Notes**
-	* None.
+	* Included the `$addon` argument for library class constructors.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.4.
@@ -180,7 +180,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.8.0 =
 
-(2020/11/30) Included the `$addon` argument for library class constructors. Fixed a "Call to a member function get_enabled_metadata_key() on null" error.
+(2020/11/30) Fixed a "Call to a member function get_enabled_metadata_key() on null" error. Included the `$addon` argument for library class constructors.
 
 = 1.7.0 =
 
