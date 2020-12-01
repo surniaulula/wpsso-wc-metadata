@@ -21,11 +21,11 @@ if ( ! class_exists( 'WpssoAddOn' ) ) {
 
 		protected $p;	// Wpsso class object.
 
-		protected $ext   = '';
-		protected $p_ext = '';
-		protected $cf    = array();
+		protected $ext   = '';		// Add-on lowercase classname. Example: 'wpssojson'.
+		protected $p_ext = '';		// Add-on lowercase acronym. Example: 'json'.
+		protected $cf    = array();	// Add-on config array. Example: WpssoJsonConfig::$cf.
 
-		public $reg;
+		public $reg;	// Add-on register class object. Example: WpssoJsonRegister.
 
 		public function __construct( $plugin_file, $classname ) {
 

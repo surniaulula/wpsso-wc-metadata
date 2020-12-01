@@ -17,15 +17,13 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
+		/**
+		 * Instantiated by WpssoWcmd->init_objects().
+		 */
 		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			add_action( 'pre_get_posts', array( $this, 'action_pre_get_posts' ), 10000, 1 );
 

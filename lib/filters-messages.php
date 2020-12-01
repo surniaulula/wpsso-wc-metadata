@@ -25,23 +25,15 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			if ( is_admin() ) {
-
-				$this->p->util->add_plugin_filters( $this, array( 
-					'messages_info'     => 2,
-					'messages_tooltip'  => 2,
-				) );
-			}
+			$this->p->util->add_plugin_filters( $this, array( 
+				'messages_info'    => 2,
+				'messages_tooltip' => 2,
+			) );
 		}
 
 		public function filter_messages_info( $text, $msg_key ) {
 
-			if ( 0 !== strpos( $msg_key, 'info-wcmd-' ) ) {	// Only handle our own tooltips.
+			if ( 0 !== strpos( $msg_key, 'info-wcmd-' ) ) {
 
 				return $text;
 			}
@@ -64,7 +56,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 
 		public function filter_messages_tooltip( $text, $msg_key ) {
 
-			if ( 0 !== strpos( $msg_key, 'tooltip-wcmd_' ) ) {	// Only handle our own tooltips.
+			if ( 0 !== strpos( $msg_key, 'tooltip-wcmd_' ) ) {
 
 				return $text;
 			}

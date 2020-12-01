@@ -17,15 +17,13 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
+		/**
+		 * Instantiated by WpssoWcmd->init_objects().
+		 */
 		public function __construct( &$plugin, &$addon ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			if ( is_admin() ) {
 
@@ -91,11 +89,6 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		}
 
 		public function show_metadata_options() {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$action_name = current_action();	// Since WP v3.9.
 
@@ -181,11 +174,6 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		 * $loop = 1, 2, 3, etc.
 		 */
 		public function show_metadata_options_variation( $loop, $variation_data, $variation ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$row_input_num = 0;
 			$row_input_max = 2;

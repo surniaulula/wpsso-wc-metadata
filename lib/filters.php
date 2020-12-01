@@ -18,6 +18,9 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 		private $a;     // WpssoWcmd class object.
 		private $msgs;	// WpssoWcmdFiltersMessages class object.
 
+		/**
+		 * Instantiated by WpssoWcmd->init_objects().
+		 */
 		public function __construct( &$plugin, &$addon ) {
 
 			static $do_once = null;
@@ -31,11 +34,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$this->p->util->add_plugin_filters( $this, array( 
 				'option_type'  => 2,
@@ -86,11 +84,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 		}
 
 		public function filter_get_defaults( $def_opts ) {
-
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
 
 			$md_config = WpssoWcmdConfig::get_md_config();
 
