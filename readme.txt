@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 4.5
 Tested Up To: 5.6
-WC Tested Up To: 4.7.1
+WC Tested Up To: 4.8.0
 Stable Tag: 1.8.0
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
