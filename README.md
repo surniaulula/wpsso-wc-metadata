@@ -15,9 +15,7 @@
 
 <h2>Description</h2>
 
-<p style="margin:0;"><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png"></p>
-
-<p>Easily include additional metadata fields in the WooCommerce <strong>Product data</strong> metabox and the purchase page <strong>Additional information</strong> section:</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png"> Easily include additional metadata fields in the WooCommerce <strong>Product data</strong> metabox and the purchase page <strong>Additional information</strong> section:</p>
 
 <ul>
 <li>GTIN</li>
