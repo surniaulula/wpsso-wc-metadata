@@ -1,4 +1,4 @@
-=== WPSSO Product Metadata (GTIN, UPC, EAN, ISBN, MPN) for WooCommerce ===
+=== WPSSO Product Metadata (GTIN, UPC, EAN, ISBN, MPN, Global Identifier) for WooCommerce ===
 Plugin Name: WPSSO Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
@@ -36,7 +36,7 @@ The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disabl
 
 The product metadata fields are integrated seamlessly in the WooCommerce product editing page, for both simple products and product variations.
 
-Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, ISBN, and MPN) are also searchable from the front-end and the WooCommerce Products admin page.
+Product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are also searchable from the front-end and the WooCommerce Products admin page.
 
 **Provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume properties to the [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) for Google Rich Results, Rich Snippets, and Structured Data.**
 
