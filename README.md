@@ -15,7 +15,7 @@
 
 <h2>Description</h2>
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png"> Easily include additional metadata fields in the WooCommerce <strong>Product data</strong> metabox and the purchase page <strong>Additional information</strong> section:</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png">Provides additional fields in the WooCommerce <strong>Product data</strong> metabox and the product webpage <strong>Additional information</strong> section:</p>
 
 <ul>
 <li>GTIN</li>
@@ -29,11 +29,7 @@
 <li>Volume</li>
 </ul>
 
-<p>The information shown under the WooCommerce purchase page <strong>Additional information</strong> section changes as different variations are selected (or unselected).</p>
-
 <p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).</p>
-
-<p>The product metadata fields are integrated seamlessly in the WooCommerce product editing page, for both simple products and product variations.</p>
 
 <p>The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are searchable from the front-end and the WooCommerce Products admin page.</p>
 
