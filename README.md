@@ -82,9 +82,9 @@
 <li>additionalProperty fluid_volume</li>
 </ul>
 
-<h3>WPSSO Core Plugin Required</h3>
+<h3>WPSSO Core Required</h3>
 
-<p>WPSSO Product Metadata for WooCommerce (aka WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>. WPSSO Core and its add-ons make sure your content looks best on social sites and in search results, no matter how webpages are shared, re-shared, messaged, posted, embedded, or crawled.</p>
+<p>WPSSO Product Metadata for WooCommerce (WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
 
 <h2>Installation</h2>
