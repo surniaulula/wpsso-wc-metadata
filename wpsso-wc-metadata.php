@@ -9,7 +9,7 @@
  * Author: JS Morisset
  * Author URI: https://wpsso.com/
  * License: GPLv3
- * License URI: http://www.gnu.org/licenses/gpl.txt
+ * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
  * Requires PHP: 7.0
  * Requires At Least: 4.5
