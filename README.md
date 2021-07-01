@@ -5,7 +5,7 @@
 <tr><th align="right" valign="top" nowrap>Summary</th><td>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.8.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>4.5 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>5.7.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>5.4.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
