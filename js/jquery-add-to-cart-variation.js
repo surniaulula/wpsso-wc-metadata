@@ -95,7 +95,7 @@
 
 	$(function() {
 
-		if ( typeof wc_add_to_cart_variation_params !== 'undefined' ) {
+		if ( 'undefined' !== typeof wc_add_to_cart_variation_params ) {
 
 			$( '.variations_form' ).each( function() {
 

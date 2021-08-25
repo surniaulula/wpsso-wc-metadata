@@ -91,8 +91,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		public function show_metadata_options() {
 
 			$action_name = current_action();	// Since WP v3.9.
-
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$md_config   = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -236,11 +235,9 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 		public function save_metadata_options_variation( $variation_id, $id ) {
 
-			$variation = $this->p->util->wc->get_product( $variation_id );
-
+			$variation   = $this->p->util->wc->get_product( $variation_id );
 			$have_update = false;
-
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$md_config   = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -289,10 +286,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		public function filter_display_product_attributes( $product_attributes, $product ) {
 
 			$filter_name = current_filter();
-
-			$product_id = $this->p->util->wc->get_product_id( $product );
-
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$product_id  = $this->p->util->wc->get_product_id( $product );
+			$md_config   = WpssoWcmdConfig::get_md_config();
 
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
@@ -304,25 +299,24 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 				if ( $metadata_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
 
 					$prod_meta_val = $product->get_meta( $metadata_key, $single = true );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_suffix, $this->p->options );
+					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
+					$label_transl  = sprintf( $label_transl, $unit_transl );
 
 					if ( '' !== $prod_meta_val ) {
 
-						$label_transl = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_suffix, $this->p->options );
-						$unit_transl  = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
-
-						$label_transl  = sprintf( $label_transl, $unit_transl );
-						$prod_meta_val = $prod_meta_val . ' ' . $unit_transl;
-
-						if ( ! empty( $cfg[ 'insert_after' ] ) ) {
-
-							SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
-						}
-
-						$product_attributes[ $md_suffix ] = array(
-							'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
-							'value' => '<span class="wcmd_vars_metadata_value">' . $prod_meta_val . '</span>',
-						);
+						$prod_meta_val .= ' ' . $unit_transl;
 					}
+
+					if ( ! empty( $cfg[ 'insert_after' ] ) ) {
+
+						SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
+					}
+
+					$product_attributes[ $md_suffix ] = array(
+						'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
+						'value' => '<span class="wcmd_vars_metadata_value">' . $prod_meta_val . '</span>',
+					);
 				}
 			}
 
