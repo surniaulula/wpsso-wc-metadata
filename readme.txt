@@ -126,7 +126,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fix to show empty and enabled product attributes under the "Additional information" tab.
+	* Fix to show all enabled product attributes under the "Additional information" tab, even if their values are empty.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -204,7 +204,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.8.2-dev.1 =
 
-(2021/08/25) Fix to show empty and enabled product attributes under the "Additional information" tab.
+(2021/08/25) Fix to show all enabled product attributes under the "Additional information" tab, even if their values are empty.
 
 = 1.8.1 =
 
