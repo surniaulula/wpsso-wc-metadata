@@ -119,7 +119,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.9.0-dev.2 (2021/08/26)**
+**Version 1.9.0-b.1 (2021/08/26)**
 
 * **New Features**
 	* None.
@@ -132,7 +132,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
-	* WPSSO Core v8.36.1-dev.2.
+	* WPSSO Core v8.36.1-b.1.
 	* WooCommerce v3.8.0.
 
 **Version 1.8.1 (2021/02/25)**
@@ -202,7 +202,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.9.0-dev.2 =
+= 1.9.0-b.1 =
 
 (2021/08/26) Added a filter hook to enable the "Additional information" tab. Fix to show product metadata if the main product value is empty.
 
