@@ -119,20 +119,20 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.8.2-dev.1 (2021/08/25)**
+**Version 1.9.0-dev.2 (2021/08/26)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added a filter hook to enable the "Additional information" tab if the product or its variations has a metadata value.
 * **Bugfixes**
-	* Fix to show all enabled product attributes under the "Additional information" tab, even if their values are empty.
+	* Fix to show product metadata if the main product value is empty but one or more variations has a value.
 * **Developer Notes**
-	* None.
+	* Added checks with `WpssoUtilWooCommerce->has_meta()` to include/exclude showing product metadata under the "Additional information" tab.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
-	* WPSSO Core v8.36.1-dev.1.
+	* WPSSO Core v8.36.1-dev.2.
 	* WooCommerce v3.8.0.
 
 **Version 1.8.1 (2021/02/25)**
@@ -202,9 +202,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.8.2-dev.1 =
+= 1.9.0-dev.2 =
 
-(2021/08/25) Fix to show all enabled product attributes under the "Additional information" tab, even if their values are empty.
+(2021/08/26) Added a filter hook to enable the "Additional information" tab. Fix to show product metadata if the main product value is empty.
 
 = 1.8.1 =
 
