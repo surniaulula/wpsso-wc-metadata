@@ -13,7 +13,7 @@
  * Description: GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
  * Requires PHP: 7.0
  * Requires At Least: 5.0
- * Tested Up To: 5.8
+ * Tested Up To: 5.8.1
  * WC Tested Up To: 5.6.0
  * Version: 1.9.0
  *
