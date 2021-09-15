@@ -48,6 +48,9 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			}
 		}
 
+		/**
+		 * Return the sanitation type for a given option key.
+		 */
 		public function filter_option_type( $type, $base_key ) {
 
 			if ( 0 === ( $pos = strpos( $base_key, 'plugin_cf_' ) ) ) {
