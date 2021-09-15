@@ -60,11 +60,11 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 				}
 			}
 
-			if ( ! empty( $type ) ) {	// Already have a type.
+			if ( ! empty( $type ) ) {	// Return early if we already have a type.
 
 				return $type;
 
-			} elseif ( 0 !== strpos( $base_key, 'wcmd_' ) ) {	// Only handle our own options.
+			} elseif ( 0 !== strpos( $base_key, 'wcmd_' ) ) {	// Nothing to do.
 
 				return $type;
 			}
