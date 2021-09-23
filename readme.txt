@@ -119,6 +119,24 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.10.0-rc.1 (2021/09/23)**
+
+Maintenance release for WPSSO Core v9.0.0.
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.0.
+	* WPSSO Core v9.0.0-rc.1.
+	* WooCommerce v3.8.0.
+
 **Version 1.9.0 (2021/08/27)**
 
 * **New Features**
@@ -201,6 +219,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.10.0-rc.1 =
+
+(2021/09/23) Maintenance release for WPSSO Core v9.0.0.
 
 = 1.9.0 =
 
