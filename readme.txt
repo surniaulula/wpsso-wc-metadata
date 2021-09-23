@@ -18,7 +18,7 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volum
 
 == Description ==
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png">Provides additional fields in the WooCommerce <strong>Product data</strong> metabox and the product webpage <strong>Additional information</strong> section:</p>
+<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png"> Provides additional fields in the WooCommerce <strong>Product data</strong> metabox and the product webpage <strong>Additional information</strong> section:</p>
 
 * GTIN
 * GTIN-8
@@ -32,17 +32,13 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volum
 
 The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are searchable from both the front-end and back-end WooCommerce Products admin page.
 
+The WPSSO Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
+
 The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).
-
-This plugin provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume properties to the [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) for Google Rich Results, Rich Snippets, and Structured Data.
-
-<h3>Can You Add More Product Metadata Fields?</h3>
-
-Absolutely. Assuming the information can be included in a [Schema Product property value](https://schema.org/Product), [create a new topic in the plugin support forum](https://wordpress.org/support/plugin/wpsso-wc-metadata/) with the details (including the suggested Schema property name) and we'll have a look. ;-)
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
-The WPSSO Product Metadata for WooCommerce add-on also includes a **Fluid volume unit** option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+The add-on includes a **Fluid volume unit** option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
@@ -58,14 +54,14 @@ The WPSSO Product Metadata for WooCommerce add-on also includes a **Fluid volume
 
 <h3>Includes Meta Tags and Schema Markup</h3>
 
-The [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) will automatically include the following Open Graph product meta tags for enabled product metadata:
+Automatically creates Open Graph product meta tags for the enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
 
-The [Schema JSON-LD Markup add-on](https://wordpress.org/plugins/wpsso-schema-json-ld/) will automatically include the following Schema Product and Offer properties for enabled product metadata:
+Automatically includes Schema Product and Offer properties for the enabled product metadata:
 
 * mpn
 * gtin14
@@ -119,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.10.0-rc.1 (2021/09/23)**
+**Version 1.10.0-rc.2 (2021/09/23)**
 
 Maintenance release for WPSSO Core v9.0.0.
 
@@ -134,7 +130,7 @@ Maintenance release for WPSSO Core v9.0.0.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
-	* WPSSO Core v9.0.0-rc.1.
+	* WPSSO Core v9.0.0-rc.2.
 	* WooCommerce v3.8.0.
 
 **Version 1.9.0 (2021/08/27)**
@@ -220,7 +216,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.10.0-rc.1 =
+= 1.10.0-rc.2 =
 
 (2021/09/23) Maintenance release for WPSSO Core v9.0.0.
 
