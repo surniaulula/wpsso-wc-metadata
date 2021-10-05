@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.10.0\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 1.10.1-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
@@ -154,19 +154,19 @@ msgctxt "metabox title"
 msgid "WooCommerce Metadata"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:75
+#: lib/submenu/wcmd-general.php:77
 msgid "Enable"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:76
+#: lib/submenu/wcmd-general.php:78
 msgid "Input Label"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:77
+#: lib/submenu/wcmd-general.php:79
 msgid "Input Placeholder"
 msgstr ""
 
-#: lib/submenu/wcmd-general.php:78
+#: lib/submenu/wcmd-general.php:80
 msgid "Information Label"
 msgstr ""
 
