@@ -1,7 +1,7 @@
-<h1>WPSSO Product Metadata for WooCommerce</h1><h3>Product GTIN, UPC, EAN, ISBN, MPN, Global Identifier</h3>
+<h1>WPSSO Product Metadata for WooCommerce SEO</h1><h3>Product GTIN, UPC, EAN, ISBN, MPN, Global Identifier</h3>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Product Metadata for WooCommerce</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Product Metadata for WooCommerce SEO</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.10.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
@@ -31,7 +31,7 @@
 
 <p>The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are searchable from both the front-end and back-end WooCommerce Products admin page.</p>
 
-<p>The WPSSO Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
+<p>The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
 
 <p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).</p>
 
@@ -80,7 +80,7 @@
 
 <h3>WPSSO Core Required</h3>
 
-<p>WPSSO Product Metadata for WooCommerce (WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
+<p>WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
 
 <h2>Installation</h2>
@@ -88,8 +88,8 @@
 <h3 class="top">Install and Uninstall</h3>
 
 <ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/">Install the WPSSO Product Metadata for WooCommerce add-on</a>.</li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/">Uninstall the WPSSO Product Metadata for WooCommerce add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/">Install the WPSSO Product Metadata for WooCommerce SEO add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/">Uninstall the WPSSO Product Metadata for WooCommerce SEO add-on</a>.</li>
 </ul>
 
 
