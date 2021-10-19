@@ -15,19 +15,17 @@
 
 <h2>Description</h2>
 
-<p><img class="readme-icon" src="https://surniaulula.github.io/wpsso-wc-metadata/assets/icon-256x256.png"> Provides additional fields in the WooCommerce <strong>Product data</strong> metabox and the product webpage <strong>Additional information</strong> section:</p>
+<p>Provides additional fields in the WooCommerce Product data metabox and the product webpage Additional information section:</p>
 
-<ul style="display:inline-block;">
-    <li>GTIN</li>
-    <li>GTIN-8</li>
-    <li>GTIN-12 (UPC)</li>
-    <li>GTIN-13 (EAN)</li>
-    <li>GTIN-14</li>
-    <li>ISBN</li>
-    <li>MPN (Manufacturer Part Number)</li>
-    <li>Depth</li>
-    <li>Volume</li>
-</ul>
+<p>GTIN
+GTIN-8
+GTIN-12 (UPC)
+GTIN-13 (EAN)
+GTIN-14
+ISBN
+MPN (Manufacturer Part Number)
+Depth
+Volume</p>
 
 <p>The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are searchable from both the front-end and back-end WooCommerce Products admin page.</p>
 
