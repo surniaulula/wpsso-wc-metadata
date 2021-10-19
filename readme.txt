@@ -18,6 +18,8 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volum
 
 == Description ==
 
+<!-- about -->
+
 Provides additional fields in the WooCommerce Product data metabox and the product webpage Additional information section:
 
 GTIN
@@ -35,6 +37,8 @@ The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-1
 The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
 
 The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).
+
+<!-- /about -->
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 

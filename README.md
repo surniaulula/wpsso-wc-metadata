@@ -15,6 +15,8 @@
 
 <h2>Description</h2>
 
+<!-- about -->
+
 <p>Provides additional fields in the WooCommerce Product data metabox and the product webpage Additional information section:</p>
 
 <p>GTIN
@@ -32,6 +34,8 @@ Volume</p>
 <p>The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
 
 <p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).</p>
+
+<!-- /about -->
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
