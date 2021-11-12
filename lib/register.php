@@ -108,7 +108,7 @@ if ( ! class_exists( 'WpssoWcmdRegister' ) ) {
 				 */
 				if ( class_exists( 'WpssoUtilReg' ) ) { // Since WPSSO Core v6.13.1.
 
-					$version = WpssoWcmdConfig::$cf[ 'plugin' ][ 'wpssowcmd' ][ 'version' ];
+					$version = WpssoWcmdConfig::get_version();
 
 					WpssoUtilReg::update_ext_version( 'wpssowcmd', $version );
 				}
