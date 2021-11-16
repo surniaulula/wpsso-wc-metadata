@@ -11,8 +11,8 @@
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
- * Requires PHP: 7.0
- * Requires At Least: 5.0
+ * Requires PHP: 7.2
+ * Requires At Least: 5.2
  * Tested Up To: 5.8.2
  * WC Tested Up To: 5.9.0
  * Version: 1.10.2
