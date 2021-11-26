@@ -362,12 +362,25 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/search.php';
 			require_once WPSSOWCMD_PLUGINDIR . 'lib/woocommerce.php';
 
-			add_filter( 'wpssowcmd_load_lib', array( 'WpssoWcmdConfig', 'load_lib' ), 10, 3 );
+			add_filter( 'wpssowcmd_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
 		}
 
 		public static function load_lib( $success = false, $filespec = '', $classname = '' ) {
 
-			if ( false === $success && ! empty( $filespec ) ) {
+			if ( false !== $success ) {
+
+				return $success;
+			}
+
+			if ( ! empty( $classname ) ) {
+
+				if ( class_exists( $classname ) ) {
+
+					return $classname;
+				}
+			}
+
+			if ( ! empty( $filespec ) ) {
 
 				$file_path = WPSSOWCMD_PLUGINDIR . 'lib/' . $filespec . '.php';
 
