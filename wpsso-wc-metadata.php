@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
  * WC Tested Up To: 5.9.0
- * Version: 1.10.2
+ * Version: 1.11.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -121,8 +121,8 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 						$opt_key = $opt_prefix . '_' . $md_suffix;
 
-						$this->p->options[ $opt_key ]         = $val;
-						$this->p->options[ $opt_key . ':is' ] = 'disabled';
+						$this->p->options[ $opt_key ]               = $val;
+						$this->p->options[ $opt_key . ':disabled' ] = true;
 					}
 
 					/**

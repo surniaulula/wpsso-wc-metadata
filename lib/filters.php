@@ -36,8 +36,8 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'option_type'  => 2,
 				'get_defaults' => 1,
+				'option_type'  => 2,
 			) );
 
 			if ( is_admin() ) {
@@ -48,9 +48,21 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			}
 		}
 
-		/**
-		 * Return the sanitation type for a given option key.
-		 */
+		public function filter_get_defaults( $defs ) {
+
+			$md_config = WpssoWcmdConfig::get_md_config();
+
+			foreach ( $md_config as $md_key => $cfg ) {
+
+				foreach ( $cfg[ 'defaults' ] as $opt_pre => $val ) {
+
+					$defs[ $opt_pre . '_' . $md_key ] = $val;
+				}
+			}
+
+			return $defs;
+		}
+
 		public function filter_option_type( $type, $base_key ) {
 
 			if ( 0 === ( $pos = strpos( $base_key, 'plugin_cf_' ) ) ) {
@@ -84,21 +96,6 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			}
 
 			return $type;
-		}
-
-		public function filter_get_defaults( $def_opts ) {
-
-			$md_config = WpssoWcmdConfig::get_md_config();
-
-			foreach ( $md_config as $md_key => $cfg ) {
-
-				foreach ( $cfg[ 'defaults' ] as $opt_pre => $val ) {
-
-					$def_opts[ $opt_pre . '_' . $md_key ] = $val;
-				}
-			}
-
-			return $def_opts;
 		}
 	}
 }
