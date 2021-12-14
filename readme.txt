@@ -125,6 +125,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.11.0-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.11.1-dev.2.
+	* WooCommerce v5.0.
+
 **Version 1.10.2 (2021/11/16)**
 
 * **New Features**
@@ -257,6 +273,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.11.0-dev.2 =
+
+(TBD) None.
 
 = 1.10.2 =
 
