@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-dev.5 (2021/12/15)**
+**Version 1.11.0-dev.6 (2021/12/15)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.12.0-dev.5.
+	* WPSSO Core v9.12.0-dev.6.
 	* WooCommerce v5.0.
 
 **Version 1.10.2 (2021/11/16)**
@@ -274,7 +274,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.11.0-dev.5 =
+= 1.11.0-dev.6 =
 
 (2021/12/15) Renamed disabled option key suffix.
 
