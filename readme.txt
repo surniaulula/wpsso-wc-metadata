@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.11.0-b.2 (2021/12/16)**
+**Version 1.11.0 (2021/12/16)**
 
 * **New Features**
 	* None.
@@ -134,11 +134,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Renamed disabled option key suffix from `":is" = "disabled"` to `":disabled" = true`.
+	* Renamed the disabled option key suffix from `":is" = "disabled"` to `":disabled" = true`.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.12.0-b.2.
+	* WPSSO Core v9.12.0.
 	* WooCommerce v5.0.
 
 **Version 1.10.2 (2021/11/16)**
@@ -274,9 +274,9 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.11.0-b.2 =
+= 1.11.0 =
 
-(2021/12/16) Renamed disabled option key suffix.
+(2021/12/16) Renamed the disabled option key suffix.
 
 = 1.10.2 =
 
