@@ -125,6 +125,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.12.0 (2022/01/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* For comformity, disable the product attribute names of enabled and disabled metadata (ie. custom fields) instead of just the enabled ones.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.13.0.
+	* WooCommerce v5.0.
+
 **Version 1.11.0 (2021/12/16)**
 
 * **New Features**
@@ -273,6 +289,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.12.0 =
+
+(2022/01/11) For comformity, disable the product attribute names of enabled and disabled metadata (ie. custom fields) instead of just the enabled ones.
 
 = 1.11.0 =
 
