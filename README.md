@@ -84,7 +84,6 @@ Volume</p>
 
 <p>WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
-
 <h2>Installation</h2>
 
 <h3 class="top">Install and Uninstall</h3>
@@ -94,7 +93,6 @@ Volume</p>
 <li><a href="https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/">Uninstall the WPSSO Product Metadata for WooCommerce SEO add-on</a>.</li>
 </ul>
 
-
 <h2>Frequently Asked Questions</h2>
 
 <h3 class="top">Frequently Asked Questions</h3>
@@ -102,5 +100,4 @@ Volume</p>
 <ul>
 <li>None.</li>
 </ul>
-
 
