@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.12.0 (2022/01/11)**
+**Version 1.12.0-b.1 (2022/01/11)**
 
 * **New Features**
 	* None.
@@ -290,7 +290,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.12.0 =
+= 1.12.0-b.1 =
 
 (2022/01/11) For comformity, disable the product attribute names of enabled and disabled metadata (ie. custom fields) instead of just the enabled ones.
 
