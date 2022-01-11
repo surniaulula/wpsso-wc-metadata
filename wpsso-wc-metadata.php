@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.8.3
  * WC Tested Up To: 6.0.0
- * Version: 1.11.0
+ * Version: 1.12.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -100,44 +100,58 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 			foreach ( $md_config as $md_suffix => $cfg ) {
 
 				/**
-				 * If the enable option is missing, assume the other wcmd options are missing as well.
+				 * If the enable option is missing, then assume the other wcmd options are missing as well and
+				 * reset the options to their default values.
 				 */
-				if ( ! isset( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+				if ( ! isset( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {	// Example: 'wcmd_enable_product_gtin'.
 
-					foreach ( $cfg[ 'defaults' ] as $opt_prefix => $val ) {
+					/**
+					 * Example defaults array:
+					 *
+					 * 	[defaults] => Array (
+					 * 		[wcmd_enable]       => 1
+					 * 		[wcmd_info_label]   => GTIN
+					 * 		[wcmd_input_holder] => Bar code
+					 * 		[wcmd_input_label]  => GTIN
+					 * 		[plugin_cf]         => _wpsso_product_gtin
+					 * 	)
+					 */
+					foreach ( $cfg[ 'defaults' ] as $opt_pre => $val ) {
 
-						$opt_key = $opt_prefix . '_' . $md_suffix;
+						$opt_key = $opt_pre . '_' . $md_suffix;	// Example: 'wcmd_enable_product_gtin'.
 
 						$this->p->options[ $opt_key ] = $val;
 					}
+				}
 
 				/**
-				 * For enabled options, hard-code some option values (example: 'plugin_attr_product_gtin' = '') and
-				 * make sure the custom field name is not empty.
+				 * Hard-code some option values, like 'plugin_attr_product_gtin' = '' for example.
+				 *
+				 * Example options array:
+				 * 
+				 * 	[options] => Array (
+				 * 		[plugin_attr] =>
+				 * 	)
 				 */
-				} elseif ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+				foreach ( $cfg[ 'options' ] as $opt_pre => $val ) {
 
-					foreach ( $cfg[ 'options' ] as $opt_prefix => $val ) {
+					$opt_key = $opt_pre . '_' . $md_suffix;	// Example: 'plugin_attr_product_gtin'.
 
-						$opt_key = $opt_prefix . '_' . $md_suffix;
+					$this->p->options[ $opt_key ]               = $val;
+					$this->p->options[ $opt_key . ':disabled' ] = true;
+				}
 
-						$this->p->options[ $opt_key ]               = $val;
-						$this->p->options[ $opt_key . ':disabled' ] = true;
-					}
+				/**
+				 * The custom field name may be changed from the default value, but should not be empty.
+				 *
+				 * Just in case, the WpssoWcmdFilters->filter_option_type() filter also returns 'not_blank_quiet'
+				 * for WooCommerce metadata custom fields.
+				 */
+				$opt_key = 'plugin_cf_' . $md_suffix;	// Example: 'plugin_cf_product_gtin'.
 
-					/**
-					 * The custom field name may be changed from the default, but should not be empty for
-					 * enabled WooCommerce metadata.
-					 *
-					 * The WpssoWcmdFilters->filter_option_type() filter also returns 'not_blank' for enabled
-					 * WooCommerce metadata custom fields in order to show an error notice.
-					 */
-					$opt_key = 'plugin_cf_' . $md_suffix;
+				if ( empty( $this->p->options[ $opt_key ] ) ) {
 
-					if ( empty( $this->p->options[ $opt_key ] ) ) {
-
-						$this->p->options[ $opt_key ] = $cfg[ 'defaults' ][ 'plugin_cf' ];
-					}
+					$this->p->options[ $opt_key ] = $cfg[ 'defaults' ][ 'plugin_cf' ];
 				}
 			}
 		}
