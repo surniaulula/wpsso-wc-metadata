@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.0-dev.2 (2022/01/14)**
+**Version 1.13.0-dev.4 (2022/01/15)**
 
 * **New Features**
 	* None.
@@ -141,7 +141,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.14.0-dev.2.
+	* WPSSO Core v9.14.0-dev.4.
 	* WooCommerce v5.0.
 
 **Version 1.12.0 (2022/01/11)**
@@ -309,9 +309,9 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.13.0-dev.2 =
+= 1.13.0-dev.4 =
 
-(2022/01/14) Renamed the lib/abstracts/ folder and its classes.
+(2022/01/15) Renamed the lib/abstracts/ folder and its classes.
 
 = 1.12.0 =
 
