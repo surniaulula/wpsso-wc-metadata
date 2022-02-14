@@ -82,7 +82,7 @@ Volume</p>
 
 <h3>WPSSO Core Required</h3>
 
-<p>WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
+<p>WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for <a href="https://wordpress.org/plugins/woocommerce/">WooCommerce</a> and the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
 
 <h2>Installation</h2>
 

@@ -79,7 +79,7 @@ Automatically includes Schema Product and Offer properties for the enabled produ
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
 == Installation ==
 
