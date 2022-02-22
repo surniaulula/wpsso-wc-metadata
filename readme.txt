@@ -10,7 +10,7 @@ Tags: woocommerce, gtin, upc, ean, isbn, mpn, custom fields, global identifier, 
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 5.9.0
+Tested Up To: 5.9.1
 WC Tested Up To: 6.2.0
 Stable Tag: 1.13.0
 
