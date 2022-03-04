@@ -125,6 +125,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.13.1-b.1 (2022/03/04)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Shortened the SSO menu item name from "WooCommerce Metadata" to "WC Metadata".
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.5.0-b.1.
+	* WooCommerce v5.0.
+
 **Version 1.13.0 (2022/01/19)**
 
 * **New Features**
@@ -308,6 +324,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.13.1-b.1 =
+
+(2022/03/03) Shortened the SSO menu item name from "WooCommerce Metadata" to "WC Metadata".
 
 = 1.13.0 =
 
