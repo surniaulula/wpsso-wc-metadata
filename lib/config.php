@@ -44,7 +44,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '10.5.0-b.1',
+							'min_version'   => '11.5.0-b.1',
 						),
 					),
 
