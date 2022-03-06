@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce SEO package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 1.13.1-b.1\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 1.13.1-b.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -42,12 +42,12 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:9
 msgctxt "plugin name"
-msgid "WooCommerce"
+msgid "WPSSO Core"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:10
 msgctxt "plugin name"
-msgid "WPSSO Core"
+msgid "WooCommerce"
 msgstr ""
 
 #: lib/config.php:110
