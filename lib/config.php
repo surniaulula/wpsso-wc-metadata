@@ -188,7 +188,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
-						'wcmd_enable'       => 0,
+						'wcmd_enable'       => 1,
 						'wcmd_info_label'   => 'EAN',
 						'wcmd_input_holder' => '13-digit bar code',
 						'wcmd_input_label'  => 'EAN',
@@ -211,7 +211,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
-						'wcmd_enable'       => 0,
+						'wcmd_enable'       => 1,
 						'wcmd_info_label'   => 'UPC',
 						'wcmd_input_holder' => '12-digit bar code',
 						'wcmd_input_label'  => 'UPC',
