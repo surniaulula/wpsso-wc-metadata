@@ -27,7 +27,8 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			add_action( 'pre_get_posts', array( $this, 'action_pre_get_posts' ), 10000, 1 );
 
-			add_filter( 'posts_search', array( $this, 'filter_posts_search' ), 10000, 2 );
+			add_filter( 'posts_where', array( $this, 'filter_posts_where' ), 10000, 2 );
+			add_filter( 'posts_request', array( $this, 'filter_posts_request' ), 10000, 1 );
 		}
 
 		public function action_pre_get_posts( $wp_query ) {
@@ -57,7 +58,10 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			}
 		}
 
-		public function filter_posts_search( $search, $wp_query ) {
+		/**
+		 * Changed the filter hook from 'posts_search' to 'posts_where' in WPSSO WCMD v1.13.2.
+		 */
+		public function filter_posts_where( $search, $wp_query ) {
 
 			if ( $this->p->debug->enabled ) {
 
@@ -87,23 +91,43 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			global $wpdb;
 
-			$post_id_query = ' OR (' . $wpdb->posts . '.ID IN (' . implode( ', ', $product_ids ) . ')) ';
+			$post_id_query = $wpdb->posts . '.ID IN (' . implode( ', ', $product_ids ) . ')';
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log( 'input search = ' . $search );
+			}
+
+			$search = preg_replace( '/[\s\n\r]+/s', ' ', $search );	// Put everything on one line.
 
 			if ( empty( $search ) ) {
 
-				$search = $post_id_query;
+				$search = ' AND ' . $post_id_query . ' ';
 
-			} elseif ( preg_match( '/^( *AND  *\()(.*)(\)) *$/', $search, $matches ) ) {
+			} elseif ( preg_match( '/^ *AND  *(.*)(  *AND  *.*)?$/U', $search, $matches ) ) {
 
-				$search = $matches[ 1 ] . '(' . $matches[ 2 ] .') ' . $post_id_query . $matches[ 3 ];
+				$search = ' AND (' . $post_id_query . ' OR ' . $matches[ 1 ] . ')' . $matches[ 2 ];
 			}
 
 			if ( $this->p->debug->enabled ) {
 
-				$this->p->debug->log( 'search string = ' . $search );
+				$this->p->debug->log( 'returned search = ' . $search );
 			}
 
 			return $search;
+		}
+
+		/**
+		 * Since WPSSO WCMD v1.13.2.
+		 */
+		public function filter_posts_request( $request ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'request', $request );
+			}
+
+			return $request;
 		}
 
 		/**
@@ -132,6 +156,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 					$product_ids[] = $post_obj->ID;
 				}
+			}
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'product_ids', $product_ids );
 			}
 
 			return $product_ids;
