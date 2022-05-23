@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.13.2-dev.1 (2022/05/23)**
+**Version 1.13.2 (2022/05/23)**
 
 * **New Features**
 	* None.
@@ -341,7 +341,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.13.2-dev.1 =
+= 1.13.2 =
 
 (2022/05/23) Fixed the admin product search query to match variations, but avoid including variations in the product search results list.
 
