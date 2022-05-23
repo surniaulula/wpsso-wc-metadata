@@ -59,6 +59,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 		public function filter_posts_search( $search, $wp_query ) {
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
 			if ( ! $wp_query->is_main_query() ) {
 
 				return $search;
@@ -69,6 +74,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			}
 
 			$product_ids = $this->get_search_product_ids( $wp_query->saved_search_s[ 's' ] );	// Returns an array.
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'product_ids', $product_ids );
+			}
 
 			if ( empty( $product_ids ) ) {
 
@@ -88,6 +98,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				$search = $matches[ 1 ] . '(' . $matches[ 2 ] .') ' . $post_id_query . $matches[ 3 ];
 			}
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log( 'search string = ' . $search );
+			}
+
 			return $search;
 		}
 
@@ -95,6 +110,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 		 * Always return an array.
 		 */
 		private function get_search_product_ids( $s ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$product_ids = array();
 
@@ -122,6 +142,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 		 * Always return an array.
 		 */
 		private function get_search_post_ids( $s ) {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			global $wpdb;
 
@@ -164,12 +189,22 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			$db_query .= ');';
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log( 'db query = ' . $db_query );
+			}
+
 			$post_ids = $wpdb->get_col( $db_query );
 
 			return $post_ids;
 		}
 
 		private function get_sql_meta_keys() {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$md_config = WpssoWcmdConfig::get_md_config();
 
@@ -186,12 +221,22 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				}
 			}
 
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'sql_meta_keys', $sql_meta_keys );
+			}
+
 			return $sql_meta_keys;
 		}
 
 		private function get_parsed_search_terms( $terms ) {
 
-			$checked = array();
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			$search_terms = array();
 
 			foreach ( $terms as $term ) {
 
@@ -215,10 +260,15 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 					continue;
 				}
 
-				$checked[] = $term;
+				$search_terms[] = $term;
 			}
 
-			return $checked;
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log_arr( 'search_terms', $search_terms );
+			}
+
+			return $search_terms;
 		}
 	}
 }
