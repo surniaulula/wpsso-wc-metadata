@@ -125,6 +125,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.13.2-dev.1 (2022/05/23)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed the admin product search query to match variations, but avoid including variations in the product search results list.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v12.3.0.
+	* WooCommerce v5.0.
+
 **Version 1.13.1 (2022/03/07)**
 
 * **New Features**
@@ -324,6 +340,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.13.2-dev.1 =
+
+(2022/05/23) Fixed the admin product search query to match variations, but avoid including variations in the product search results list.
 
 = 1.13.1 =
 
