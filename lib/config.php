@@ -83,7 +83,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				return $local_cache;
 			}
 
-			if ( ! class_exists( 'WpssoUtilWooCommerce' ) ) {	// Just in case.
+			if ( ! class_exists( 'WpssoUtilWoocommerce' ) ) {	// Just in case.
 
 				return $local_cache = array();			// Must return an array.
 			}
@@ -94,13 +94,13 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			 */
 			$dim_unit_text     = WpssoSchema::get_data_unit_text( 'depth' );
 			$dim_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dim_unit_text );
-			$dim_unit_wc_label = WpssoUtilWooCommerce::get_dimension_label( $dim_unit_wc_text );
-			$dim_unit_wc_1x    = WpssoUtilWooCommerce::get_dimension( 1, $dim_unit_text, $dim_unit_wc_text );
+			$dim_unit_wc_label = WpssoUtilWoocommerce::get_dimension_label( $dim_unit_wc_text );
+			$dim_unit_wc_1x    = WpssoUtilWoocommerce::get_dimension( 1, $dim_unit_text, $dim_unit_wc_text );
 
 			$fl_vol_unit_text     = WpssoSchema::get_data_unit_text( 'fluid_volume' );
 			$fl_vol_unit_wc_text  = get_option( 'woocommerce_fluid_volume_unit', $fl_vol_unit_text );
-			$fl_vol_unit_wc_label = WpssoUtilWooCommerce::get_fluid_volume_label( $fl_vol_unit_wc_text );
-			$fl_vol_unit_wc_1x    = WpssoUtilWooCommerce::get_fluid_volume( 1, $fl_vol_unit_text, $fl_vol_unit_wc_text );
+			$fl_vol_unit_wc_label = WpssoUtilWoocommerce::get_fluid_volume_label( $fl_vol_unit_wc_text );
+			$fl_vol_unit_wc_1x    = WpssoUtilWoocommerce::get_fluid_volume( 1, $fl_vol_unit_text, $fl_vol_unit_wc_text );
 
 			/**
 			 * Metadata options will be down in the order listed here.

@@ -14,7 +14,7 @@
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 6.0.1
- * WC Tested Up To: 6.8.0
+ * WC Tested Up To: 6.8.1
  * Version: 1.13.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 		public $filters;	// WpssoWcmdFilters class object.
 		public $search;		// WpssoWcmdSearch class object.
-		public $wc;		// WpssoWcmdWooCommerce class object.
+		public $wc;		// WpssoWcmdWoocommerce class object.
 
 		protected $p;	// Wpsso class object.
 
@@ -85,7 +85,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 			$this->filters = new WpssoWcmdFilters( $this->p, $this );
 			$this->search  = new WpssoWcmdSearch( $this->p, $this );
-			$this->wc      = new WpssoWcmdWooCommerce( $this->p, $this );
+			$this->wc      = new WpssoWcmdWoocommerce( $this->p, $this );
 		}
 
 		public function init_check_options() {

@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
+if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
-	class WpssoWcmdWooCommerce {
+	class WpssoWcmdWoocommerce {
 
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 		public function filter_products_general_settings( $settings ) {
 
-			$fl_vol_units = WpssoUtilWooCommerce::get_fluid_volume_units();
+			$fl_vol_units = WpssoUtilWoocommerce::get_fluid_volume_units();
 
 			$fl_vol_settings = array(
 				'id'       => 'woocommerce_fluid_volume_unit',
