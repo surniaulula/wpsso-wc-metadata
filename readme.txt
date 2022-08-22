@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.0.1
-WC Tested Up To: 6.8.0
+WC Tested Up To: 6.8.1
 Stable Tag: 1.13.2
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
@@ -267,7 +267,7 @@ Maintenance release for WPSSO Core v9.0.0.
 * **Bugfixes**
 	* Fix to show product metadata if the main product value is empty but one or more variations has a value.
 * **Developer Notes**
-	* Added checks with `WpssoUtilWooCommerce->has_meta()` to include/exclude showing product metadata under the "Additional information" tab.
+	* Added checks with `WpssoUtilWoocommerce->has_meta()` to include/exclude showing product metadata under the "Additional information" tab.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
