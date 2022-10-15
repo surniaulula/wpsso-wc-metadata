@@ -128,7 +128,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				 * Hard-code some option values, like 'plugin_attr_product_gtin' = '' for example.
 				 *
 				 * Example options array:
-				 * 
+				 *
 				 * 	[options] => Array (
 				 * 		[plugin_attr] =>
 				 * 	)
