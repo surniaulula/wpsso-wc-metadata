@@ -47,6 +47,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 					's' => isset( $wp_query->query[ 's' ] ) ? $wp_query->query[ 's' ] : '',
 				);
 
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log_arr( 'query is search', $wp_query->saved_search_s );
+				}
+
 			/**
 			 * Save the WooCommerce admin product search (ie. Products > All Products page > Search products button).
 			 */
@@ -55,6 +60,11 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				$wp_query->saved_search_s = array(
 					's' => isset( $_GET[ 's' ] ) ? sanitize_text_field( $_GET[ 's' ] ) : '',
 				);
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log_arr( 'query is product search', $wp_query->saved_search_s );
+				}
 			}
 		}
 
@@ -124,6 +134,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			if ( $this->p->debug->enabled ) {
 
+				$this->p->debug->mark();
 				$this->p->debug->log_arr( 'request', $request );
 			}
 
@@ -140,9 +151,8 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				$this->p->debug->mark();
 			}
 
+			$post_ids    = $this->get_search_post_ids( $s );	// Returns an array.
 			$product_ids = array();
-
-			$post_ids = $this->get_search_post_ids( $s );	// Returns an array.
 
 			foreach ( $post_ids as $post_id ) {
 
