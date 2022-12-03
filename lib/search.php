@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			global $wpdb;
 
-			$post_id_query = $wpdb->posts . '.ID IN (' . implode( ', ', $product_ids ) . ')';
+			$post_id_query = $wpdb->posts . '.ID IN (' . implode( $glue = ', ', $product_ids ) . ')';
 
 			if ( $this->p->debug->enabled ) {
 
