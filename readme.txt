@@ -126,6 +126,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.13.3-dev.3 (2022/12/20)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.13.1-dev.3.
+	* WooCommerce v5.0.
+
 **Version 1.13.2 (2022/05/23)**
 
 * **New Features**
@@ -341,6 +357,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 1.13.3-dev.3 =
+
+(2022/12/20) None.
 
 = 1.13.2 =
 
