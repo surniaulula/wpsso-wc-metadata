@@ -131,7 +131,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Maintenance release for the new `WpssoUtilUnits` class in WPSSO Core v13.14.0-dev.4..
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -360,7 +360,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 = 1.14.0-dev.4 =
 
-(2022/12/20) None.
+(2022/12/20) Maintenance release for the new `WpssoUtilUnits` class in WPSSO Core v13.14.0-dev.4..
 
 = 1.13.2 =
 
