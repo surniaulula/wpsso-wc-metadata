@@ -12,7 +12,7 @@ Requires Plugins: wpsso, woocommerce
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.1
-WC Tested Up To: 7.2.0
+WC Tested Up To: 7.2.1
 Stable Tag: 1.13.2
 
 GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
@@ -126,7 +126,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.14.0-dev.4 (2022/12/20)**
+**Version 2.0.0-dev.4 (2022/12/20)**
 
 * **New Features**
 	* None.
@@ -358,7 +358,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 1.14.0-dev.4 =
+= 2.0.0-dev.4 =
 
 (2022/12/20) Maintenance release for the new `WpssoUtilUnits` class in WPSSO Core v13.14.0-dev.4..
 
