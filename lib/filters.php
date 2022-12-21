@@ -56,6 +56,9 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 				foreach ( $cfg[ 'defaults' ] as $opt_pre => $val ) {
 
+					/**
+					 * Example: 'wcmd_enable_product_mfr_part_no' => 1.
+					 */
 					$defs[ $opt_pre . '_' . $md_key ] = $val;
 				}
 			}

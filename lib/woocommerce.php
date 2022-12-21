@@ -357,7 +357,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 					}
 
 					/**
-					 * Depth is inserted after 'dimensions', and volume is inserted after 'weight'.
+					 * Example, insert after 'dimensions' or 'weight'.
 					 */
 					if ( ! empty( $cfg[ 'insert_after' ] ) ) {
 

@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '2.0.0-dev.4',	// Plugin version.
-					'opt_version' => '10',		// Increment when changing default option values.
+					'version'     => '2.0.0-dev.5',	// Plugin version.
+					'opt_version' => '11',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
 					'desc'        => 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '13.14.0-dev.4',
+							'min_version'   => '13.14.0-dev.5',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -92,15 +92,20 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			 * WpssoSchema::get_data_unit_text() returns a https://schema.org/unitText value (for example, 'cm', 'ml',
 			 * 'kg', etc.).
 			 */
-			$dim_unit_text     = WpssoSchema::get_data_unit_text( 'depth' );
-			$dim_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dim_unit_text );
-			$dim_unit_wc_label = WpssoUtilWoocommerce::get_dimension_label( $dim_unit_wc_text );
-			$dim_unit_wc_1x    = WpssoUtilWoocommerce::get_dimension( 1, $dim_unit_text, $dim_unit_wc_text );
+			$dimension_unit_text     = WpssoSchema::get_data_unit_text( 'depth' );
+			$dimension_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dimension_unit_text );
+			$dimension_unit_wc_label = WpssoUtilWoocommerce::get_dimension_label( $dimension_unit_wc_text );
+			$dimension_unit_wc_1x    = WpssoUtilWoocommerce::get_dimension( 1, $dimension_unit_text, $dimension_unit_wc_text );
 
 			$fl_vol_unit_text     = WpssoSchema::get_data_unit_text( 'fluid_volume' );
 			$fl_vol_unit_wc_text  = get_option( 'woocommerce_fluid_volume_unit', $fl_vol_unit_text );
 			$fl_vol_unit_wc_label = WpssoUtilWoocommerce::get_fluid_volume_label( $fl_vol_unit_wc_text );
 			$fl_vol_unit_wc_1x    = WpssoUtilWoocommerce::get_fluid_volume( 1, $fl_vol_unit_text, $fl_vol_unit_wc_text );
+
+			$weight_unit_text     = WpssoSchema::get_data_unit_text( 'weight' );
+			$weight_unit_wc_text  = get_option( 'woocommerce_weight_unit', $weight_unit_text );
+			$weight_unit_wc_label = WpssoUtilWoocommerce::get_weight_label( $weight_unit_wc_text );
+			$weight_unit_wc_1x    = WpssoUtilWoocommerce::get_weight( 1, $weight_unit_text, $weight_unit_wc_text );
 
 			/**
 			 * Metadata options will be down in the order listed here.
@@ -121,7 +126,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 1,
 						'wcmd_info_label'   => 'Manufacturer Part Number',
-						'wcmd_input_holder' => 'Part number',
+						'wcmd_input_holder' => 'Part number',	// Capitalize the first word.
 						'wcmd_input_label'  => 'MPN',
 						'plugin_cf'         => '_wpsso_product_mfr_part_no',
 					),
@@ -144,7 +149,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 0,
 						'wcmd_info_label'   => 'ISBN',
-						'wcmd_input_holder' => 'Book number',
+						'wcmd_input_holder' => 'Book number',	// Capitalize the first word.
 						'wcmd_input_label'  => 'ISBN',
 						'plugin_cf'         => '_wpsso_product_isbn',
 					),
@@ -167,7 +172,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 0,
 						'wcmd_info_label'   => 'GTIN-14',
-						'wcmd_input_holder' => '14-digit bar code',
+						'wcmd_input_holder' => '14-digit bar code',	// Capitalize the first word.
 						'wcmd_input_label'  => 'GTIN-14',
 						'plugin_cf'         => '_wpsso_product_gtin14',
 					),
@@ -190,7 +195,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 1,
 						'wcmd_info_label'   => 'EAN',
-						'wcmd_input_holder' => '13-digit bar code',
+						'wcmd_input_holder' => '13-digit bar code',	// Capitalize the first word.
 						'wcmd_input_label'  => 'EAN',
 						'plugin_cf'         => '_wpsso_product_gtin13',
 					),
@@ -213,7 +218,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 1,
 						'wcmd_info_label'   => 'UPC',
-						'wcmd_input_holder' => '12-digit bar code',
+						'wcmd_input_holder' => '12-digit bar code',	// Capitalize the first word.
 						'wcmd_input_label'  => 'UPC',
 						'plugin_cf'         => '_wpsso_product_gtin12',
 					),
@@ -236,7 +241,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'defaults' => array(
 						'wcmd_enable'       => 0,
 						'wcmd_info_label'   => 'GTIN-8',
-						'wcmd_input_holder' => '8-digit bar code',
+						'wcmd_input_holder' => '8-digit bar code',	// Capitalize the first word.
 						'wcmd_input_label'  => 'GTIN-8',
 						'plugin_cf'         => '_wpsso_product_gtin8',
 					),
@@ -257,9 +262,9 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
-						'wcmd_enable'       => 1,
+						'wcmd_enable'       => 0,
 						'wcmd_info_label'   => 'GTIN',
-						'wcmd_input_holder' => 'Bar code',
+						'wcmd_input_holder' => 'Bar code',	// Capitalize the first word.
 						'wcmd_input_label'  => 'GTIN',
 						'plugin_cf'         => '_wpsso_product_gtin',
 					),
@@ -267,27 +272,104 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'plugin_attr' => '',
 					),
 				),
-				'product_depth_value' => array(
-					'label'        => _x( 'Product Depth', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product depth (in %2$s).', 'wpsso-wc-metadata' ),
+				'product_length_value' => array(
+					'label'        => _x( 'Product Net Length', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net length (in %2$s).', 'wpsso-wc-metadata' ),
 					'type'         => 'text',
 					'data_type'    => 'decimal',
-					'unit_text'    => $dim_unit_wc_text,
-					'unit_label'   => $dim_unit_wc_label,
-					'unit_wc_1x'   => $dim_unit_wc_1x === 1 ? null : $dim_unit_wc_1x,
-					'insert_after' => 'dimensions',	// Used by 'woocommerce_display_product_attributes' filter.
+					'unit_text'    => $dimension_unit_wc_text,
+					'unit_label'   => $dimension_unit_wc_label,
+					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
 					'actions'      => array(
-						'woocommerce_product_options_dimensions'   => true,
-						'woocommerce_variation_options_dimensions' => true,
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
+					'defaults' => array(
+						'wcmd_enable'       => 1,
+						'wcmd_info_label'   => 'Net Length',
+						'wcmd_input_holder' => 'Net length in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Length (%s)',
+						'plugin_cf'         => '_wpsso_product_length_value',
+					),
+					'options' => array(
+						'plugin_attr' => '',
+					),
+				),
+				'product_width_value' => array(
+					'label'        => _x( 'Product Net Width', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net width (in %2$s).', 'wpsso-wc-metadata' ),
+					'type'         => 'text',
+					'data_type'    => 'decimal',
+					'unit_text'    => $dimension_unit_wc_text,
+					'unit_label'   => $dimension_unit_wc_label,
+					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'      => array(
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
+					'defaults' => array(
+						'wcmd_enable'       => 1,
+						'wcmd_info_label'   => 'Net Width',
+						'wcmd_input_holder' => 'Net width in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Width (%s)',
+						'plugin_cf'         => '_wpsso_product_width_value',
+					),
+					'options' => array(
+						'plugin_attr' => '',
+					),
+				),
+				'product_height_value' => array(
+					'label'        => _x( 'Product Net Height', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net height (in %2$s).', 'wpsso-wc-metadata' ),
+					'type'         => 'text',
+					'data_type'    => 'decimal',
+					'unit_text'    => $dimension_unit_wc_text,
+					'unit_label'   => $dimension_unit_wc_label,
+					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'      => array(
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
+					'defaults' => array(
+						'wcmd_enable'       => 1,
+						'wcmd_info_label'   => 'Net Height',
+						'wcmd_input_holder' => 'Net height in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Height (%s)',
+						'plugin_cf'         => '_wpsso_product_height_value',
+					),
+					'options' => array(
+						'plugin_attr' => '',
+					),
+				),
+				'product_depth_value' => array(
+					'label'        => _x( 'Product Net Depth', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net depth (in %2$s).', 'wpsso-wc-metadata' ),
+					'type'         => 'text',
+					'data_type'    => 'decimal',
+					'unit_text'    => $dimension_unit_wc_text,
+					'unit_label'   => $dimension_unit_wc_label,
+					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'      => array(
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable'       => 0,
-						'wcmd_info_label'   => 'Depth',
-						'wcmd_input_holder' => 'Depth in %s',
-						'wcmd_input_label'  => 'Depth (%s)',
+						'wcmd_info_label'   => 'Net Depth',
+						'wcmd_input_holder' => 'Net depth in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Depth (%s)',
 						'plugin_cf'         => '_wpsso_product_depth_value',
 					),
 					'options' => array(
@@ -295,27 +377,52 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_fluid_volume_value' => array(
-					'label'        => _x( 'Product Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product fluid volume (in %2$s).', 'wpsso-wc-metadata' ),
+					'label'        => _x( 'Product Net Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net fluid volume (in %2$s).', 'wpsso-wc-metadata' ),
 					'type'         => 'text',
 					'data_type'    => 'decimal',
 					'unit_text'    => $fl_vol_unit_wc_text,
 					'unit_label'   => $fl_vol_unit_wc_label,
 					'unit_wc_1x'   => $fl_vol_unit_wc_1x === 1 ? null : $fl_vol_unit_wc_1x,
-					'insert_after' => 'weight',	// Used by 'woocommerce_display_product_attributes' filter.
 					'actions'      => array(
-						'woocommerce_product_options_dimensions'   => true,
-						'woocommerce_variation_options_dimensions' => true,
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
 					'defaults' => array(
 						'wcmd_enable'       => 0,
-						'wcmd_info_label'   => 'Volume',
-						'wcmd_input_holder' => 'Volume in %s',
-						'wcmd_input_label'  => 'Volume (%s)',
+						'wcmd_info_label'   => 'Net Fluid Volume',
+						'wcmd_input_holder' => 'Net fluid volume in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Fl. Volume (%s)',
 						'plugin_cf'         => '_wpsso_product_fluid_volume_value',
+					),
+					'options' => array(
+						'plugin_attr' => '',
+					),
+				),
+				'product_weight_value' => array(
+					'label'        => _x( 'Product Net Weight', 'option label', 'wpsso-wc-metadata' ),
+					'desc'         => __( '%1$s refers to a product net weight (in %2$s).', 'wpsso-wc-metadata' ),
+					'type'         => 'text',
+					'data_type'    => 'decimal',
+					'unit_text'    => $weight_unit_wc_text,
+					'unit_label'   => $weight_unit_wc_label,
+					'unit_wc_1x'   => $weight_unit_wc_1x === 1 ? null : $weight_unit_wc_1x,
+					'actions'      => array(
+						'woocommerce_product_options_sku'       => true,
+						'woocommerce_variation_options_pricing' => true,
+					),
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
+					'defaults' => array(
+						'wcmd_enable'       => 1,
+						'wcmd_info_label'   => 'Net Weight',
+						'wcmd_input_holder' => 'Net weight in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Weight (%s)',
+						'plugin_cf'         => '_wpsso_product_weight_value',
 					),
 					'options' => array(
 						'plugin_attr' => '',
