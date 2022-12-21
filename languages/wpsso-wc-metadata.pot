@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce SEO package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 2.0.0-dev.5\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 2.0.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -121,11 +121,13 @@ msgstr ""
 
 #: lib/config.php:276
 msgctxt "option label"
-msgid "Product Net Length"
+msgid "Product Net Length / Depth"
 msgstr ""
 
 #: lib/config.php:277
-msgid "%1$s refers to a product net length (in %2$s)."
+msgid ""
+"%1$s refers to a product's net length (in %2$s), as opposed to the shipping "
+"or packaged length used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:302
@@ -134,7 +136,9 @@ msgid "Product Net Width"
 msgstr ""
 
 #: lib/config.php:303
-msgid "%1$s refers to a product net width (in %2$s)."
+msgid ""
+"%1$s refers to a product's net width (in %2$s), as opposed to the shipping "
+"or packaged width used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:328
@@ -143,34 +147,31 @@ msgid "Product Net Height"
 msgstr ""
 
 #: lib/config.php:329
-msgid "%1$s refers to a product net height (in %2$s)."
+msgid ""
+"%1$s refers to a product's net height (in %2$s), as opposed to the shipping "
+"or packaged height used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:354
 msgctxt "option label"
-msgid "Product Net Depth"
+msgid "Product Net Fluid Volume"
 msgstr ""
 
 #: lib/config.php:355
-msgid "%1$s refers to a product net depth (in %2$s)."
+msgid ""
+"%1$s refers to a product's net fluid volume (in %2$s), as opposed to the "
+"shipping or packaged fluid volume used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:380
 msgctxt "option label"
-msgid "Product Net Fluid Volume"
-msgstr ""
-
-#: lib/config.php:381
-msgid "%1$s refers to a product net fluid volume (in %2$s)."
-msgstr ""
-
-#: lib/config.php:406
-msgctxt "option label"
 msgid "Product Net Weight"
 msgstr ""
 
-#: lib/config.php:407
-msgid "%1$s refers to a product net weight (in %2$s)."
+#: lib/config.php:381
+msgid ""
+"%1$s refers to a product's net weight (in %2$s), as opposed to the shipping "
+"or packaged weight used for shipping cost calculations."
 msgstr ""
 
 #: lib/filters-messages.php:47

@@ -95,13 +95,10 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 
 			switch ( $base_key ) {
 
-				case ( false !== strpos( $base_key, 'wcmd_input_label_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_info_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_input_' ) ? true : false ):
 
 					return 'not_blank';
-
-				case ( false !== strpos( $base_key, 'wcmd_input_holder_' ) ? true : false ):
-
-					return 'one_line';
 			}
 
 			return $type;

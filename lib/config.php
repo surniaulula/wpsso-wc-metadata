@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '2.0.0-dev.5',	// Plugin version.
+					'version'     => '2.0.0-dev.6',	// Plugin version.
 					'opt_version' => '11',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '13.14.0-dev.5',
+							'min_version'   => '13.14.0-dev.6',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -273,14 +273,14 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_length_value' => array(
-					'label'        => _x( 'Product Net Length', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net length (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $dimension_unit_wc_text,
-					'unit_label'   => $dimension_unit_wc_label,
-					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
-					'actions'      => array(
+					'label'      => _x( 'Product Net Length / Depth', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to the shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'data_type'  => 'decimal',
+					'unit_text'  => $dimension_unit_wc_text,
+					'unit_label' => $dimension_unit_wc_label,
+					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -289,9 +289,9 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'defaults' => array(
 						'wcmd_enable'       => 1,
-						'wcmd_info_label'   => 'Net Length',
-						'wcmd_input_holder' => 'Net length in %s',	// Capitalize the first word.
-						'wcmd_input_label'  => 'Net Length (%s)',
+						'wcmd_info_label'   => 'Net Length or Depth',
+						'wcmd_input_holder' => 'Net length or depth in %s',	// Capitalize the first word.
+						'wcmd_input_label'  => 'Net Length / Depth (%s)',
 						'plugin_cf'         => '_wpsso_product_length_value',
 					),
 					'options' => array(
@@ -299,14 +299,14 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_width_value' => array(
-					'label'        => _x( 'Product Net Width', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net width (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $dimension_unit_wc_text,
-					'unit_label'   => $dimension_unit_wc_label,
-					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
-					'actions'      => array(
+					'label'      => _x( 'Product Net Width', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net width (in %2$s), as opposed to the shipping or packaged width used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'data_type'  => 'decimal',
+					'unit_text'  => $dimension_unit_wc_text,
+					'unit_label' => $dimension_unit_wc_label,
+					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -325,14 +325,14 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_height_value' => array(
-					'label'        => _x( 'Product Net Height', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net height (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $dimension_unit_wc_text,
-					'unit_label'   => $dimension_unit_wc_label,
-					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
-					'actions'      => array(
+					'label'      => _x( 'Product Net Height', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net height (in %2$s), as opposed to the shipping or packaged height used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'data_type'  => 'decimal',
+					'unit_text'  => $dimension_unit_wc_text,
+					'unit_label' => $dimension_unit_wc_label,
+					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -350,41 +350,15 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						'plugin_attr' => '',
 					),
 				),
-				'product_depth_value' => array(
-					'label'        => _x( 'Product Net Depth', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net depth (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $dimension_unit_wc_text,
-					'unit_label'   => $dimension_unit_wc_label,
-					'unit_wc_1x'   => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
-					'actions'      => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
-					),
-					'filters' => array(
-						'woocommerce_display_product_attributes' => true,
-					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_info_label'   => 'Net Depth',
-						'wcmd_input_holder' => 'Net depth in %s',	// Capitalize the first word.
-						'wcmd_input_label'  => 'Net Depth (%s)',
-						'plugin_cf'         => '_wpsso_product_depth_value',
-					),
-					'options' => array(
-						'plugin_attr' => '',
-					),
-				),
 				'product_fluid_volume_value' => array(
-					'label'        => _x( 'Product Net Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net fluid volume (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $fl_vol_unit_wc_text,
-					'unit_label'   => $fl_vol_unit_wc_label,
-					'unit_wc_1x'   => $fl_vol_unit_wc_1x === 1 ? null : $fl_vol_unit_wc_1x,
-					'actions'      => array(
+					'label'      => _x( 'Product Net Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net fluid volume (in %2$s), as opposed to the shipping or packaged fluid volume used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'data_type'  => 'decimal',
+					'unit_text'  => $fl_vol_unit_wc_text,
+					'unit_label' => $fl_vol_unit_wc_label,
+					'unit_wc_1x' => $fl_vol_unit_wc_1x === 1 ? null : $fl_vol_unit_wc_1x,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
@@ -403,14 +377,14 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_weight_value' => array(
-					'label'        => _x( 'Product Net Weight', 'option label', 'wpsso-wc-metadata' ),
-					'desc'         => __( '%1$s refers to a product net weight (in %2$s).', 'wpsso-wc-metadata' ),
-					'type'         => 'text',
-					'data_type'    => 'decimal',
-					'unit_text'    => $weight_unit_wc_text,
-					'unit_label'   => $weight_unit_wc_label,
-					'unit_wc_1x'   => $weight_unit_wc_1x === 1 ? null : $weight_unit_wc_1x,
-					'actions'      => array(
+					'label'      => _x( 'Product Net Weight', 'option label', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net weight (in %2$s), as opposed to the shipping or packaged weight used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'type'       => 'text',
+					'data_type'  => 'decimal',
+					'unit_text'  => $weight_unit_wc_text,
+					'unit_label' => $weight_unit_wc_label,
+					'unit_wc_1x' => $weight_unit_wc_1x === 1 ? null : $weight_unit_wc_1x,
+					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
 					),
