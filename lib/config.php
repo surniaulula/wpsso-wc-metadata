@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			 * WpssoSchema::get_data_unit_text() returns a https://schema.org/unitText value (for example, 'cm', 'ml',
 			 * 'kg', etc.).
 			 */
-			$dimension_unit_text     = WpssoSchema::get_data_unit_text( 'depth' );
+			$dimension_unit_text     = WpssoSchema::get_data_unit_text( 'length' );
 			$dimension_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dimension_unit_text );
 			$dimension_unit_wc_label = WpssoUtilWoocommerce::get_dimension_label( $dimension_unit_wc_text );
 			$dimension_unit_wc_1x    = WpssoUtilWoocommerce::get_dimension( 1, $dimension_unit_text, $dimension_unit_wc_text );
