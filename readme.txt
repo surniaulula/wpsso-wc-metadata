@@ -126,7 +126,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-dev.7 (2022/12/21)**
+**Version 2.0.0-dev.7 (2022/12/22)**
 
 * **New Features**
 	* None.
@@ -363,7 +363,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 = 2.0.0-dev.7 =
 
-(2022/12/21) Removed product depth options, attributes and custom fields.
+(2022/12/22) Removed product depth options, attributes and custom fields.
 
 = 1.13.2 =
 
