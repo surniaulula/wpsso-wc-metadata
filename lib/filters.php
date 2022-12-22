@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 			}
 		}
 
-		public function filter_get_defaults( $defs ) {
+		public function filter_get_defaults( array $defs ) {
 
 			$md_config = WpssoWcmdConfig::get_md_config();
 
