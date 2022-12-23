@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce SEO package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 2.0.0-dev.10\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 2.0.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -36,8 +36,8 @@ msgstr ""
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin description"
 msgid ""
-"GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and "
-"volume for WooCommerce products and variations."
+"MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume "
+"for WooCommerce products and variations."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:9
@@ -154,24 +154,22 @@ msgstr ""
 
 #: lib/config.php:358
 msgctxt "option label"
-msgid "Product Net Fluid Volume"
+msgid "Product Net Weight"
 msgstr ""
 
 #: lib/config.php:359
 msgid ""
-"%1$s refers to a product's net fluid volume (in %2$s), as opposed to the "
-"shipping or packaged fluid volume used for shipping cost calculations."
+"%1$s refers to a product's net weight (in %2$s), as opposed to the shipping "
+"or packaged weight used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:384
 msgctxt "option label"
-msgid "Product Net Weight"
+msgid "Product Fluid Volume"
 msgstr ""
 
 #: lib/config.php:385
-msgid ""
-"%1$s refers to a product's net weight (in %2$s), as opposed to the shipping "
-"or packaged weight used for shipping cost calculations."
+msgid "%1$s refers to a product's fluid volume (in %2$s)."
 msgstr ""
 
 #: lib/filters-messages.php:47
@@ -215,11 +213,11 @@ msgstr ""
 msgid "Information Label"
 msgstr ""
 
-#: lib/woocommerce.php:86
+#: lib/woocommerce.php:89
 msgid "Fluid volume unit"
 msgstr ""
 
-#: lib/woocommerce.php:91
+#: lib/woocommerce.php:94
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
@@ -233,8 +231,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and "
-"volume for WooCommerce products and variations."
+"MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume "
+"for WooCommerce products and variations."
 msgstr ""
 
 #. Author of the plugin/theme
