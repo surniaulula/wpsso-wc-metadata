@@ -126,8 +126,8 @@ msgstr ""
 
 #: lib/config.php:281
 msgid ""
-"%1$s refers to a product's net length (in %2$s), as opposed to the shipping "
-"or packaged length used for shipping cost calculations."
+"%1$s refers to a product's net length (in %2$s), as opposed to a shipping or "
+"packaged length used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:306
@@ -137,8 +137,8 @@ msgstr ""
 
 #: lib/config.php:307
 msgid ""
-"%1$s refers to a product's net width (in %2$s), as opposed to the shipping "
-"or packaged width used for shipping cost calculations."
+"%1$s refers to a product's net width (in %2$s), as opposed to a shipping or "
+"packaged width used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:332
@@ -148,8 +148,8 @@ msgstr ""
 
 #: lib/config.php:333
 msgid ""
-"%1$s refers to a product's net height (in %2$s), as opposed to the shipping "
-"or packaged height used for shipping cost calculations."
+"%1$s refers to a product's net height (in %2$s), as opposed to a shipping or "
+"packaged height used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:358
@@ -159,8 +159,8 @@ msgstr ""
 
 #: lib/config.php:359
 msgid ""
-"%1$s refers to a product's net weight (in %2$s), as opposed to the shipping "
-"or packaged weight used for shipping cost calculations."
+"%1$s refers to a product's net weight (in %2$s), as opposed to a shipping or "
+"packaged weight used for shipping cost calculations."
 msgstr ""
 
 #: lib/config.php:384

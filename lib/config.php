@@ -278,7 +278,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_length_value' => array(
 					'label'      => _x( 'Product Net Len. / Depth', 'option label', 'wpsso-wc-metadata' ),
-					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to the shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
 					'unit_label' => $dimension_unit_label,
@@ -304,7 +304,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_width_value' => array(
 					'label'      => _x( 'Product Net Width', 'option label', 'wpsso-wc-metadata' ),
-					'desc'       => __( '%1$s refers to a product\'s net width (in %2$s), as opposed to the shipping or packaged width used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net width (in %2$s), as opposed to a shipping or packaged width used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
 					'unit_label' => $dimension_unit_label,
@@ -330,7 +330,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_height_value' => array(
 					'label'      => _x( 'Product Net Height', 'option label', 'wpsso-wc-metadata' ),
-					'desc'       => __( '%1$s refers to a product\'s net height (in %2$s), as opposed to the shipping or packaged height used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net height (in %2$s), as opposed to a shipping or packaged height used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
 					'unit_label' => $dimension_unit_label,
@@ -356,7 +356,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_weight_value' => array(
 					'label'      => _x( 'Product Net Weight', 'option label', 'wpsso-wc-metadata' ),
-					'desc'       => __( '%1$s refers to a product\'s net weight (in %2$s), as opposed to the shipping or packaged weight used for shipping cost calculations.', 'wpsso-wc-metadata' ),
+					'desc'       => __( '%1$s refers to a product\'s net weight (in %2$s), as opposed to a shipping or packaged weight used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
 					'unit_label' => $weight_unit_label,
