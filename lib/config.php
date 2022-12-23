@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '2.0.0-dev.8',	// Plugin version.
-					'opt_version' => '11',		// Increment when changing default option values.
+					'version'     => '2.0.0-dev.10',	// Plugin version.
+					'opt_version' => '18',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
 					'desc'        => 'GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.0.0-dev.8',
+							'min_version'   => '14.0.0-dev.10',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -83,25 +83,19 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				return $local_cache;
 			}
 
-			if ( ! class_exists( 'WpssoUtilWoocommerce' ) ) {	// Just in case.
+			if ( ! class_exists( 'WpssoUtilUnits' ) ) {	// Just in case.
 
 				return $local_cache = array();			// Must return an array.
 			}
 
-			$dimension_unit_text     = WpssoSchema::get_unit_text( 'length' );
-			$dimension_unit_wc_text  = get_option( 'woocommerce_dimension_unit', $dimension_unit_text );
-			$dimension_unit_wc_label = WpssoUtilWoocommerce::get_dimension_label( $dimension_unit_wc_text );
-			$dimension_unit_wc_1x    = WpssoUtilWoocommerce::get_dimension( 1, $dimension_unit_text, $dimension_unit_wc_text );
+			$dimension_unit_text  = WpssoUtilUnits::get_dimension_text();
+			$dimension_unit_label = WpssoUtilUnits::get_dimension_label( $dimension_unit_text );
 
-			$fl_vol_unit_text     = WpssoSchema::get_unit_text( 'fluid_volume' );
-			$fl_vol_unit_wc_text  = get_option( 'woocommerce_fluid_volume_unit', $fl_vol_unit_text );
-			$fl_vol_unit_wc_label = WpssoUtilWoocommerce::get_fluid_volume_label( $fl_vol_unit_wc_text );
-			$fl_vol_unit_wc_1x    = WpssoUtilWoocommerce::get_fluid_volume( 1, $fl_vol_unit_text, $fl_vol_unit_wc_text );
+			$fl_vol_unit_text  = WpssoUtilUnits::get_fluid_volume_text();
+			$fl_vol_unit_label = WpssoUtilUnits::get_fluid_volume_label( $fl_vol_unit_text );
 
-			$weight_unit_text     = WpssoSchema::get_unit_text( 'weight' );
-			$weight_unit_wc_text  = get_option( 'woocommerce_weight_unit', $weight_unit_text );
-			$weight_unit_wc_label = WpssoUtilWoocommerce::get_weight_label( $weight_unit_wc_text );
-			$weight_unit_wc_1x    = WpssoUtilWoocommerce::get_weight( 1, $weight_unit_text, $weight_unit_wc_text );
+			$weight_unit_text  = WpssoUtilUnits::get_weight_text();
+			$weight_unit_label = WpssoUtilUnits::get_weight_label( $weight_unit_text );
 
 			/**
 			 * Metadata options will be down in the order listed here.
@@ -119,15 +113,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'MPN',
-						'wcmd_input_holder' => 'Part number',			// Capitalize the first word.
-						'wcmd_info_label'   => 'Manufacturer Part Number',
-						'plugin_cf'         => '_wpsso_product_mfr_part_no',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'MPN',
+							'wcmd_input_holder' => 'Part number',			// Capitalize the first word.
+							'wcmd_info_label'   => 'Manufacturer Part Number',
+							'plugin_cf'         => '_wpsso_product_mfr_part_no',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_isbn' => array(
@@ -142,15 +138,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_input_label'  => 'ISBN',
-						'wcmd_input_holder' => 'Book number',		// Capitalize the first word.
-						'wcmd_info_label'   => 'ISBN',
-						'plugin_cf'         => '_wpsso_product_isbn',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 0,
+							'wcmd_input_label'  => 'ISBN',
+							'wcmd_input_holder' => 'Book number',		// Capitalize the first word.
+							'wcmd_info_label'   => 'ISBN',
+							'plugin_cf'         => '_wpsso_product_isbn',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_gtin14' => array(
@@ -165,15 +163,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_input_label'  => 'GTIN-14',
-						'wcmd_input_holder' => '14-digit bar code',	// Capitalize the first word.
-						'wcmd_info_label'   => 'GTIN-14',
-						'plugin_cf'         => '_wpsso_product_gtin14',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 0,
+							'wcmd_input_label'  => 'GTIN-14',
+							'wcmd_input_holder' => '14-digit bar code',	// Capitalize the first word.
+							'wcmd_info_label'   => 'GTIN-14',
+							'plugin_cf'         => '_wpsso_product_gtin14',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_gtin13' => array(
@@ -188,15 +188,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'EAN',
-						'wcmd_input_holder' => '13-digit bar code',	// Capitalize the first word.
-						'wcmd_info_label'   => 'EAN',
-						'plugin_cf'         => '_wpsso_product_gtin13',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'EAN',
+							'wcmd_input_holder' => '13-digit bar code',	// Capitalize the first word.
+							'wcmd_info_label'   => 'EAN',
+							'plugin_cf'         => '_wpsso_product_gtin13',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_gtin12' => array(
@@ -211,15 +213,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'UPC',
-						'wcmd_input_holder' => '12-digit bar code',	// Capitalize the first word.
-						'wcmd_info_label'   => 'UPC',
-						'plugin_cf'         => '_wpsso_product_gtin12',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'UPC',
+							'wcmd_input_holder' => '12-digit bar code',	// Capitalize the first word.
+							'wcmd_info_label'   => 'UPC',
+							'plugin_cf'         => '_wpsso_product_gtin12',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_gtin8' => array(
@@ -234,15 +238,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_input_label'  => 'GTIN-8',
-						'wcmd_input_holder' => '8-digit bar code',	// Capitalize the first word.
-						'wcmd_info_label'   => 'GTIN-8',
-						'plugin_cf'         => '_wpsso_product_gtin8',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 0,
+							'wcmd_input_label'  => 'GTIN-8',
+							'wcmd_input_holder' => '8-digit bar code',	// Capitalize the first word.
+							'wcmd_info_label'   => 'GTIN-8',
+							'plugin_cf'         => '_wpsso_product_gtin8',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_gtin' => array(
@@ -257,15 +263,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_input_label'  => 'GTIN',
-						'wcmd_input_holder' => 'Bar code',		// Capitalize the first word.
-						'wcmd_info_label'   => 'GTIN',
-						'plugin_cf'         => '_wpsso_product_gtin',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 0,
+							'wcmd_input_label'  => 'GTIN',
+							'wcmd_input_holder' => 'Bar code',		// Capitalize the first word.
+							'wcmd_info_label'   => 'GTIN',
+							'plugin_cf'         => '_wpsso_product_gtin',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_length_value' => array(
@@ -273,9 +281,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to the shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
-					'unit_text'  => $dimension_unit_wc_text,
-					'unit_label' => $dimension_unit_wc_label,
-					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
@@ -283,15 +289,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'Net Len. / Depth (%s)',
-						'wcmd_input_holder' => 'Net length or depth in %s',	// Capitalize the first word.
-						'wcmd_info_label'   => 'Net Length or Depth',
-						'plugin_cf'         => '_wpsso_product_length_value',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'Net Len. / Depth (%s)',
+							'wcmd_input_holder' => 'Net length or depth in %s',	// Capitalize the first word.
+							'wcmd_info_label'   => 'Net Length or Depth',
+							'plugin_cf'         => '_wpsso_product_length_value',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_width_value' => array(
@@ -299,9 +307,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'desc'       => __( '%1$s refers to a product\'s net width (in %2$s), as opposed to the shipping or packaged width used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
-					'unit_text'  => $dimension_unit_wc_text,
-					'unit_label' => $dimension_unit_wc_label,
-					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
@@ -309,15 +315,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'Net Width (%s)',
-						'wcmd_input_holder' => 'Net width in %s',		// Capitalize the first word.
-						'wcmd_info_label'   => 'Net Width',
-						'plugin_cf'         => '_wpsso_product_width_value',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'Net Width (%s)',
+							'wcmd_input_holder' => 'Net width in %s',		// Capitalize the first word.
+							'wcmd_info_label'   => 'Net Width',
+							'plugin_cf'         => '_wpsso_product_width_value',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_height_value' => array(
@@ -325,9 +333,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'desc'       => __( '%1$s refers to a product\'s net height (in %2$s), as opposed to the shipping or packaged height used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
-					'unit_text'  => $dimension_unit_wc_text,
-					'unit_label' => $dimension_unit_wc_label,
-					'unit_wc_1x' => $dimension_unit_wc_1x === 1 ? null : $dimension_unit_wc_1x,
+					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
@@ -335,15 +341,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'Net Height (%s)',
-						'wcmd_input_holder' => 'Net height in %s',		// Capitalize the first word.
-						'wcmd_info_label'   => 'Net Height',
-						'plugin_cf'         => '_wpsso_product_height_value',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'Net Height (%s)',
+							'wcmd_input_holder' => 'Net height in %s',		// Capitalize the first word.
+							'wcmd_info_label'   => 'Net Height',
+							'plugin_cf'         => '_wpsso_product_height_value',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_fluid_volume_value' => array(
@@ -351,9 +359,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'desc'       => __( '%1$s refers to a product\'s net fluid volume (in %2$s), as opposed to the shipping or packaged fluid volume used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
-					'unit_text'  => $fl_vol_unit_wc_text,
-					'unit_label' => $fl_vol_unit_wc_label,
-					'unit_wc_1x' => $fl_vol_unit_wc_1x === 1 ? null : $fl_vol_unit_wc_1x,
+					'unit_label' => $fl_vol_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
@@ -361,15 +367,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 0,
-						'wcmd_input_label'  => 'Net Fl. Volume (%s)',
-						'wcmd_input_holder' => 'Net fluid volume in %s',		// Capitalize the first word.
-						'wcmd_info_label'   => 'Net Fluid Volume',
-						'plugin_cf'         => '_wpsso_product_fluid_volume_value',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 0,
+							'wcmd_input_label'  => 'Net Fl. Volume (%s)',
+							'wcmd_input_holder' => 'Net fluid volume in %s',		// Capitalize the first word.
+							'wcmd_info_label'   => 'Net Fluid Volume',
+							'plugin_cf'         => '_wpsso_product_fluid_volume_value',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 				'product_weight_value' => array(
@@ -377,9 +385,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'desc'       => __( '%1$s refers to a product\'s net weight (in %2$s), as opposed to the shipping or packaged weight used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
-					'unit_text'  => $weight_unit_wc_text,
-					'unit_label' => $weight_unit_wc_label,
-					'unit_wc_1x' => $weight_unit_wc_1x === 1 ? null : $weight_unit_wc_1x,
+					'unit_label' => $weight_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
 						'woocommerce_variation_options_pricing' => true,
@@ -387,15 +393,17 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
 					),
-					'defaults' => array(
-						'wcmd_enable'       => 1,
-						'wcmd_input_label'  => 'Net Weight (%s)',
-						'wcmd_input_holder' => 'Net weight in %s',		// Capitalize the first word.
-						'wcmd_info_label'   => 'Net Weight',
-						'plugin_cf'         => '_wpsso_product_weight_value',	// Used by WpssoWcmd->init_check_options().
-					),
-					'options' => array(
-						'plugin_attr' => '',
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_enable'       => 1,
+							'wcmd_input_label'  => 'Net Weight (%s)',
+							'wcmd_input_holder' => 'Net weight in %s',		// Capitalize the first word.
+							'wcmd_info_label'   => 'Net Weight',
+							'plugin_cf'         => '_wpsso_product_weight_value',	// Used by WpssoWcmd->init_check_options().
+						),
+						'options' => array(
+							'plugin_attr' => '',
+						),
 					),
 				),
 			);

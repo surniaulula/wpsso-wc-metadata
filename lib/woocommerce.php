@@ -53,11 +53,31 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 				add_action( 'woocommerce_variable_add_to_cart', array( $this, 'enqueue_script_add_to_cart_variation' ), 10, 0 );
 			}
+
+			$this->disable_options_keys();
+		}
+
+		public function disable_options_keys() {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			$fl_vol_unit_text = get_option( 'woocommerce_fluid_volume_unit', $default = 'ml' );
+
+			foreach ( array(
+				'og_def_fluid_volume_units' => $fl_vol_unit_text,		// Default Fluid Volume Units.
+			) as $opt_key => $opt_val ) {
+
+				$this->p->options[ $opt_key ]               = $opt_val;
+				$this->p->options[ $opt_key . ':disabled' ] = true;
+			}
 		}
 
 		public function filter_products_general_settings( $settings ) {
 
-			$fl_vol_units = WpssoUtilWoocommerce::get_fluid_volume_units();
+			$fl_vol_units = WpssoUtilUnits::get_fluid_volume_units();
 
 			$fl_vol_settings = array(
 				'id'       => 'woocommerce_fluid_volume_unit',
@@ -94,20 +114,19 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			$action_name = current_action();	// Since WP v3.9.
 			$md_config   = WpssoWcmdConfig::get_md_config();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
 				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
 
 					continue;
 				}
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $cfg ) ) {	// Always returns a string.
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_key, $this->p->options );
+					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_key, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
 					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
-
 					$label_transl  = sprintf( $label_transl, $unit_transl );
 					$holder_transl = sprintf( $holder_transl, $unit_transl );
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
@@ -133,9 +152,9 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 			$md_config = WpssoWcmdConfig::get_md_config();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key ) ) {	// Always returns a string.
 
 					$meta_value = null;
 
@@ -150,22 +169,6 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 					}
 
 					$product->update_meta_data( $meta_key, $meta_value );
-
-					if ( isset( $cfg[ 'unit_wc_1x' ] ) ) {
-
-						/**
-						 * Get a new metakey without the '_unit_wc' suffix.
-						 */
-						if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix ) ) {	// Always returns a string.
-
-							if ( null !== $meta_value ) {
-
-								$meta_value *= $cfg[ 'unit_wc_1x' ];
-							}
-						}
-
-						$product->update_meta_data( $meta_key, $meta_value );
-					}
 				}
 			}
 		}
@@ -181,23 +184,22 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			$action_name = current_action();	// Since WP v3.9.
 			$md_config   = WpssoWcmdConfig::get_md_config();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
 				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
 
 					continue;
 				}
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $cfg ) ) {	// Always returns a string.
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_suffix, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_suffix, $this->p->options );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_input_label_' . $md_key, $this->p->options );
+					$holder_transl = SucomUtil::get_key_value( 'wcmd_input_holder_' . $md_key, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
 					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$var_obj       = $this->p->util->wc->get_product( $variation->ID );
 					$var_meta_val  = $var_obj->get_meta( $meta_key, $single = true );
 					$row_input_num = $row_input_num >= $row_input_max ? 1 : $row_input_num + 1;
-
 					$label_transl  = sprintf( $label_transl, $unit_transl );
 					$holder_transl = sprintf( $holder_transl, $unit_transl );
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
@@ -235,13 +237,13 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 		public function save_metadata_options_variation( $variation_id, $id ) {
 
+			$md_config   = WpssoWcmdConfig::get_md_config();
 			$variation   = $this->p->util->wc->get_product( $variation_id );
 			$have_update = false;
-			$md_config   = WpssoWcmdConfig::get_md_config();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key ) ) {	// Always returns a string.
 
 					$meta_value = null;
 
@@ -256,22 +258,6 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 					}
 
 					$variation->update_meta_data( $meta_key, $meta_value );
-
-					if ( isset( $cfg[ 'unit_wc_1x' ] ) ) {
-
-						/**
-						 * Get a new metakey without the '_unit_wc' suffix.
-						 */
-						if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix ) ) {	// Always returns a string.
-
-							if ( null !== $meta_value ) {
-
-								$meta_value *= $cfg[ 'unit_wc_1x' ];
-							}
-						}
-
-						$variation->update_meta_data( $meta_key, $meta_value );
-					}
 
 					$have_update = true;
 				}
@@ -298,14 +284,14 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			$filter_name = 'woocommerce_display_product_attributes';
 			$md_config   = WpssoWcmdConfig::get_md_config();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
 				if ( empty( $cfg[ 'filters' ][ $filter_name ] ) ) {
 
 					continue;
 				}
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $cfg ) ) {	// Always returns a string.
 
 					/**
 					 * Check if a simple product, variable product or any of its variations, has a meta data value.
@@ -326,14 +312,14 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			$md_config   = WpssoWcmdConfig::get_md_config();
 			$product_id  = $this->p->util->wc->get_product_id( $product );
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
 				if ( empty( $cfg[ 'filters' ][ $filter_name ] ) ) {
 
 					continue;
 				}
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $cfg ) ) {	// Always returns a string.
 
 					/**
 					 * Check if a simple product, variable product or any of its variations, has a meta data value.
@@ -344,7 +330,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 					}
 
 					$prod_meta_val = $product->get_meta( $meta_key, $single = true );
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_suffix, $this->p->options );
+					$label_transl  = SucomUtil::get_key_value( 'wcmd_info_label_' . $md_key, $this->p->options );
 					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$label_transl  = sprintf( $label_transl, $unit_transl );
 
@@ -356,15 +342,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 						$prod_meta_val .= ' ' . $unit_transl;
 					}
 
-					/**
-					 * Example, insert after 'dimensions' or 'weight'.
-					 */
-					if ( ! empty( $cfg[ 'insert_after' ] ) ) {
-
-						SucomUtil::add_after_key( $product_attributes, $cfg[ 'insert_after' ], $md_suffix, null );
-					}
-
-					$product_attributes[ $md_suffix ] = array(
+					$product_attributes[ $md_key ] = array(
 						'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
 						'value' => '<span class="wcmd_vars_metadata_value">' . $prod_meta_val . '</span>',
 					);
@@ -384,9 +362,9 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 			$ret = array();
 
-			foreach ( $md_config as $md_suffix => $cfg ) {
+			foreach ( $md_config as $md_key => $cfg ) {
 
-				if ( $meta_key = $this->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+				if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $cfg ) ) {	// Always returns a string.
 
 					$available_vars = $this->p->util->wc->get_available_variations( $product );	// Always returns an array.
 
@@ -400,7 +378,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 							if ( '' !== $var_meta_val ) {
 
-								$ret[ $var_id ][ $md_suffix ] = $var_meta_val;
+								$ret[ $var_id ][ $md_key ] = $var_meta_val;
 							}
 						}
 					}
@@ -423,25 +401,20 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			wp_enqueue_script( 'wpsso-wcmd-add-to-cart-variation' );
 		}
 
-		public function get_enabled_metadata_key( $md_suffix, $cfg = array() ) {
+		public function get_enabled_metadata_key( $md_key ) {
 
-			if ( empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+			if ( empty( $this->p->options[ 'wcmd_enable_' . $md_key ] ) ) {
 
 				return '';
 
-			} elseif ( empty( $this->p->options[ 'plugin_cf_' . $md_suffix ] ) ) {
+			} elseif ( empty( $this->p->options[ 'plugin_cf_' . $md_key ] ) ) {
 
 				return '';
 			}
 
-			$meta_key = $this->p->options[ 'plugin_cf_' . $md_suffix ];
+			$meta_key = $this->p->options[ 'plugin_cf_' . $md_key ];
 
-			$meta_key = (string) apply_filters( 'wpsso_wc_metadata_plugin_cf_' . $md_suffix, $meta_key );
-
-			if ( isset( $cfg[ 'unit_wc_1x' ] ) ) {
-
-				$meta_key .= '_unit_wc';
-			}
+			$meta_key = (string) apply_filters( 'wpsso_wc_metadata_plugin_cf_' . $md_key, $meta_key );
 
 			return SucomUtil::sanitize_hookname( $meta_key );
 		}
