@@ -1,4 +1,4 @@
-=== WPSSO Product Metadata for WooCommerce SEO - GTIN, UPC, EAN, ISBN, MPN, Global Identifiers ===
+=== WPSSO Product Metadata for WooCommerce SEO - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
 Plugin Name: WPSSO Product Metadata for WooCommerce SEO
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
@@ -15,7 +15,7 @@ Tested Up To: 6.1.1
 WC Tested Up To: 7.2.2
 Stable Tag: 1.13.2
 
-GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volume for WooCommerce products and variations.
+MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
 
 == Description ==
 
@@ -23,32 +23,34 @@ GTIN, GTIN-8, GTIN-12 (UPC), GTIN-13 (EAN), GTIN-14, ISBN, MPN, depth, and volum
 
 Provides additional fields in the WooCommerce Product data metabox and the product webpage Additional information section:
 
-GTIN
-GTIN-8
-GTIN-12 (UPC)
-GTIN-13 (EAN)
-GTIN-14
-ISBN
 MPN (Manufacturer Part Number)
-Depth
-Volume
-
-The product global identifier values (ie. GTIN, GTIN-8, GTIN-12, GTIN-13, GTIN-14, UPC, EAN, ISBN, MPN) are searchable from both the front-end and back-end WooCommerce Products admin page.
-
-The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
-
-The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).
+ISBN
+GTIN-14
+GTIN-13 (EAN)
+GTIN-12 (UPC)
+GTIN-8
+GTIN
+Net Length / Depth
+Net Width
+Net Height
+Net Weight
+Fluid Volume
 
 <!-- /about -->
 
+The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).
+
+The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13 (EAN, GTIN-12 (UPC), GTIN-8, and GTIN) are searchable from both the front-end, and the back-end WooCommerce Products admin page.
+
+The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
+
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
-The add-on includes a **Fluid volume unit** option in the *WooCommerce &gt; Settings &gt; Products* settings page:
+Includes a **Fluid volume unit** option in the *WooCommerce &gt; Settings &gt; Products* settings page:
 
 * ml
 * cl
 * l
-* kl
 * US tsp
 * US tbsp
 * US fl oz
@@ -57,16 +59,18 @@ The add-on includes a **Fluid volume unit** option in the *WooCommerce &gt; Sett
 * US qt
 * US gal
 
-<h3>Includes Meta Tags and Schema Markup</h3>
+<h3>Additonal Meta Tags and Schema Markup</h3>
 
-Automatically creates Open Graph product meta tags for the enabled product metadata:
+Automatically provides additional Open Graph product meta tags for enabled product metadata:
 
 * product:ean
 * product:isbn
 * product:mfr_part_no
 * product:upc
+* product:weight:value
+* product:weight:units
 
-Automatically includes Schema Product and Offer properties for the enabled product metadata:
+Automatically provides additional Schema Product and Offer properties for enabled product metadata:
 
 * mpn
 * gtin14
@@ -75,12 +79,15 @@ Automatically includes Schema Product and Offer properties for the enabled produ
 * gtin8
 * gtin
 * productID isbn
-* depth
+* depth (aka length)
+* width
+* height
+* weight
 * additionalProperty fluid_volume
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which provides complete structured data for WordPress to present your content at its best on social sites and in search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
@@ -126,23 +133,26 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-dev.10 (2022/12/22)**
+**Version 2.0.0-b.1 (2022/12/22)**
 
 * **New Features**
-	* None.
+	* Added new product metadata:
+		* Net Len. / Depth
+		* Net Width
+		* Net Height
+		* Net Weight
 * **Improvements**
-	* Removed product depth options, attributes and custom fields:
-		* Product Depth
-		* Product Depth Attribute Name
-		* Product Depth Custom Field
+	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new `WpssoWcmdFiltersOptions` class.
+	* Added a new `WpssoWcmdFiltersUpgrade` class
+	* Refactored the `WpssoWcmdConfig->get_md_config()` method and its config array.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-dev.10.
+	* WPSSO Core v14.0.0-b.1.
 	* WooCommerce v5.0.
 
 **Version 1.13.2 (2022/05/23)**
@@ -361,9 +371,9 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 2.0.0-dev.10 =
+= 2.0.0-b.1 =
 
-(2022/12/22) Removed product depth options, attributes and custom fields.
+(2022/12/22) Added new product metadata.
 
 = 1.13.2 =
 
