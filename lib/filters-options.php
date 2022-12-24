@@ -49,18 +49,15 @@ if ( ! class_exists( 'WpssoWcmdFiltersOptions' ) ) {
 		public function filter_option_type( $type, $base_key ) {
 
 			/**
-			 * The custom field name may be changed from the default value, but should not be empty.
+			 * Return 'not_blank' for enabled WPSSO WCMD metadata custom fields.
 			 */
 			if ( 0 === strpos( $base_key, 'plugin_cf_' ) ) {
 
-				/**
-				 * Return 'not_blank_quiet' for WooCommerce metadata custom fields.
-				 */
 				$md_suffix = substr( $base_key, strlen( 'plugin_cf_' ) );
 
-				if ( isset( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+				if ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
 
-					return 'not_blank_quiet';
+					return 'not_blank';
 				}
 			}
 

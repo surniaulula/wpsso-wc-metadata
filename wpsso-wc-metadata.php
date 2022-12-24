@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.2.2
- * Version: 2.0.0-b.1
+ * Version: 2.0.0-b.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -138,19 +138,23 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 					$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin'.
 
-					$this->p->options[ $opt_key ]               = $opt_val;
+					$this->p->options[ $opt_key ] = $opt_val;
+
 					$this->p->options[ $opt_key . ':disabled' ] = true;
 				}
 
 				/**
-				 * The custom field name may be changed from the default value, but cannot be empty.
-				 *
-				 * The WpssoWcmdFilters->filter_option_type() filter also returns 'not_blank_quiet' for WooCommerce
-				 * metadata custom fields.
+				 * Disable custom fields for disabled metadata.
 				 */
-				$opt_key = 'plugin_cf_' . $md_key;	// Example: 'plugin_cf_product_gtin'.
+				$opt_key = 'plugin_cf_' . $md_key;
 
-				if ( empty( $this->p->options[ $opt_key ] ) ) {
+				if ( empty( $this->p->options[ 'wcmd_enable_' . $md_key ] ) ) {
+
+					$this->p->options[ $opt_key ] = '';
+
+					$this->p->options[ $opt_key . ':disabled' ] = true;
+
+				} elseif ( empty( $this->p->options[ $opt_key ] = '' ) ) {
 
 					$this->p->options[ $opt_key ] = $cfg[ 'prefixes' ][ 'defaults' ][ 'plugin_cf' ];
 				}
