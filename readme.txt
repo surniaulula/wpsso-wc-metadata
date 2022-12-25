@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-b.4 (2022/12/24)**
+**Version 2.0.0-b.4 (2022/12/25)**
 
 * **New Features**
 	* Added new product metadata options:
@@ -373,7 +373,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 = 2.0.0-b.4 =
 
-(2022/12/24) Added new product metadata options.
+(2022/12/25) Added new product metadata options.
 
 = 1.13.2 =
 
