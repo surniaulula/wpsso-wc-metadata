@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0-b.3 (2022/12/24)**
+**Version 2.0.0-b.4 (2022/12/24)**
 
 * **New Features**
 	* Added new product metadata options:
@@ -152,7 +152,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-b.3.
+	* WPSSO Core v14.0.0-b.4.
 	* WooCommerce v5.0.
 
 **Version 1.13.2 (2022/05/23)**
@@ -371,7 +371,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 2.0.0-b.3 =
+= 2.0.0-b.4 =
 
 (2022/12/24) Added new product metadata options.
 
