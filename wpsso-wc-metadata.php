@@ -96,7 +96,8 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				return;	// Stop here.
 			}
 
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$md_config    = WpssoWcmdConfig::get_md_config();
+			$save_options = false;
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -123,6 +124,8 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 						$this->p->options[ $opt_key ] = $opt_val;
 					}
+
+					$save_options = true;
 				}
 
 				/**
@@ -138,7 +141,12 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 					$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin'.
 
-					$this->p->options[ $opt_key ] = $opt_val;
+					if ( ! isset( $this->p->options[ $opt_key ] ) || $this->p->options[ $opt_key ] !== $opt_val ) {
+
+						$save_options = true;
+
+						$this->p->options[ $opt_key ] = $opt_val;
+					}
 
 					$this->p->options[ $opt_key . ':disabled' ] = true;
 				}
@@ -150,14 +158,26 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 				if ( empty( $this->p->options[ 'wcmd_enable_' . $md_key ] ) ) {
 
-					$this->p->options[ $opt_key ] = '';
+					if ( ! empty( $this->p->options[ $opt_key ] ) ) {
 
+						$save_options = true;
+
+						$this->p->options[ $opt_key ] = '';
+					}
+					
 					$this->p->options[ $opt_key . ':disabled' ] = true;
 
-				} elseif ( empty( $this->p->options[ $opt_key ] = '' ) ) {
+				} elseif ( empty( $this->p->options[ $opt_key ] ) ) {
+
+					$save_options = true;
 
 					$this->p->options[ $opt_key ] = $cfg[ 'prefixes' ][ 'defaults' ][ 'plugin_cf' ];
 				}
+			}
+
+			if ( $save_options ) {
+
+				$this->p->opt->save_options( WPSSO_OPTIONS_NAME, $this->p->options, $network = false );
 			}
 		}
 	}
