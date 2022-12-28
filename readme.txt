@@ -13,7 +13,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.1
 WC Tested Up To: 7.2.2
-Stable Tag: 1.13.2
+Stable Tag: 2.0.0
 
 MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
 
@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0 (2022/12/27)**
+**Version 2.0.0 (2022/12/28)**
 
 * **New Features**
 	* Added new product metadata options:
@@ -373,7 +373,7 @@ Maintenance release for WPSSO Core v9.0.0.
 
 = 2.0.0 =
 
-(2022/12/27) Added new product metadata options.
+(2022/12/28) Added new product metadata options.
 
 = 1.13.2 =
 
