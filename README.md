@@ -34,9 +34,9 @@ Fluid Volume</p>
 
 <!-- /about -->
 
-<p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable product metadata with a simple checkbox, along with customizing the label and placeholder for different languages (aka WordPress locales).</p>
+<p>The <em>SSO &gt; WooCommerce Metadata</em> settings page allows you to enable or disable each product metadata, along with customizing the label and placeholder values for different languages (aka WordPress locales).</p>
 
-<p>The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13 (EAN, GTIN-12 (UPC), GTIN-8, and GTIN) are searchable from both the front-end, and the back-end WooCommerce Products admin page.</p>
+<p>The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.</p>
 
 <p>The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
 
