@@ -164,7 +164,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 						$this->p->options[ $opt_key ] = '';
 					}
-					
+
 					$this->p->options[ $opt_key . ':disabled' ] = true;
 
 				} elseif ( empty( $this->p->options[ $opt_key ] ) ) {
