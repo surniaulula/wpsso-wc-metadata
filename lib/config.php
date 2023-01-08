@@ -393,7 +393,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'prefixes' => array(
 						'defaults' => array(
 							'wcmd_show'        => 1,
-							'wcmd_show_label'  => 'Net Dimensions',
+							'wcmd_show_label'  => 'Net Dimensions (L x W x H)',
 						),
 					),
 					'implode' => array(
