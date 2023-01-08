@@ -26,8 +26,102 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
+				'rename_options_keys' => 1,
+				'upgraded_options'    => 2,
 				'upgraded_md_options' => 2,
 			) );
+		}
+
+		public function filter_rename_options_keys( $options_keys ) {
+
+			$options_keys[ 'wpssowcmd' ] = array(
+				21 => array(	// Renamed for WPSSO WCMD v3.0.0.
+					'wcmd_enable_product_mfr_part_no'              => 'wcmd_edit_product_mfr_part_no',
+					'wcmd_enable_product_isbn'                     => 'wcmd_edit_product_isbn',
+					'wcmd_enable_product_gtin14'                   => 'wcmd_edit_product_gtin14',
+					'wcmd_enable_product_gtin13'                   => 'wcmd_edit_product_gtin13',
+					'wcmd_enable_product_gtin12'                   => 'wcmd_edit_product_gtin12',
+					'wcmd_enable_product_gtin8'                    => 'wcmd_edit_product_gtin8',
+					'wcmd_enable_product_gtin'                     => 'wcmd_edit_product_gtin',
+					'wcmd_enable_product_length_value'             => 'wcmd_edit_product_length_value',
+					'wcmd_enable_product_width_value'              => 'wcmd_edit_product_width_value',
+					'wcmd_enable_product_height_value'             => 'wcmd_edit_product_height_value',
+					'wcmd_enable_product_weight_value'             => 'wcmd_edit_product_weight_value',
+					'wcmd_enable_product_fluid_volume_value'       => 'wcmd_edit_product_fluid_volume_value',
+					'wcmd_input_label_product_mfr_part_no'         => 'wcmd_edit_label_product_mfr_part_no',
+					'wcmd_input_label_product_isbn'                => 'wcmd_edit_label_product_isbn',
+					'wcmd_input_label_product_gtin14'              => 'wcmd_edit_label_product_gtin14',
+					'wcmd_input_label_product_gtin13'              => 'wcmd_edit_label_product_gtin13',
+					'wcmd_input_label_product_gtin12'              => 'wcmd_edit_label_product_gtin12',
+					'wcmd_input_label_product_gtin8'               => 'wcmd_edit_label_product_gtin8',
+					'wcmd_input_label_product_gtin'                => 'wcmd_edit_label_product_gtin',
+					'wcmd_input_label_product_length_value'        => 'wcmd_edit_label_product_length_value',
+					'wcmd_input_label_product_width_value'         => 'wcmd_edit_label_product_width_value',
+					'wcmd_input_label_product_height_value'        => 'wcmd_edit_label_product_height_value',
+					'wcmd_input_label_product_weight_value'        => 'wcmd_edit_label_product_weight_value',
+					'wcmd_input_label_product_fluid_volume_value'  => 'wcmd_edit_label_product_fluid_volume_value',
+					'wcmd_input_holder_product_mfr_part_no'        => 'wcmd_edit_holder_product_mfr_part_no',
+					'wcmd_input_holder_product_isbn'               => 'wcmd_edit_holder_product_isbn',
+					'wcmd_input_holder_product_gtin14'             => 'wcmd_edit_holder_product_gtin14',
+					'wcmd_input_holder_product_gtin13'             => 'wcmd_edit_holder_product_gtin13',
+					'wcmd_input_holder_product_gtin12'             => 'wcmd_edit_holder_product_gtin12',
+					'wcmd_input_holder_product_gtin8'              => 'wcmd_edit_holder_product_gtin8',
+					'wcmd_input_holder_product_gtin'               => 'wcmd_edit_holder_product_gtin',
+					'wcmd_input_holder_product_length_value'       => 'wcmd_edit_holder_product_length_value',
+					'wcmd_input_holder_product_width_value'        => 'wcmd_edit_holder_product_width_value',
+					'wcmd_input_holder_product_height_value'       => 'wcmd_edit_holder_product_height_value',
+					'wcmd_input_holder_product_weight_value'       => 'wcmd_edit_holder_product_weight_value',
+					'wcmd_input_holder_product_fluid_volume_value' => 'wcmd_edit_holder_product_fluid_volume_value',
+					'wcmd_info_label_product_mfr_part_no'          => 'wcmd_show_label_product_mfr_part_no',
+					'wcmd_info_label_product_isbn'                 => 'wcmd_show_label_product_isbn',
+					'wcmd_info_label_product_gtin14'               => 'wcmd_show_label_product_gtin14',
+					'wcmd_info_label_product_gtin13'               => 'wcmd_show_label_product_gtin13',
+					'wcmd_info_label_product_gtin12'               => 'wcmd_show_label_product_gtin12',
+					'wcmd_info_label_product_gtin8'                => 'wcmd_show_label_product_gtin8',
+					'wcmd_info_label_product_gtin'                 => 'wcmd_show_label_product_gtin',
+					'wcmd_info_label_product_length_value'         => 'wcmd_show_label_product_length_value',
+					'wcmd_info_label_product_width_value'          => 'wcmd_show_label_product_width_value',
+					'wcmd_info_label_product_height_value'         => 'wcmd_show_label_product_height_value',
+					'wcmd_info_label_product_weight_value'         => 'wcmd_show_label_product_weight_value',
+					'wcmd_info_label_product_fluid_volume_value'   => 'wcmd_show_label_product_fluid_volume_value',
+				),
+			);
+
+			return $options_keys;
+		}
+
+		public function filter_upgraded_options( $opts, $defs ) {
+
+			$prev_version = $this->p->opt->get_version( $opts, 'wpssowcmd' );
+
+			/**
+			 * Create new "Show" options for WPSSO WCMD v3.0.0 based on the existing "Edit" options.
+			 */
+			if ( $prev_version > 0 && $prev_version <= 21 ) {
+
+				foreach ( array(
+					'wcmd_edit_product_mfr_part_no'              => 'wcmd_show_product_mfr_part_no',
+					'wcmd_edit_product_isbn'                     => 'wcmd_show_product_isbn',
+					'wcmd_edit_product_gtin14'                   => 'wcmd_show_product_gtin14',
+					'wcmd_edit_product_gtin13'                   => 'wcmd_show_product_gtin13',
+					'wcmd_edit_product_gtin12'                   => 'wcmd_show_product_gtin12',
+					'wcmd_edit_product_gtin8'                    => 'wcmd_show_product_gtin8',
+					'wcmd_edit_product_gtin'                     => 'wcmd_show_product_gtin',
+					'wcmd_edit_product_length_value'             => 'wcmd_show_product_length_value',
+					'wcmd_edit_product_width_value'              => 'wcmd_show_product_width_value',
+					'wcmd_edit_product_height_value'             => 'wcmd_show_product_height_value',
+					'wcmd_edit_product_weight_value'             => 'wcmd_show_product_weight_value',
+					'wcmd_edit_product_fluid_volume_value'       => 'wcmd_show_product_fluid_volume_value',
+				) as $opt_edit_key => $opt_show_key ) {
+
+					if ( isset( $opts[ $opt_edit_key ] ) ) {
+
+						$opts[ $opt_show_key ] = $opts[ $opt_edit_key ];
+					}
+				}
+			}
+
+			return $opts;
 		}
 
 		public function filter_upgraded_md_options( $md_opts, $mod ) {

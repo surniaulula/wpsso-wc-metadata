@@ -135,6 +135,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			if ( $this->p->debug->enabled ) {
 
 				$this->p->debug->mark();
+
 				$this->p->debug->log_arr( 'request', $request );
 			}
 
@@ -253,9 +254,9 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 				if ( ! empty( $cfg[ 'searchable' ] ) ) {
 
-					if ( $metadata_key = $this->a->wc->get_enabled_metadata_key( $md_suffix, $cfg ) ) {	// Always returns a string.
+					if ( $md_key = $this->a->wc->get_edit_metadata_key( $md_suffix ) ) {	// Always returns a string.
 
-						$sql_meta_keys[] = '\'' . esc_sql( $metadata_key ) . '\'';
+						$sql_meta_keys[] = '\'' . esc_sql( $md_key ) . '\'';
 					}
 				}
 			}

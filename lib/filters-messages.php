@@ -44,7 +44,9 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 
 					$text .= '<blockquote class="top-info">';
 
-					$text .= __( 'Enabled WooCommerce metadata fields are included in the WooCommerce product data metabox and shown under the Additional information tab on the product page.', 'wpsso-wc-metadata' );
+					$text .= '<p>' . __( 'Edit enabled metadata is included in the WooCommerce product data metabox when editing a product.', 'wpsso-wc-metadata' ) . '</p>';
+
+					$text .= '<p>' . __( 'Show enabled metadata is included in the WooCommerce product page under the additional information tab.', 'wpsso-wc-metadata' ) . '</p>';
 
 					$text .= '</blockquote>';
 
@@ -63,15 +65,18 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				case ( 0 === strpos( $msg_key, 'tooltip-wcmd_input_label_' ) ? true : false ):
+				case ( 0 === strpos( $msg_key, 'tooltip-wcmd_edit_' ) ? true : false ):
 
-					$text .= __( 'Enable (or disable) this WooCommerce metadata field, modify the input field label, input field placeholder, and the information label shown on the product page.', 'wpsso-wc-metadata' ) . ' ';
+					$md_config = WpssoWcmdConfig::get_md_config();
+					$md_suffix = substr( $msg_key, strlen( 'tooltip-wcmd_edit_' ) );
 
-					$opt_key = 'plugin_cf_' . substr( $msg_key, 25 );
+					$text .= sprintf( __( 'Enable or disable the %s metadata field, modify the editing field label, the editing field placeholder, and the information label shown in the WooCommerce product page under the additional information tab.', 'wpsso-wc-metadata' ), $md_config[ $md_suffix ][ 'label' ] ) . ' ';
 
-					if ( ! empty( $this->p->options[ $opt_key ] ) ) {
+					$opt_cf_key = 'plugin_cf_' . $md_suffix;
 
-						$text .= sprintf( __( 'The WooCommerce metadata field value is saved in the WooCommerce product or variation %s custom field name (aka metadata name).', 'wpsso-wc-metadata' ),  '<code>' . $this->p->options[ $opt_key ] . '</code>' );
+					if ( ! empty( $this->p->options[ $opt_cf_key ] ) ) {
+
+						$text .= sprintf( __( 'The editing field value is saved in the WooCommerce product or variation %s custom field name (aka metadata name).', 'wpsso-wc-metadata' ),  '<code>' . $this->p->options[ $opt_cf_key ] . '</code>' );
 					}
 
 					break;

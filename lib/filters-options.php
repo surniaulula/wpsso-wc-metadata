@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersOptions' ) ) {
 
 				$md_suffix = substr( $base_key, strlen( 'plugin_cf_' ) );
 
-				if ( ! empty( $this->p->options[ 'wcmd_enable_' . $md_suffix ] ) ) {
+				if ( ! empty( $this->p->options[ 'wcmd_edit_' . $md_suffix ] ) ) {
 
 					return 'not_blank';
 				}
@@ -72,10 +72,16 @@ if ( ! class_exists( 'WpssoWcmdFiltersOptions' ) ) {
 
 			switch ( $base_key ) {
 
-				case ( false !== strpos( $base_key, 'wcmd_info_' ) ? true : false ):
-				case ( false !== strpos( $base_key, 'wcmd_input_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_edit_label_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_edit_holder_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_show_label_' ) ? true : false ):
 
 					return 'not_blank';
+
+				case ( false !== strpos( $base_key, 'wcmd_edit_' ) ? true : false ):
+				case ( false !== strpos( $base_key, 'wcmd_show_' ) ? true : false ):
+
+					return 'checkbox';
 			}
 
 			return $type;

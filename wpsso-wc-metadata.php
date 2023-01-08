@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.2.2
- * Version: 2.0.1
+ * Version: 3.0.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -102,76 +102,51 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 			foreach ( $md_config as $md_key => $cfg ) {
 
 				/**
-				 * If the enable option is missing, then assume the other wcmd options are missing as well and
-				 * reset the options to their default values.
+				 * Maybe fix some hard-coded options values.
 				 */
-				if ( ! isset( $this->p->options[ 'wcmd_enable_' . $md_key ] ) ) {	// Example: 'wcmd_enable_product_gtin'.
+				if ( ! empty( $cfg[ 'prefixes' ][ 'options' ] ) ) {
 
-					/**
-					 * Example defaults array:
-					 *
-					 * 	[defaults] => Array (
-					 * 		[wcmd_enable]       => 1
-					 * 		[wcmd_info_label]   => GTIN
-					 * 		[wcmd_input_holder] => Bar code
-					 * 		[wcmd_input_label]  => GTIN
-					 * 		[plugin_cf]         => _wpsso_product_gtin
-					 * 	)
-					 */
-					foreach ( $cfg[ 'prefixes' ][ 'defaults' ] as $opt_pre => $opt_val ) {
-
-						$opt_key = $opt_pre . '_' . $md_key;	// Example: 'wcmd_enable_product_gtin'.
-
-						$this->p->options[ $opt_key ] = $opt_val;
+					foreach ( $cfg[ 'prefixes' ][ 'options' ] as $opt_pre => $opt_val ) {
+	
+						$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin'.
+	
+						if ( ! isset( $this->p->options[ $opt_key ] ) || $opt_val !== $this->p->options[ $opt_key ] ) {
+	
+							$save_options = true;
+	
+							$this->p->options[ $opt_key ] = $opt_val;
+						}
+	
+						$this->p->options[ $opt_key . ':disabled' ] = true;
 					}
-
-					$save_options = true;
 				}
 
 				/**
-				 * Hard-code some option values, like 'plugin_attr_product_gtin' = '' for example.
-				 *
-				 * Example options array:
-				 *
-				 * 	[options] => Array (
-				 * 		[plugin_attr] =>
-				 * 	)
+				 * Maybe fix some custom field options values.
 				 */
-				foreach ( $cfg[ 'prefixes' ][ 'options' ] as $opt_pre => $opt_val ) {
+				if ( WpssoWcmdConfig::is_editable( $md_key ) ) {
 
-					$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin'.
-
-					if ( ! isset( $this->p->options[ $opt_key ] ) || $this->p->options[ $opt_key ] !== $opt_val ) {
-
+					$opt_key = 'plugin_cf_' . $md_key;
+	
+					if ( empty( $this->p->options[ 'wcmd_edit_' . $md_key ] ) ) {
+	
+						if ( ! empty( $this->p->options[ $opt_key ] ) ) {
+	
+							$save_options = true;
+	
+							$this->p->options[ $opt_key ] = '';
+					
+							$this->p->options[ 'wcmd_show_' . $md_key ] = 0;
+						}
+	
+						$this->p->options[ $opt_key . ':disabled' ] = true;
+	
+					} elseif ( empty( $this->p->options[ $opt_key ] ) ) {
+	
 						$save_options = true;
-
-						$this->p->options[ $opt_key ] = $opt_val;
+	
+						$this->p->options[ $opt_key ] = $cfg[ 'prefixes' ][ 'defaults' ][ 'plugin_cf' ];
 					}
-
-					$this->p->options[ $opt_key . ':disabled' ] = true;
-				}
-
-				/**
-				 * Disable custom fields for disabled metadata.
-				 */
-				$opt_key = 'plugin_cf_' . $md_key;
-
-				if ( empty( $this->p->options[ 'wcmd_enable_' . $md_key ] ) ) {
-
-					if ( ! empty( $this->p->options[ $opt_key ] ) ) {
-
-						$save_options = true;
-
-						$this->p->options[ $opt_key ] = '';
-					}
-
-					$this->p->options[ $opt_key . ':disabled' ] = true;
-
-				} elseif ( empty( $this->p->options[ $opt_key ] ) ) {
-
-					$save_options = true;
-
-					$this->p->options[ $opt_key ] = $cfg[ 'prefixes' ][ 'defaults' ][ 'plugin_cf' ];
 				}
 			}
 

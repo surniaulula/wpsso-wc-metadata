@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '2.0.1',	// Plugin version.
-					'opt_version' => '18',		// Increment when changing default option values.
+					'version'     => '3.0.0-dev.1',	// Plugin version.
+					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
 					'desc'        => 'MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.0.0',
+							'min_version'   => '14.4.0-dev.1',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -73,6 +73,26 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 			),
 		);
+
+		/**
+		 * Since WPSSO WCMD v3.0.0.
+		 */
+		public static function is_editable( $md_key ) {
+
+			$md_config = self::get_md_config();
+
+			return isset( $md_config[ $md_key ][ 'prefixes' ][ 'defaults' ][ 'wcmd_edit' ] ) ? true : false;
+		}
+
+		/**
+		 * Since WPSSO WCMD v3.0.0.
+		 */
+		public static function is_showable( $md_key ) {
+
+			$md_config = self::get_md_config();
+
+			return isset( $md_config[ $md_key ][ 'prefixes' ][ 'defaults' ][ 'wcmd_show' ] ) ? true : false;
+		}
 
 		public static function get_md_config() {
 
@@ -115,11 +135,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'MPN',
-							'wcmd_input_holder' => 'Part number',			// Capitalize the first word.
-							'wcmd_info_label'   => 'Manufacturer Part Number',
-							'plugin_cf'         => '_wpsso_product_mfr_part_no',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'MPN',
+							'wcmd_edit_holder' => 'Part number',			// Capitalize the first word.
+							'wcmd_show'        => 1,
+							'wcmd_show_label'  => 'Manufacturer Part Number',
+							'plugin_cf'        => '_wpsso_product_mfr_part_no',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -140,11 +161,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 0,
-							'wcmd_input_label'  => 'ISBN',
-							'wcmd_input_holder' => 'Book number',		// Capitalize the first word.
-							'wcmd_info_label'   => 'ISBN',
-							'plugin_cf'         => '_wpsso_product_isbn',
+							'wcmd_edit'        => 0,
+							'wcmd_edit_label'  => 'ISBN',
+							'wcmd_edit_holder' => 'Book number',		// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'ISBN',
+							'plugin_cf'        => '_wpsso_product_isbn',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -165,11 +187,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 0,
-							'wcmd_input_label'  => 'GTIN-14',
-							'wcmd_input_holder' => '14-digit bar code',	// Capitalize the first word.
-							'wcmd_info_label'   => 'GTIN-14',
-							'plugin_cf'         => '_wpsso_product_gtin14',
+							'wcmd_edit'        => 0,
+							'wcmd_edit_label'  => 'GTIN-14',
+							'wcmd_edit_holder' => '14-digit bar code',	// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'GTIN-14',
+							'plugin_cf'        => '_wpsso_product_gtin14',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -190,11 +213,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'EAN',
-							'wcmd_input_holder' => '13-digit bar code',	// Capitalize the first word.
-							'wcmd_info_label'   => 'EAN',
-							'plugin_cf'         => '_wpsso_product_gtin13',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'EAN',
+							'wcmd_edit_holder' => '13-digit bar code',	// Capitalize the first word.
+							'wcmd_show'        => 1,
+							'wcmd_show_label'  => 'EAN',
+							'plugin_cf'        => '_wpsso_product_gtin13',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -215,11 +239,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'UPC',
-							'wcmd_input_holder' => '12-digit bar code',	// Capitalize the first word.
-							'wcmd_info_label'   => 'UPC',
-							'plugin_cf'         => '_wpsso_product_gtin12',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'UPC',
+							'wcmd_edit_holder' => '12-digit bar code',	// Capitalize the first word.
+							'wcmd_show'        => 1,
+							'wcmd_show_label'  => 'UPC',
+							'plugin_cf'        => '_wpsso_product_gtin12',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -240,11 +265,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 0,
-							'wcmd_input_label'  => 'GTIN-8',
-							'wcmd_input_holder' => '8-digit bar code',	// Capitalize the first word.
-							'wcmd_info_label'   => 'GTIN-8',
-							'plugin_cf'         => '_wpsso_product_gtin8',
+							'wcmd_edit'        => 0,
+							'wcmd_edit_label'  => 'GTIN-8',
+							'wcmd_edit_holder' => '8-digit bar code',	// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'GTIN-8',
+							'plugin_cf'        => '_wpsso_product_gtin8',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -265,11 +291,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 0,
-							'wcmd_input_label'  => 'GTIN',
-							'wcmd_input_holder' => 'Bar code',		// Capitalize the first word.
-							'wcmd_info_label'   => 'GTIN',
-							'plugin_cf'         => '_wpsso_product_gtin',
+							'wcmd_edit'        => 0,
+							'wcmd_edit_label'  => 'GTIN',
+							'wcmd_edit_holder' => 'Bar code',		// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'GTIN',
+							'plugin_cf'        => '_wpsso_product_gtin',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -291,11 +318,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'Net Len. / Depth (%s)',
-							'wcmd_input_holder' => 'Net length or depth in %s',	// Capitalize the first word.
-							'wcmd_info_label'   => 'Net Length or Depth',
-							'plugin_cf'         => '_wpsso_product_length_value',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'Net Len. / Depth (%s)',
+							'wcmd_edit_holder' => 'Net length or depth in %s',	// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'Net Length or Depth',
+							'plugin_cf'        => '_wpsso_product_length_value',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -317,11 +345,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'Net Width (%s)',
-							'wcmd_input_holder' => 'Net width in %s',		// Capitalize the first word.
-							'wcmd_info_label'   => 'Net Width',
-							'plugin_cf'         => '_wpsso_product_width_value',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'Net Width (%s)',
+							'wcmd_edit_holder' => 'Net width in %s',		// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'Net Width',
+							'plugin_cf'        => '_wpsso_product_width_value',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -343,14 +372,36 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'Net Height (%s)',
-							'wcmd_input_holder' => 'Net height in %s',		// Capitalize the first word.
-							'wcmd_info_label'   => 'Net Height',
-							'plugin_cf'         => '_wpsso_product_height_value',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'Net Height (%s)',
+							'wcmd_edit_holder' => 'Net height in %s',		// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'Net Height',
+							'plugin_cf'        => '_wpsso_product_height_value',
 						),
 						'options' => array(
 							'plugin_attr' => '',
+						),
+					),
+				),
+				'product_dimensions' => array(
+					'label'      => _x( 'Product Net Dimensions', 'option label', 'wpsso-wc-metadata' ),
+					'unit_label' => $dimension_unit_label,
+					'filters' => array(
+						'woocommerce_display_product_attributes' => true,
+					),
+					'prefixes' => array(
+						'defaults' => array(
+							'wcmd_show'        => 1,
+							'wcmd_show_label'  => 'Net Dimensions',
+						),
+					),
+					'implode' => array(
+						'separator' => ' x ',
+						'md_keys'   => array(
+							'product_length_value',
+							'product_width_value',
+							'product_height_value',
 						),
 					),
 				),
@@ -369,11 +420,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 1,
-							'wcmd_input_label'  => 'Net Weight (%s)',
-							'wcmd_input_holder' => 'Net weight in %s',		// Capitalize the first word.
-							'wcmd_info_label'   => 'Net Weight',
-							'plugin_cf'         => '_wpsso_product_weight_value',
+							'wcmd_edit'        => 1,
+							'wcmd_edit_label'  => 'Net Weight (%s)',
+							'wcmd_edit_holder' => 'Net weight in %s',		// Capitalize the first word.
+							'wcmd_show'        => 1,
+							'wcmd_show_label'  => 'Net Weight',
+							'plugin_cf'        => '_wpsso_product_weight_value',
 						),
 						'options' => array(
 							'plugin_attr' => '',
@@ -395,11 +447,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 					'prefixes' => array(
 						'defaults' => array(
-							'wcmd_enable'       => 0,
-							'wcmd_input_label'  => 'Fluid Volume (%s)',
-							'wcmd_input_holder' => 'Fluid volume in %s',		// Capitalize the first word.
-							'wcmd_info_label'   => 'Fluid Volume',
-							'plugin_cf'         => '_wpsso_product_fluid_volume_value',
+							'wcmd_edit'        => 0,
+							'wcmd_edit_label'  => 'Fluid Volume (%s)',
+							'wcmd_edit_holder' => 'Fluid volume in %s',		// Capitalize the first word.
+							'wcmd_show'        => 0,
+							'wcmd_show_label'  => 'Fluid Volume',
+							'plugin_cf'        => '_wpsso_product_fluid_volume_value',
 						),
 						'options' => array(
 							'plugin_attr' => '',

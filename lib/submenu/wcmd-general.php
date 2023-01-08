@@ -70,26 +70,44 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 
 				case 'wcmd-general':
 
-					$table_rows[] = '<td colspan="5">' . $this->p->msgs->get( 'info-wcmd-custom-fields' ) . '</td>';
+					$table_rows[] = '<td colspan="6">' . $this->p->msgs->get( 'info-wcmd-custom-fields' ) . '</td>';
 
 					$table_rows[] = '' .
 						'<th></th>' .
-						'<th class="xshort option_col"><h3>' . __( 'Enable', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="short option_col"><h3>' . __( 'Input Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="medium option_col"><h3>' . __( 'Input Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="wide option_col"><h3>' . __( 'Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
+						'<th class="checkbox option_col"><h3>' . __( 'Edit', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="short option_col"><h3>' . __( 'Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="medium option_col"><h3>' . __( 'Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="checkbox option_col"><h3>' . __( 'Show', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="wide option_col"><h3>' . __( 'Additional Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
 
 					$md_config = WpssoWcmdConfig::get_md_config();
 
 					foreach ( $md_config as $md_suffix => $cfg ) {
 
-						$table_rows[ 'wcmd_input_label_' . $md_suffix ] = '' .
-							$this->form->get_th_html_locale( _x( $cfg[ 'label' ], 'option label', 'wpsso-wc-metadata' ),
-								$css_class = '', $css_id = 'wcmd_input_label_' . $md_suffix ) .
-							'<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_enable_' . $md_suffix ) . '</td>' .
-							'<td class="short">' . $this->form->get_input_locale( 'wcmd_input_label_' . $md_suffix, $css_class = 'short' ) . '</td>' .
-							'<td class="medium">' . $this->form->get_input_locale( 'wcmd_input_holder_' . $md_suffix, $css_class = 'medium' ) . '</td>' .
-							'<td class="wide">' . $this->form->get_input_locale( 'wcmd_info_label_' . $md_suffix, $css_class = 'wide' ) . '</td>';
+						$html = $this->form->get_th_html_locale( _x( $cfg[ 'label' ], 'option label', 'wpsso-wc-metadata' ),
+							$css_class = '', $css_id = 'wcmd_edit_' . $md_suffix );
+
+						if ( WpssoWcmdConfig::is_editable( $md_suffix ) ) {
+
+							$html .= '<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_edit_' . $md_suffix ) . '</td>';
+
+							$html .= '<td class="short">' . $this->form->get_input_locale( 'wcmd_edit_label_' . $md_suffix,
+								$css_class = 'short' ) . '</td>';
+
+							$html .= '<td class="medium">' . $this->form->get_input_locale( 'wcmd_edit_holder_' . $md_suffix,
+								$css_class = 'medium' ) . '</td>';
+
+						} else $html .= '<td colspan="3"></td>';
+
+						if ( WpssoWcmdConfig::is_showable( $md_suffix ) ) {
+
+							$html .= '<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_show_' . $md_suffix ) . '</td>';
+
+							$html .= '<td class="wide">' . $this->form->get_input_locale( 'wcmd_show_label_' . $md_suffix ) . '</td>';
+
+						} else $html .= '<td colspan="2"></td>';
+						
+						$table_rows[ 'wcmd_edit_' . $md_suffix ] = $html;
 					}
 
 					break;
