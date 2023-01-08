@@ -133,6 +133,25 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.0-dev.1 (TBD)**
+
+* **New Features**
+	* Added a "Product Net Dimensions" option in the SSO &gt; WC Metadata settings page.
+* **Improvements**
+	* Added a "Show" column in the SSO &gt; WC Metadata settings page to enable/disable metadata for editing pages and front-end pages independently.
+	* Renamed the "Enable" column in the SSO &gt; WC Metadata settings page to "Edit".
+* **Bugfixes**
+	* Fixed the missing units value under the Additional Information tab when switching variations.
+* **Developer Notes**
+	* Added new methods:
+		* `WpssoWcmdConfig::is_editable()`
+		* `WpssoWcmdConfig::is_showable()`
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v14.4.0-dev.1.
+	* WooCommerce v5.0.
+
 **Version 2.0.1 (2022/12/28)**
 
 * **New Features**
@@ -386,6 +405,10 @@ Maintenance release for WPSSO Core v9.0.0.
 	* WooCommerce v3.6.4.
 
 == Upgrade Notice ==
+
+= 3.0.0-dev.1 =
+
+(TBD) Added a "Product Net Dimensions" option and "Show" column in the SSO &gt; WC Metadata settings page.
 
 = 2.0.1 =
 
