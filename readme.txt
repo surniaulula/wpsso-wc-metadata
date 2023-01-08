@@ -1,4 +1,4 @@
-=== WPSSO Product Metadata for WooCommerce SEO - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
+=== WPSSO Product Metadata (aka Custom Fields) for WooCommerce SEO - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
 Plugin Name: WPSSO Product Metadata for WooCommerce SEO
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
@@ -21,24 +21,24 @@ MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for
 
 <!-- about -->
 
-Provides additional fields in the WooCommerce Product data metabox and the product webpage Additional information section:
+Provides additional fields in the WooCommerce "Product data" metabox and under the product webpage "Additional information" section:
 
-MPN (Manufacturer Part Number)
-ISBN
-GTIN-14
-GTIN-13 (EAN)
-GTIN-12 (UPC)
-GTIN-8
-GTIN
-Net Length / Depth
-Net Width
-Net Height
-Net Weight
-Fluid Volume
+* MPN (Manufacturer Part Number)
+* ISBN
+* GTIN-14
+* GTIN-13 (EAN)
+* GTIN-12 (UPC)
+* GTIN-8
+* GTIN
+* Net Length / Depth
+* Net Width
+* Net Height
+* Net Weight
+* Fluid Volume
 
 <!-- /about -->
 
-The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable each product metadata, along with customizing the label and placeholder values for different languages (aka WordPress locales).
+The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable each product metadata (aka custom field), along with customizing the label and placeholder values for the available languages (aka WordPress locales).
 
 The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.
 
