@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.2.2
- * Version: 3.0.0-b.1
+ * Version: 3.0.0-rc.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -107,16 +107,16 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				if ( ! empty( $cfg[ 'prefixes' ][ 'options' ] ) ) {
 
 					foreach ( $cfg[ 'prefixes' ][ 'options' ] as $opt_pre => $opt_val ) {
-	
+
 						$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin'.
-	
+
 						if ( ! isset( $this->p->options[ $opt_key ] ) || $opt_val !== $this->p->options[ $opt_key ] ) {
-	
+
 							$save_options = true;
-	
+
 							$this->p->options[ $opt_key ] = $opt_val;
 						}
-	
+
 						$this->p->options[ $opt_key . ':disabled' ] = true;
 					}
 				}
@@ -127,24 +127,24 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				if ( WpssoWcmdConfig::is_editable( $md_key ) ) {
 
 					$opt_key = 'plugin_cf_' . $md_key;
-	
+
 					if ( empty( $this->p->options[ 'wcmd_edit_' . $md_key ] ) ) {
-	
+
 						if ( ! empty( $this->p->options[ $opt_key ] ) ) {
-	
+
 							$save_options = true;
-	
+
 							$this->p->options[ $opt_key ] = '';
-					
+
 							$this->p->options[ 'wcmd_show_' . $md_key ] = 0;
 						}
-	
+
 						$this->p->options[ $opt_key . ':disabled' ] = true;
-	
+
 					} elseif ( empty( $this->p->options[ $opt_key ] ) ) {
-	
+
 						$save_options = true;
-	
+
 						$this->p->options[ $opt_key ] = $cfg[ 'prefixes' ][ 'defaults' ][ 'plugin_cf' ];
 					}
 				}

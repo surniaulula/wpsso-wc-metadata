@@ -390,7 +390,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 		 * Always returns an array.
 		 */
 		public function get_show_metadata_keys( $md_key ) {
-			
+
 			if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $context = 'show' ) ) {	// Always returns a string.
 
 				return array( $meta_key );
@@ -479,7 +479,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 				$obj_meta = '';
 
 				if ( $var_obj ) {	// If we have a variation object, get that first.
-				
+
 					$obj_meta = $var_obj->get_meta( $meta_key, $single = true );
 				}
 
@@ -494,7 +494,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 						$meta_value .= $meta_sep;
 					}
-					
+
 					$meta_value .= $obj_meta;
 				}
 			}

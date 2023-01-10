@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 							$html .= '<td class="wide">' . $this->form->get_input_locale( 'wcmd_show_label_' . $md_suffix ) . '</td>';
 
 						} else $html .= '<td colspan="2"></td>';
-						
+
 						$table_rows[ 'wcmd_edit_' . $md_suffix ] = $html;
 					}
 
