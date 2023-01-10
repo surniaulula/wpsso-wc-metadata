@@ -75,8 +75,8 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 					$table_rows[] = '' .
 						'<th></th>' .
 						'<th class="checkbox option_col"><h3>' . __( 'Edit', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="short option_col"><h3>' . __( 'Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
-						'<th class="medium option_col"><h3>' . __( 'Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="wcmd_edit_label option_col"><h3>' . __( 'Label', 'wpsso-wc-metadata' ) . '</h3></th>' .
+						'<th class="wcmd_edit_holder option_col"><h3>' . __( 'Placeholder', 'wpsso-wc-metadata' ) . '</h3></th>' .
 						'<th class="checkbox option_col"><h3>' . __( 'Show', 'wpsso-wc-metadata' ) . '</h3></th>' .
 						'<th class="wide option_col"><h3>' . __( 'Additional Information Label', 'wpsso-wc-metadata' ) . '</h3></th>';
 
@@ -91,11 +91,11 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 
 							$html .= '<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_edit_' . $md_suffix ) . '</td>';
 
-							$html .= '<td class="short">' . $this->form->get_input_locale( 'wcmd_edit_label_' . $md_suffix,
-								$css_class = 'short' ) . '</td>';
+							$html .= '<td class="wcmd_edit_label">' . $this->form->get_input_locale( 'wcmd_edit_label_' . $md_suffix,
+								$css_class = 'wcmd_edit_label' ) . '</td>';
 
-							$html .= '<td class="medium">' . $this->form->get_input_locale( 'wcmd_edit_holder_' . $md_suffix,
-								$css_class = 'medium' ) . '</td>';
+							$html .= '<td class="wcmd_edit_holder">' . $this->form->get_input_locale( 'wcmd_edit_holder_' . $md_suffix,
+								$css_class = 'wcmd_edit_holder' ) . '</td>';
 
 						} else $html .= '<td colspan="3"></td>';
 
@@ -103,7 +103,8 @@ if ( ! class_exists( 'WpssoWcmdSubmenuWcmdGeneral' ) && class_exists( 'WpssoAdmi
 
 							$html .= '<td class="checkbox">' . $this->form->get_checkbox( 'wcmd_show_' . $md_suffix ) . '</td>';
 
-							$html .= '<td class="wide">' . $this->form->get_input_locale( 'wcmd_show_label_' . $md_suffix ) . '</td>';
+							$html .= '<td class="wide">' . $this->form->get_input_locale( 'wcmd_show_label_' . $md_suffix,
+								$css_class = 'wcmd_show_label' ) . '</td>';
 
 						} else $html .= '<td colspan="2"></td>';
 

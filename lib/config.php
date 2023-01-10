@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '3.0.0-rc.2',	// Plugin version.
+					'version'     => '3.0.0-rc.3',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.4.0-rc.2',
+							'min_version'   => '14.4.0-rc.3',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -200,7 +200,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_gtin13' => array(
-					'label'      => _x( 'Product GTIN-13 (EAN)', 'option label', 'wpsso-wc-metadata' ),
+					'label'      => _x( 'Product GTIN-13', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13).', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'searchable' => true,
@@ -214,7 +214,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'prefixes' => array(
 						'defaults' => array(
 							'wcmd_edit'        => 1,
-							'wcmd_edit_label'  => 'EAN',
+							'wcmd_edit_label'  => 'GTIN-13 (EAN)',
 							'wcmd_edit_holder' => '13-digit bar code',	// Capitalize the first word.
 							'wcmd_show'        => 1,
 							'wcmd_show_label'  => 'EAN',
@@ -226,7 +226,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_gtin12' => array(
-					'label'      => _x( 'Product GTIN-12 (UPC)', 'option label', 'wpsso-wc-metadata' ),
+					'label'      => _x( 'Product GTIN-12', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit).', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'searchable' => true,
@@ -240,7 +240,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'prefixes' => array(
 						'defaults' => array(
 							'wcmd_edit'        => 1,
-							'wcmd_edit_label'  => 'UPC',
+							'wcmd_edit_label'  => 'GTIN-12 (UPC)',
 							'wcmd_edit_holder' => '12-digit bar code',	// Capitalize the first word.
 							'wcmd_show'        => 1,
 							'wcmd_show_label'  => 'UPC',
@@ -304,7 +304,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					),
 				),
 				'product_length_value' => array(
-					'label'      => _x( 'Product Net Len. / Depth', 'option label', 'wpsso-wc-metadata' ),
+					'label'      => _x( 'Product Net Length', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
 					'data_type'  => 'decimal',
@@ -319,7 +319,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'prefixes' => array(
 						'defaults' => array(
 							'wcmd_edit'        => 1,
-							'wcmd_edit_label'  => 'Net Len. / Depth (%s)',
+							'wcmd_edit_label'  => 'Net Length / Depth (%s)',
 							'wcmd_edit_holder' => 'Net length or depth in %s',	// Capitalize the first word.
 							'wcmd_show'        => 0,
 							'wcmd_show_label'  => 'Net Length or Depth',
