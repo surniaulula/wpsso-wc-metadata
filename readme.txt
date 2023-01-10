@@ -133,7 +133,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-rc.1 (2023/01/09)**
+**Version 3.0.0-rc.2 (2023/01/10)**
 
 * **New Features**
 	* Added a "Product Net Dimensions" option in the SSO &gt; WC Metadata settings page.
@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.4.0-rc.1.
+	* WPSSO Core v14.4.0-rc.2.
 	* WooCommerce v5.0.
 
 **Version 2.0.1 (2022/12/28)**
@@ -406,9 +406,9 @@ Maintenance release for WPSSO Core v9.0.0.
 
 == Upgrade Notice ==
 
-= 3.0.0-rc.1 =
+= 3.0.0-rc.2 =
 
-(2023/01/09) Added a "Product Net Dimensions" option and "Show" column in the SSO &gt; WC Metadata settings page.
+(2023/01/10) Added a "Product Net Dimensions" option and "Show" column in the SSO &gt; WC Metadata settings page.
 
 = 2.0.1 =
 
