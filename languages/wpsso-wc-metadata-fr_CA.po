@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 3.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-01-08 12:37-0800\n"
+"PO-Revision-Date: 2023-01-15 10:54-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -76,8 +76,8 @@ msgstr "%1$s fait référence à un code de produit GTIN-14 (ITF-14)."
 
 #: lib/config.php:203
 msgctxt "option label"
-msgid "Product GTIN-13 (EAN)"
-msgstr "GTIN-13 (EAN) du produit"
+msgid "Product GTIN-13"
+msgstr "GTIN-13 du produit"
 
 #: lib/config.php:204
 msgid "%1$s refers to a product GTIN-13 code (aka 13-digit ISBN codes or EAN/UCC-13)."
@@ -85,8 +85,8 @@ msgstr "%1$s fait référence à un code de produit GTIN-13 (codes ISBN à 13 ch
 
 #: lib/config.php:229
 msgctxt "option label"
-msgid "Product GTIN-12 (UPC)"
-msgstr "GTIN-12 (UPC) du produit"
+msgid "Product GTIN-12"
+msgstr "GTIN-12 du produit"
 
 #: lib/config.php:230
 msgid "%1$s refers to a product GTIN-12 code (12-digit GS1 identification key composed of a UPC company prefix, item reference, and check digit)."
@@ -112,8 +112,8 @@ msgstr "%1$s fait référence à un code de produit GTIN (GTIN-8, GTIN-12/UPC, G
 
 #: lib/config.php:307
 msgctxt "option label"
-msgid "Product Net Len. / Depth"
-msgstr "Long. / prof. nette du produit"
+msgid "Product Net Length"
+msgstr "Longueur nette du produit"
 
 #: lib/config.php:308
 msgid "%1$s refers to a product's net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations."
