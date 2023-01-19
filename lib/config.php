@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2022 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '3.1.0-rc.1',	// Plugin version.
+					'version'     => '3.1.0-rc.2',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'text_domain' => 'wpsso-wc-metadata',
 					'domain_path' => '/languages',
 
-					/**
+					/*
 					 * Required plugin and its version.
 					 */
 					'req' => array(
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.5.0-rc.1',
+							'min_version'   => '14.5.0-rc.2',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -48,12 +48,12 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * URLs or relative paths to plugin banners and icons.
 					 */
 					'assets' => array(
 
-						/**
+						/*
 						 * Icon image array keys are '1x' and '2x'.
 						 */
 						'icons' => array(
@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
@@ -74,7 +74,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			),
 		);
 
-		/**
+		/*
 		 * Since WPSSO WCMD v3.0.0.
 		 */
 		public static function is_editable( $md_key ) {
@@ -84,7 +84,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			return isset( $md_config[ $md_key ][ 'prefixes' ][ 'defaults' ][ 'wcmd_edit' ] ) ? true : false;
 		}
 
-		/**
+		/*
 		 * Since WPSSO WCMD v3.0.0.
 		 */
 		public static function is_showable( $md_key ) {
@@ -117,7 +117,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			$weight_unit_text  = WpssoUtilUnits::get_weight_text();
 			$weight_unit_label = WpssoUtilUnits::get_weight_label( $weight_unit_text );
 
-			/**
+			/*
 			 * Metadata options will be down in the order listed here.
 			 */
 			$local_cache = array(
@@ -482,7 +482,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 
 			$info =& self::$cf[ 'plugin' ][ 'wpssowcmd' ];
 
-			/**
+			/*
 			 * Define fixed constants.
 			 */
 			define( 'WPSSOWCMD_FILEPATH', $plugin_file );

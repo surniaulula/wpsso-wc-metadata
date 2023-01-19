@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: WPSSO Product Metadata for WooCommerce SEO
  * Plugin Slug: wpsso-wc-metadata
  * Text Domain: wpsso-wc-metadata
@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.3.0
- * Version: 3.1.0-rc.1
+ * Version: 3.1.0-rc.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
-				/**
+				/*
 				 * Maybe fix some hard-coded options values.
 				 */
 				if ( ! empty( $cfg[ 'prefixes' ][ 'options' ] ) ) {
@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 					}
 				}
 
-				/**
+				/*
 				 * Maybe fix some custom field options values.
 				 */
 				if ( WpssoWcmdConfig::is_editable( $md_key ) ) {
