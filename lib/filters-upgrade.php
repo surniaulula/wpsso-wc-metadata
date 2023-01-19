@@ -133,7 +133,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 
 				$prev_version = $this->p->opt->get_version( $md_opts, 'wpssowcmd' );
 
-				if ( $prev_version <= 17 ) {
+				if ( $prev_version > 0 && $prev_version <= 17 ) {
 
 					$md_config = WpssoWcmdConfig::get_md_config();
 
@@ -141,12 +141,15 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 
 						$opt_key = 'plugin_cf_' . $md_key;
 
-						$meta_value_key   = $this->p->options[ $opt_key ];
-						$meta_units_key   = preg_replace( '/_value$/', '', $meta_value_key ) . '_units';
-						$meta_unit_wc_key = $meta_value_key . '_unit_wc';
+						if ( ! empty( $this->p->options[ $opt_key ] ) ) {
 
-						$mod[ 'obj' ]->delete_meta( $mod[ 'id' ], $meta_units_key );
-						$mod[ 'obj' ]->delete_meta( $mod[ 'id' ], $meta_unit_wc_key );
+							$meta_value_key   = $this->p->options[ $opt_key ];
+							$meta_units_key   = preg_replace( '/_value$/', '', $meta_value_key ) . '_units';
+							$meta_unit_wc_key = $meta_value_key . '_unit_wc';
+
+							$mod[ 'obj' ]->delete_meta( $mod[ 'id' ], $meta_units_key );
+							$mod[ 'obj' ]->delete_meta( $mod[ 'id' ], $meta_unit_wc_key );
+						}
 					}
 				}
 			}
