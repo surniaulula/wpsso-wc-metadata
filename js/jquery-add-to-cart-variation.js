@@ -1,7 +1,7 @@
 
 ;(function ( $, window, document, undefined ) {
 
-	/**
+	/*
 	 * VariationForm class which handles variation forms and attributes.
 	 */
 	var VariationForm = function( $form ) {
@@ -46,7 +46,7 @@
 		var cssItemPrefix = '.woocommerce-product-attributes-item';
 		var cssItemValue  = cssItemPrefix + '__value .wcmd_vars_metadata_value';
 
-		/**
+		/*
 		 * Some variations may not have a metadata value, so reset the values to reload parent metadata between variation
 		 * to variation switches.
 		 */
