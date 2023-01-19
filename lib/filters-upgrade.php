@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoWcmd class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoWcmdFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -94,7 +94,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 
 			$prev_version = $this->p->opt->get_version( $opts, 'wpssowcmd' );
 
-			/**
+			/*
 			 * Create new "Show" options for WPSSO WCMD v3.0.0 based on the existing "Edit" options.
 			 */
 			if ( $prev_version > 0 && $prev_version <= 21 ) {
@@ -126,7 +126,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 
 		public function filter_upgraded_md_options( $md_opts, $mod ) {
 
-			/**
+			/*
 			 * Remove old meta data.
 			 */
 			if ( ! empty( $mod[ 'id' ] ) && ! empty( $mod[ 'obj' ] ) ) {	// Just in case.

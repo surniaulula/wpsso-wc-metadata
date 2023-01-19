@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoWcmd->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 				return;
 			}
 
-			/**
+			/*
 			 * Save the WordPress front-end and admin search query.
 			 */
 			if ( ! empty( $wp_query->is_search ) ) {
@@ -52,7 +52,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 					$this->p->debug->log_arr( 'query is search', $wp_query->saved_search_s );
 				}
 
-			/**
+			/*
 			 * Save the WooCommerce admin product search (ie. Products > All Products page > Search products button).
 			 */
 			} elseif ( ! empty( $wp_query->query[ 'product_search' ] ) ) {
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Changed the filter hook from 'posts_search' to 'posts_where' in WPSSO WCMD v1.13.2.
 		 */
 		public function filter_posts_where( $search, $wp_query ) {
@@ -127,7 +127,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			return $search;
 		}
 
-		/**
+		/*
 		 * Since WPSSO WCMD v1.13.2.
 		 */
 		public function filter_posts_request( $request ) {
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			return $request;
 		}
 
-		/**
+		/*
 		 * Always return an array.
 		 */
 		private function get_search_product_ids( $s ) {
@@ -178,7 +178,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 		}
 
-		/**
+		/*
 		 * Always return an array.
 		 */
 		private function get_search_post_ids( $s ) {
@@ -280,7 +280,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 
 			foreach ( $terms as $term ) {
 
-				/**
+				/*
 				 * Keep spaces when term is for exact match.
 				 */
 				if ( preg_match( '/^".+"$/', $term ) ) {
@@ -292,7 +292,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 					$term = trim( $term, "\"' " );
 				}
 
-				/**
+				/*
 				 * Avoid single a-z and single dashes.
 				 */
 				if ( ! $term || ( 1 === strlen( $term ) && preg_match( '/^[a-z\-]$/i', $term ) ) ) {

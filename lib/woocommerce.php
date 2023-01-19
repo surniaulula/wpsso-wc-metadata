@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoWcmd->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -27,19 +27,19 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 
 			if ( is_admin() ) {
 
-				/**
+				/*
 				 * Product settings.
 				 */
 				add_filter( 'woocommerce_products_general_settings', array( $this, 'filter_products_general_settings' ), 10, 1 );
 
-				/**
+				/*
 				 * Product data.
 				 */
 				add_action( 'woocommerce_product_options_sku', array( $this, 'edit_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_product_options_dimensions', array( $this, 'edit_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_admin_process_product_object', array( $this, 'save_metadata_options'), -1000, 1 );
 
-				/**
+				/*
 				 * Product variations.
 				 */
 				add_action( 'woocommerce_variation_options_pricing', array( $this, 'edit_metadata_options_variation'), -1000, 3 );
@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			$this->disable_options_keys();
 		}
 
-		/**
+		/*
 		 * Since WPSSO WCMD v2.0.0.
 		 */
 		public function disable_options_keys() {
@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_products_general_settings' filter.
 		 */
 		public function filter_products_general_settings( $settings ) {
@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return $settings;
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_product_options_sku' action.
 		 * Hooked to 'woocommerce_product_options_dimensions' action.
 		 */
@@ -158,7 +158,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_admin_process_product_object' action.
 		 */
 		public function save_metadata_options( $product ) {
@@ -186,7 +186,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_variation_options_pricing' action.
 		 * Hooked to 'woocommerce_variation_options_dimensions' action.
 		 *
@@ -219,7 +219,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 					$holder_transl = sprintf( $holder_transl, $unit_transl );
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
 
-					/**
+					/*
 					 * Maybe use the main product metadata value in the placeholder.
 					 */
 					$prod_id       = $var_obj->get_parent_id();
@@ -250,7 +250,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_save_product_variation' action.
 		 */
 		public function save_metadata_options_variation( $variation_id, $id ) {
@@ -287,7 +287,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Hooked to 'wc_product_enable_dimensions_display' filter.
 		 *
 		 * Return true to enable the "Additional information" tab.
@@ -320,7 +320,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return $bool;
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_display_product_attributes' filter.
 		 */
 		public function filter_show_additional_information( $product_attributes, $product ) {
@@ -360,7 +360,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return $product_attributes;
 		}
 
-		/**
+		/*
 		 * Hooked to 'woocommerce_variable_add_to_cart' action.
 		 */
 		public function enqueue_script_add_to_cart_variation() {
@@ -376,7 +376,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			wp_enqueue_script( 'wpsso-wcmd-add-to-cart-variation' );
 		}
 
-		/**
+		/*
 		 * Always returns a string.
 		 *
 		 * See WpssoWcmdSearch->get_sql_meta_keys().
@@ -386,7 +386,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return $this->get_enabled_metadata_key( $md_key, $context = 'edit' );	// Always returns a string.
 		}
 
-		/**
+		/*
 		 * Always returns an array.
 		 */
 		public function get_show_metadata_keys( $md_key ) {
@@ -416,7 +416,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return array();
 		}
 
-		/**
+		/*
 		 * Always returns a string.
 		 */
 		public function get_enabled_metadata_key( $md_key, $context = '' ) {
@@ -435,7 +435,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 			return '';
 		}
 
-		/**
+		/*
 		 * See wp_localize_script() in WpssoWcmdWoocommerce->filter_show_additional_information().
 		 */
 		private function get_variations_meta( $product ) {

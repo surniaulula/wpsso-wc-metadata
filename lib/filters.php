@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2023 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -20,7 +20,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 		private $opts;	// WpssoWcmdFiltersOptions class object.
 		private $upg;	// WpssoWcmdFiltersUpgrade class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoWcmd->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
