@@ -13,7 +13,7 @@
  * Description: MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
  * Requires Plugins: wpsso, woocommerce
  * Requires PHP: 7.2
- * Requires At Least: 5.2
+ * Requires At Least: 5.4
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.3.0
  * Version: 3.1.1-dev.3
