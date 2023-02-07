@@ -367,7 +367,7 @@ Maintenance release for WPSSO Core v9.0.0.
 * **Bugfixes**
 	* Fix to show product metadata if the main product value is empty but one or more variations has a value.
 * **Developer Notes**
-	* Added checks with `WpssoUtilWoocommerce->has_meta()` to include/exclude showing product metadata under the "Additional information" tab.
+	* Added checks with `WpssoUtilWooCommerce->has_meta()` to include/exclude showing product metadata under the "Additional information" tab.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
