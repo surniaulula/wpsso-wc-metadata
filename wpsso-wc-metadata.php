@@ -44,7 +44,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 		public $filters;	// WpssoWcmdFilters class object.
 		public $search;		// WpssoWcmdSearch class object.
-		public $wc;		// WpssoWcmdWoocommerce class object.
+		public $wc;		// WpssoWcmdWooCommerce class object.
 
 		protected $p;	// Wpsso class object.
 
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 			$this->filters = new WpssoWcmdFilters( $this->p, $this );
 			$this->search  = new WpssoWcmdSearch( $this->p, $this );
-			$this->wc      = new WpssoWcmdWoocommerce( $this->p, $this );
+			$this->wc      = new WpssoWcmdWooCommerce( $this->p, $this );
 		}
 
 		public function init_check_options() {

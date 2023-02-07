@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
+if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
-	class WpssoWcmdWoocommerce {
+	class WpssoWcmdWooCommerce {
 
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
@@ -436,7 +436,7 @@ if ( ! class_exists( 'WpssoWcmdWoocommerce' ) ) {
 		}
 
 		/*
-		 * See wp_localize_script() in WpssoWcmdWoocommerce->filter_show_additional_information().
+		 * See wp_localize_script() in WpssoWcmdWooCommerce->filter_show_additional_information().
 		 */
 		private function get_variations_meta( $product ) {
 
