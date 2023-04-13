@@ -10,7 +10,7 @@ Tags: woocommerce, gtin, upc, ean, isbn, mpn, custom fields, global identifier, 
 Contributors: jsmoriss
 Requires Plugins: wpsso, woocommerce
 Requires PHP: 7.2
-Requires At Least: 5.4
+Requires At Least: 5.5
 Tested Up To: 6.2.0
 WC Tested Up To: 7.5.1
 Stable Tag: 3.1.1
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Updated the `WpssoAbstractAddOn` library class.
 * **Requires At Least**
 	* PHP v7.2.
-	* WordPress v5.4.
+	* WordPress v5.5.
 	* WPSSO Core v14.7.0.
 	* WooCommerce v5.0.
 
