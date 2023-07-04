@@ -9,10 +9,10 @@ Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
 Tags: woocommerce, gtin, upc, ean, isbn, mpn, custom fields, global identifier, manufacturer part number
 Contributors: jsmoriss
 Requires Plugins: wpsso, woocommerce
-Requires PHP: 7.2.5
+Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.2.2
-WC Tested Up To: 7.8.0
+WC Tested Up To: 7.8.2
 Stable Tag: 3.1.1
 
 MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
@@ -147,7 +147,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Updated the `WpssoAbstractAddOn` library class.
 * **Requires At Least**
-	* PHP v7.2.5.
+	* PHP v7.2.34.
 	* WordPress v5.5.
 	* WPSSO Core v14.7.0.
 	* WooCommerce v5.0.
