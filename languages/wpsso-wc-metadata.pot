@@ -227,11 +227,11 @@ msgstr ""
 msgid "Additional Information Label"
 msgstr ""
 
-#: lib/woocommerce.php:96
+#: lib/woocommerce.php:98
 msgid "Fluid volume unit"
 msgstr ""
 
-#: lib/woocommerce.php:101
+#: lib/woocommerce.php:103
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 

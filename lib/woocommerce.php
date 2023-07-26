@@ -17,7 +17,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
-		private $decimal_sep = '.';     // WooCommerce price decimal separator.
+		private $decimal_sep  = '.';     // WooCommerce price decimal separator.
+		private $thousand_sep = ',';     // WooCommerce price thousand separator.
 
 		/*
 		 * Instantiated by WpssoWcmd->init_objects().
@@ -27,7 +28,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->decimal_sep = wc_get_price_decimal_separator();
+			$this->decimal_sep  = wc_get_price_decimal_separator();
+			$this->thousand_sep = wc_get_price_thousand_separator();
 
 			if ( is_admin() ) {
 
@@ -509,55 +511,32 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			if ( '' === $meta_value ) {	// Nothing to do.
 
-				return null;
+				$meta_value = null;
 			}
 
-			/*
-			 * Maybe convert a comma to a period in a decimal value.
-			 */
-			$meta_value = $this->maybe_convert_decimal( $meta_value, $cfg, $this->decimal_sep, $to_sep = '.' );
+			if ( null !== $meta_value ) {	// Format if we have a value.
+
+				if ( isset( $cfg[ 'data_type' ] ) ) {
+
+					if ( 'decimal' === $cfg[ 'data_type' ]  ) {
+
+						$meta_value = wc_format_decimal( $meta_value );
+					}
+				}
+			}
 
 			return $meta_value;
 		}
 		
 		private function sanitize_show_value( $meta_value, array $cfg ) {
 
-			/*
-			 * Maybe convert a period to a comma in a decimal value.
-			 */
-			$meta_value = $this->maybe_convert_decimal( $meta_value, $cfg, $from_sep = '.', $this->decimal_sep );
-
-			return $meta_value;
-		}
-
-		/*
-		 * Maybe convert a comma to/from a period in a decimal value (if the config data_type is decimal).
-		 *
-		 * See wc_format_decimal() in woocommerce/includes/wc-formatting-functions.php for a related (and more complex)
-		 * function used by WooCommerce to format decimal numbers for DB storage (ie. converts a comma to a period, formats
-		 * the decimal point, and trims trailing zeros).
-		 *
-		 * Note that $from_sep can be an array of decimal separators:
-		 *
-		 *	$locale   = localeconv();
-		 *	$from_sep = array( wc_get_price_decimal_separator(), $locale['decimal_point'], $locale['mon_decimal_point'] );
-		 */
-		private function maybe_convert_decimal( $meta_value, array $cfg, $from_sep, $to_sep ) {
-
-			if ( null !== $meta_value ) {
+			if ( null !== $meta_value ) {	// Format if we have a value.
 
 				if ( isset( $cfg[ 'data_type' ] ) ) {
 
 					if ( 'decimal' === $cfg[ 'data_type' ]  ) {
 
-						/*
-						 * We only need to convert decimals to/from a numeric value if WooCommerce is
-						 * configured to use a non-numeric decimal separator (like a comma, for example).
-						 */
-						if ( '.' !== $this->decimal_sep ) {
-
-							$meta_value = str_replace( $from_sep, $to_sep, $meta_value );
-						}
+						$meta_value = wc_format_localized_decimal( $meta_value );
 					}
 				}
 			}

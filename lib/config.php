@@ -407,7 +407,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						),
 					),
 					'implode' => array(
-						'separator' => ' x ',
+						'separator' => ' &times; ',
 						'md_keys'   => array(
 							'product_length_value',
 							'product_width_value',

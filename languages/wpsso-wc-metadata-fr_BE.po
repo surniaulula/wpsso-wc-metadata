@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 3.1.0\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 3.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-05-26 04:17-0700\n"
+"PO-Revision-Date: 2023-07-26 09:28-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: .\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
@@ -142,21 +142,21 @@ msgctxt "option label"
 msgid "Product Net Dimensions"
 msgstr "Dimensions nettes du produit"
 
-#: lib/config.php:418
+#: lib/config.php:419
 msgctxt "option label"
 msgid "Product Net Weight"
 msgstr "Poids net du produit"
 
-#: lib/config.php:419
+#: lib/config.php:420
 msgid "%1$s refers to a product's net weight (in %2$s), as opposed to a shipping or packaged weight used for shipping cost calculations."
 msgstr "%1$s fait référence au poids net d'un produit (en %2$s), contrairement au poids d'expédition ou emballé utilisé pour le calcul des frais d'expédition."
 
-#: lib/config.php:445
+#: lib/config.php:446
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr "Volume fluide du produit"
 
-#: lib/config.php:446
+#: lib/config.php:447
 msgid "%1$s refers to a product's fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de liquide d'un produit (en %2$s)."
 
@@ -201,11 +201,11 @@ msgstr "Afficher"
 msgid "Additional Information Label"
 msgstr "Étiquette d'informations supplémentaires"
 
-#: lib/woocommerce.php:92
+#: lib/woocommerce.php:96
 msgid "Fluid volume unit"
 msgstr "Unité de volume fluide"
 
-#: lib/woocommerce.php:97
+#: lib/woocommerce.php:101
 msgid "This controls what unit you will define fluid volumes in."
 msgstr "Cela détermine dans quelle unité vous définirez les volumes fluide."
 
