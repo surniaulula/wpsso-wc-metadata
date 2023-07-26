@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-dev.2 (2023/07/26)**
+**Version 3.2.0-b.1 (2023/07/26)**
 
 * **New Features**
 	* None.
@@ -210,7 +210,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.2.0-dev.2 =
+= 3.2.0-b.1 =
 
 (2023/07/26) Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
 
