@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '3.2.0-dev.1',	// Plugin version.
+					'version'     => '3.2.0-dev.2',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -393,9 +393,9 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						),
 					),
 				),
-				'product_dimensions' => array(
+				'product_dimensions' => array(	// Not an input field.
 					'label'      => _x( 'Product Net Dimensions', 'option label', 'wpsso-wc-metadata' ),
-					'data_type'  => 'decimal',	// Data type used to convert all imploded values. 
+					'data_type'  => 'decimal',	// Data type used to sanitize imploded values. 
 					'unit_label' => $dimension_unit_label,
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
