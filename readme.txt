@@ -135,6 +135,27 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.2.0-dev.1 (2023/07/25)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new private `WpssoWcmdWooCommerce->sanitize_save_value()` method.
+	* Added a new private `WpssoWcmdWooCommerce->sanitize_show_value()` method.
+	* Added a new private `WpssoWcmdWooCommerce->maybe_convert_decimal()` method.
+	* Refactored the `WpssoWcmdWooCommerce->save_metadata_options()` method.
+	* Refactored the `WpssoWcmdWooCommerce->save_metadata_options_variation()` method.
+	* Refactored the `WpssoWcmdWooCommerce->get_show_meta_keys_values()` method.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v15.17.2.
+	* WooCommerce v5.0.
+
 **Version 3.1.1 (2023/01/26)**
 
 * **New Features**
@@ -188,6 +209,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v5.0.
 
 == Upgrade Notice ==
+
+= 3.2.0-dev.1 =
+
+(2023/07/25) Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
 
 = 3.1.1 =
 
