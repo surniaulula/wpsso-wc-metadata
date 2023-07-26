@@ -17,6 +17,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoWcmd class object.
 
+		private $decimal_sep = '.';     // WooCommerce price decimal separator.
+
 		/*
 		 * Instantiated by WpssoWcmd->init_objects().
 		 */
@@ -24,6 +26,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			$this->p =& $plugin;
 			$this->a =& $addon;
+
+			$this->decimal_sep = wp_specialchars_decode( stripslashes( get_option( 'woocommerce_price_decimal_sep') ), ENT_QUOTES );
 
 			if ( is_admin() ) {
 
@@ -121,8 +125,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		 */
 		public function edit_metadata_options() {
 
-			$action_name = current_action();	// Since WP v3.9.
-			$md_config   = WpssoWcmdConfig::get_md_config();
+			$action_name = current_action();
+			$md_config   = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -163,7 +167,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		 */
 		public function save_metadata_options( $product ) {
 
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -173,12 +177,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 					if ( isset( $_POST[ $meta_key ] ) ) {
 
-						$meta_value = trim( wc_clean( wp_unslash( $_POST[ $meta_key ] ) ) );
-
-						if ( '' === $meta_value ) {
-
-							$meta_value = null;
-						}
+						$meta_value = $this->sanitize_save_value( $_POST[ $meta_key ], $cfg );
 					}
 
 					$product->update_meta_data( $meta_key, $meta_value );
@@ -196,8 +195,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			$row_input_num = 0;
 			$row_input_max = 2;
-			$action_name   = current_action();	// Since WP v3.9.
-			$md_config     = WpssoWcmdConfig::get_md_config();
+			$action_name   = current_action();
+			$md_config     = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -257,7 +256,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			$variation   = $this->p->util->wc->get_product( $variation_id );
 			$have_update = false;
-			$md_config   = WpssoWcmdConfig::get_md_config();
+			$md_config   = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -267,12 +266,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 					if ( isset( $_POST[ $meta_key . '_variable' ][ $id ] ) ) {
 
-						$meta_value = trim( wc_clean( wp_unslash( $_POST[ $meta_key . '_variable' ][ $id ] ) ) );
-
-						if ( '' === $meta_value ) {
-
-							$meta_value = null;
-						}
+						$meta_value = $this->sanitize_save_value( $_POST[ $meta_key . '_variable' ][ $id ], $cfg );
 					}
 
 					$variation->update_meta_data( $meta_key, $meta_value );
@@ -302,7 +296,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			global $product;
 
 			$filter_name = 'woocommerce_display_product_attributes';
-			$md_config   = WpssoWcmdConfig::get_md_config();
+			$md_config   = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -327,7 +321,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			$filter_name = 'woocommerce_display_product_attributes';
 			$product_id  = $this->p->util->wc->get_product_id( $product );
-			$md_config   = WpssoWcmdConfig::get_md_config();
+			$md_config   = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
@@ -341,7 +335,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					$unit_transl  = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$label_transl = SucomUtil::get_key_value( 'wcmd_show_label_' . $md_key, $this->p->options );
 					$label_transl = sprintf( $label_transl, $unit_transl );
-					$meta_value   = $this->get_meta_keys_values( $meta_keys, $cfg, $product );
+					$meta_value   = $this->get_show_meta_keys_values( $meta_keys, $cfg, $product );
 
 					if ( '' !== $meta_value ) {
 
@@ -396,7 +390,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 				return array( $meta_key );
 			}
 
-			$md_config = WpssoWcmdConfig::get_md_config();
+			$md_config = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 
 			if ( ! empty( $md_config[ $md_key ][ 'implode' ][ 'md_keys' ] ) ) {
 
@@ -404,7 +398,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				foreach ( $md_config[ $md_key ][ 'implode' ][ 'md_keys' ] as $md_key ) {
 
-					if ( $meta_key = self::get_enabled_metadata_key( $md_key ) ) {	// Always returns a string.
+					if ( $meta_key = $this->get_enabled_metadata_key( $md_key ) ) {	// Always returns a string.
 
 						$meta_keys[] = SucomUtil::sanitize_hookname( $meta_key );
 					}
@@ -441,7 +435,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		private function get_variations_meta( $product ) {
 
 			$vars_meta  = array();
-			$md_config  = WpssoWcmdConfig::get_md_config();
+			$md_config  = WpssoWcmdConfig::get_md_config();	// Uses a local cache.
 			$avail_vars = $this->p->util->wc->get_available_variations( $product );	// Always returns an array.
 
 			foreach( $avail_vars as $num => $variation ) {
@@ -454,7 +448,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 						if ( $meta_keys = $this->get_show_metadata_keys( $md_key ) ) {	// Always returns an array.
 
-							$meta_value = $this->get_meta_keys_values( $meta_keys, $cfg, $product, $var_obj );
+							$meta_value = $this->get_show_meta_keys_values( $meta_keys, $cfg, $product, $var_obj );
 
 							if ( '' !== $meta_value ) {
 
@@ -468,11 +462,11 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			return $vars_meta;
 		}
 
-		private function get_meta_keys_values( array $meta_keys, array $cfg, $product, $var_obj = null ) {
+		private function get_show_meta_keys_values( array $meta_keys, array $cfg, $product, $var_obj = null ) {
 
-			$unit_transl  = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
-			$meta_value   = '';
-			$meta_sep     = isset( $cfg[ 'implode' ][ 'separator' ] ) ? $cfg[ 'implode' ][ 'separator' ] : '';
+			$unit_transl = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
+			$meta_sep    = isset( $cfg[ 'implode' ][ 'separator' ] ) ? $cfg[ 'implode' ][ 'separator' ] : '';
+			$meta_value  = '';
 
 			foreach ( $meta_keys as $meta_key ) {	// One or more meta keys.
 
@@ -490,6 +484,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				if ( '' !== $obj_meta  ) {
 
+					$obj_meta = $this->sanitize_show_value( $obj_meta, $cfg );
+
 					if ( '' !== $meta_sep && '' !== $meta_value ) {
 
 						$meta_value .= $meta_sep;
@@ -502,6 +498,50 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			if ( '' !== $meta_value  ) {
 
 				$meta_value .= ' ' . $unit_transl;
+			}
+
+			return $meta_value;
+		}
+
+		private function sanitize_save_value( $meta_value, array $cfg ) {
+
+			$meta_value = trim( wc_clean( wp_unslash( $meta_value ) ) );
+
+			if ( '' === $meta_value ) {
+
+				$meta_value = null;
+			}
+
+			$meta_value = $this->maybe_convert_decimal( $meta_value, $cfg, $this->decimal_sep, '.' );
+
+			return $meta_value;
+		}
+		
+		private function sanitize_show_value( $meta_value, array $cfg ) {
+
+			$meta_value = $this->maybe_convert_decimal( $meta_value, $cfg, '.', $this->decimal_sep );
+
+			return $meta_value;
+		}
+
+		private function maybe_convert_decimal( $meta_value, array $cfg, $from_sep, $to_sep ) {
+
+			if ( null !== $meta_value ) {
+
+				if ( isset( $cfg[ 'data_type' ] ) ) {
+
+					if ( 'decimal' === $cfg[ 'data_type' ]  ) {
+
+						/*
+						 * We only need to convert decimals to/from a numeric value if WooCommerce is
+						 * configured to use a non-numeric decimal separator.
+						 */
+						if ( '.' !== $this->decimal_sep ) {
+
+							$meta_value = str_replace( $from_sep, $to_sep, $meta_value );
+						}
+					}
+				}
 			}
 
 			return $meta_value;

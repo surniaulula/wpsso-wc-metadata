@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce SEO package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 3.1.1\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 3.2.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -157,23 +157,23 @@ msgctxt "option label"
 msgid "Product Net Dimensions"
 msgstr ""
 
-#: lib/config.php:418
+#: lib/config.php:419
 msgctxt "option label"
 msgid "Product Net Weight"
 msgstr ""
 
-#: lib/config.php:419
+#: lib/config.php:420
 msgid ""
 "%1$s refers to a product's net weight (in %2$s), as opposed to a shipping or "
 "packaged weight used for shipping cost calculations."
 msgstr ""
 
-#: lib/config.php:445
+#: lib/config.php:446
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr ""
 
-#: lib/config.php:446
+#: lib/config.php:447
 msgid "%1$s refers to a product's fluid volume (in %2$s)."
 msgstr ""
 
@@ -227,11 +227,11 @@ msgstr ""
 msgid "Additional Information Label"
 msgstr ""
 
-#: lib/woocommerce.php:92
+#: lib/woocommerce.php:96
 msgid "Fluid volume unit"
 msgstr ""
 
-#: lib/woocommerce.php:97
+#: lib/woocommerce.php:101
 msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 

@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '3.1.1',	// Plugin version.
+					'version'     => '3.2.0-dev.1',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.7.0',
+							'min_version'   => '15.17.2',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
@@ -316,7 +316,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'label'      => _x( 'Product Net Length', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
-					'data_type'  => 'decimal',
+					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
@@ -343,7 +343,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'label'      => _x( 'Product Net Width', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net width (in %2$s), as opposed to a shipping or packaged width used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
-					'data_type'  => 'decimal',
+					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
@@ -370,7 +370,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'label'      => _x( 'Product Net Height', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net height (in %2$s), as opposed to a shipping or packaged height used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
-					'data_type'  => 'decimal',
+					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
@@ -395,6 +395,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_dimensions' => array(
 					'label'      => _x( 'Product Net Dimensions', 'option label', 'wpsso-wc-metadata' ),
+					'data_type'  => 'decimal',	// Data type used to convert all imploded values. 
 					'unit_label' => $dimension_unit_label,
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -418,7 +419,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'label'      => _x( 'Product Net Weight', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net weight (in %2$s), as opposed to a shipping or packaged weight used for shipping cost calculations.', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
-					'data_type'  => 'decimal',
+					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $weight_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
@@ -445,7 +446,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'label'      => _x( 'Product Fluid Volume', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s fluid volume (in %2$s).', 'wpsso-wc-metadata' ),
 					'type'       => 'text',
-					'data_type'  => 'decimal',
+					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $fl_vol_unit_label,
 					'actions'    => array(
 						'woocommerce_product_options_sku'       => true,
