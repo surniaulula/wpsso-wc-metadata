@@ -527,7 +527,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			return $meta_value;
 		}
-		
+
 		private function sanitize_show_value( $meta_value, array $cfg ) {
 
 			if ( null !== $meta_value ) {	// Format if we have a value.
