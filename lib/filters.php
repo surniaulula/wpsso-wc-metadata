@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoWcmdFilters' ) ) {
 	class WpssoWcmdFilters {
 
 		private $p;	// Wpsso class object.
-		private $a;     // WpssoWcmd class object.
+		private $a;	// WpssoWcmd class object.
 		private $msgs;	// WpssoWcmdFiltersMessages class object.
 		private $opts;	// WpssoWcmdFiltersOptions class object.
 		private $upg;	// WpssoWcmdFiltersUpgrade class object.

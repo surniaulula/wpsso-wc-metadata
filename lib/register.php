@@ -106,7 +106,7 @@ if ( ! class_exists( 'WpssoWcmdRegister' ) ) {
 				/*
 				 * Register plugin install, activation, update times.
 				 */
-				if ( class_exists( 'WpssoUtilReg' ) ) { // Since WPSSO Core v6.13.1.
+				if ( class_exists( 'WpssoUtilReg' ) ) {	// Since WPSSO Core v6.13.1.
 
 					$version = WpssoWcmdConfig::get_version();
 

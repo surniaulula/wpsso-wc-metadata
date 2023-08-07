@@ -15,10 +15,10 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 	class WpssoWcmdWooCommerce {
 
 		private $p;	// Wpsso class object.
-		private $a;     // WpssoWcmd class object.
+		private $a;	// WpssoWcmd class object.
 
-		private $decimal_sep  = '.';     // WooCommerce price decimal separator.
-		private $thousand_sep = ',';     // WooCommerce price thousand separator.
+		private $decimal_sep  = '.';	// WooCommerce price decimal separator.
+		private $thousand_sep = ',';	// WooCommerce price thousand separator.
 
 		/*
 		 * Instantiated by WpssoWcmd->init_objects().

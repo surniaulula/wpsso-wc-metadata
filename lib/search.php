@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 	class WpssoWcmdSearch {
 
 		private $p;	// Wpsso class object.
-		private $a;     // WpssoWcmd class object.
+		private $a;	// WpssoWcmd class object.
 
 		/*
 		 * Instantiated by WpssoWcmd->init_objects().
