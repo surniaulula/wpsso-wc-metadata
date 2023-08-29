@@ -395,7 +395,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 				),
 				'product_dimensions' => array(	// Not an input field.
 					'label'      => _x( 'Product Net Dimensions', 'option label', 'wpsso-wc-metadata' ),
-					'data_type'  => 'decimal',	// Data type used to sanitize imploded values. 
+					'data_type'  => 'decimal',	// Data type used to sanitize imploded values.
 					'unit_label' => $dimension_unit_label,
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
