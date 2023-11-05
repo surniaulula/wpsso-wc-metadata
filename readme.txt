@@ -171,58 +171,6 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.17.2.
 	* WooCommerce v5.0.
 
-**Version 3.1.1 (2023/01/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added compatibility declaration for WooCommerce HPOS.
-	* Updated the minimum WordPress version from v5.2 to v5.5.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `WpssoAbstractAddOn` library class.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v14.7.0.
-	* WooCommerce v5.0.
-
-**Version 3.1.0 (2023/01/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the `SucomAbstractAddOn` common library class.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v14.5.0.
-	* WooCommerce v5.0.
-
-**Version 3.0.0 (2023/01/11)**
-
-* **New Features**
-	* Added a "Product Net Dimensions" option in the SSO &gt; WC Metadata settings page.
-* **Improvements**
-	* Added a "Show" column in the SSO &gt; WC Metadata settings page to enable/disable metadata for editing pages and front-end pages independently.
-	* Renamed the "Enable" column in the SSO &gt; WC Metadata settings page to "Edit".
-* **Bugfixes**
-	* Fixed the missing units value under the Additional Information tab when switching variations.
-* **Developer Notes**
-	* Added new methods:
-		* `WpssoWcmdConfig::is_editable()`
-		* `WpssoWcmdConfig::is_showable()`
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.2.
-	* WPSSO Core v14.4.0.
-	* WooCommerce v5.0.
-
 == Upgrade Notice ==
 
 = 4.0.0-dev.13 =
@@ -232,16 +180,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 3.2.0 =
 
 (2023/07/26) Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
-
-= 3.1.1 =
-
-(2023/01/26) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.5.
-
-= 3.1.0 =
-
-(2023/01/20) Updated the `SucomAbstractAddOn` common library class.
-
-= 3.0.0 =
-
-(2023/01/11) Added a "Product Net Dimensions" option and "Show" column in the SSO &gt; WC Metadata settings page.
 
