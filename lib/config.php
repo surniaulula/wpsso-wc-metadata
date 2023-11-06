@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '4.0.0-dev.13',	// Plugin version.
+					'version'     => '4.0.0-dev.14',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Product Metadata for WooCommerce SEO',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '17.0.0-dev.13',
+							'min_version'   => '17.0.0-dev.14',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
