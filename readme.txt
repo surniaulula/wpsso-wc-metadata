@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-rc.1 (2021/11/07)**
+**Version 4.0.0-rc.2 (2021/11/08)**
 
 * **New Features**
 	* None.
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v17.0.0-rc.1.
+	* WPSSO Core v17.0.0-rc.2.
 	* WooCommerce v5.0.
 
 **Version 3.2.0 (2023/07/26)**
@@ -173,9 +173,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-rc.1 =
+= 4.0.0-rc.2 =
 
-(2021/11/07) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
+(2021/11/08) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
 = 3.2.0 =
 
