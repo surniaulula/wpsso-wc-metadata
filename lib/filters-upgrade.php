@@ -32,9 +32,9 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 			) );
 		}
 
-		public function filter_rename_options_keys( $options_keys ) {
+		public function filter_rename_options_keys( $rename_options ) {
 
-			$options_keys[ 'wpssowcmd' ] = array(
+			$rename_options[ 'wpssowcmd' ] = array(
 				21 => array(	// Renamed for WPSSO WCMD v3.0.0.
 					'wcmd_enable_product_mfr_part_no'              => 'wcmd_edit_product_mfr_part_no',
 					'wcmd_enable_product_isbn'                     => 'wcmd_edit_product_isbn',
@@ -87,7 +87,7 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 				),
 			);
 
-			return $options_keys;
+			return $rename_options;
 		}
 
 		public function filter_upgraded_options( $opts, $defs ) {
