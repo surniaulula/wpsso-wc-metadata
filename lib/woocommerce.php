@@ -361,9 +361,9 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 		 */
 		public function enqueue_script_add_to_cart_variation() {
 
-			$doing_dev = SucomUtil::get_const( 'WPSSO_DEV' );
+			$doing_dev = SucomUtilWP::doing_dev();
 			$file_ext  = $doing_dev ? 'js' : 'min.js';
-			$version   = WpssoWcmdConfig::get_version();
+			$version   = WpssoWcmdConfig::get_version() . ( $this->doing_dev ? gmdate( '-ymd-His' ) : '' );
 
 			wp_register_script( 'wpsso-wcmd-add-to-cart-variation',
 				WPSSOWCMD_URLPATH . 'js/jquery-add-to-cart-variation.' . $file_ext,
