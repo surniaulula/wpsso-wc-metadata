@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.1.0-dev.1 (TBD)**
+**Version 4.1.0-dev.1 (2024/01/31)**
 
 * **New Features**
 	* None.
@@ -191,7 +191,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.1.0-dev.1 =
 
-(TBD) Added support for the new `SucomUtilWP::doing_dev()` method.
+(2024/01/31) Added support for the new `SucomUtilWP::doing_dev()` method.
 
 = 4.0.0 =
 
