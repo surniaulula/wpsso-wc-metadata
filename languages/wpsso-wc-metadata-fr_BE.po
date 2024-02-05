@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 4.0.0\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 4.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
-"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-11-06 07:02-0800\n"
+"POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-02-05 07:01-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,14 +11,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.1\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-Poedit-Basepath: .\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:243
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:223
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:262
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -176,36 +176,36 @@ msgstr "Activez ou désactivez le champ de métadonnées %s, modifiez l'étiquet
 msgid "The editing field value is saved in the WooCommerce product or variation %s custom field name (aka metadata name)."
 msgstr "La valeur du champ de modification est enregistrée dans le champ personnalisé (c.à.d. métadonnées) %s du produit WooCommerce ou de la variante."
 
-#: lib/submenu/wcmd-general.php:38
+#: lib/submenu/wc-metadata.php:32
 msgctxt "metabox title"
 msgid "WooCommerce Metadata"
 msgstr "Métadonnées WooCommerce"
 
-#: lib/submenu/wcmd-general.php:77
+#: lib/submenu/wc-metadata.php:49
 msgid "Edit"
 msgstr "Modifier"
 
-#: lib/submenu/wcmd-general.php:78
+#: lib/submenu/wc-metadata.php:50
 msgid "Label"
 msgstr "Étiquette"
 
-#: lib/submenu/wcmd-general.php:79
+#: lib/submenu/wc-metadata.php:51
 msgid "Placeholder"
 msgstr "Espace réservé"
 
-#: lib/submenu/wcmd-general.php:80
+#: lib/submenu/wc-metadata.php:52
 msgid "Show"
 msgstr "Afficher"
 
-#: lib/submenu/wcmd-general.php:81
+#: lib/submenu/wc-metadata.php:53
 msgid "Additional Information Label"
 msgstr "Étiquette d'informations supplémentaires"
 
-#: lib/woocommerce.php:96
+#: lib/woocommerce.php:98
 msgid "Fluid volume unit"
 msgstr "Unité de volume fluide"
 
-#: lib/woocommerce.php:101
+#: lib/woocommerce.php:103
 msgid "This controls what unit you will define fluid volumes in."
 msgstr "Cela détermine dans quelle unité vous définirez les volumes fluide."
 
