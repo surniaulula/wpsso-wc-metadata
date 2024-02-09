@@ -135,6 +135,23 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 4.1.1-dev.2 (2024/02/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed the "Net Dimensions (L x W x H)" attribute showing even if showing that attribute was disabled.
+	* Fixed main product attributes not showing if they have no value, but one of its variation has a value.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.12.0.
+	* WooCommerce v6.0.0.
+
 **Version 4.1.0 (2024/02/05)**
 
 * **New Features**
@@ -188,6 +205,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v5.0.
 
 == Upgrade Notice ==
+
+= 4.1.1-dev.2 =
+
+(2024/02/09) Fixed the "Net Dimensions (L x W x H)" attribute showing even if showing that attribute was disabled. Fixed main product attributes not showing if they have no value, but one of its variation has a value.
 
 = 4.1.0 =
 
