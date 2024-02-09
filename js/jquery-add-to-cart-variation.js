@@ -47,8 +47,8 @@
 		var cssItemValue  = cssItemPrefix + '__value .wcmd_vars_metadata_value';
 
 		/*
-		 * Some variations may not have a metadata value, so reset the values to reload parent metadata between variation
-		 * to variation switches.
+		 * Some variations may not have a metadata value, so reset the values to reload the parent metadata between
+		 * variation to variation switches.
 		 */
 		form.onResetDisplayedVariation( event );
 
