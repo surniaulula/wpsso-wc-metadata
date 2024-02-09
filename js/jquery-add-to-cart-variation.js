@@ -30,11 +30,14 @@
 
 		for ( var varID in form.varsMetaData ) {
 
-			for ( var metaDataKey in form.varsMetaData[ varID ] ) {
+			if ( $.isNumeric( varID ) ) {	// Just in case.
 
-				var cssMetaData = cssItemPrefix + '--' + metaDataKey;
+				for ( var metaDataKey in form.varsMetaData[ varID ] ) {
 
-				form.$product.find( cssMetaData + ' ' + cssItemValue ).wcmd_reset_metadata();
+					var cssMetaData = cssItemPrefix + '--' + metaDataKey;
+
+					form.$product.find( cssMetaData + ' ' + cssItemValue ).wcmd_reset_metadata();
+				}
 			}
 		}
 	}
