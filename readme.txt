@@ -135,15 +135,16 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.1.1-dev.2 (2024/02/09)**
+**Version 4.1.1-dev.3 (2024/02/09)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fixed the "Net Dimensions (L x W x H)" attribute showing even if showing that attribute was disabled.
-	* Fixed main product attributes not showing if they have no value, but one of its variation has a value.
+	* Fixed "Net Dimensions (L x W x H)" attribute showing, even if showing that attribute was disabled.
+	* Fixed showing HTML encoded values for variation "Net Dimensions (L x W x H)".
+	* Fixed main product attributes not showing when they have no value but a variation has a value.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -206,9 +207,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.1.1-dev.2 =
+= 4.1.1-dev.3 =
 
-(2024/02/09) Fixed the "Net Dimensions (L x W x H)" attribute showing even if showing that attribute was disabled. Fixed main product attributes not showing if they have no value, but one of its variation has a value.
+(2024/02/09) Fixed "Net Dimensions (L x W x H)" attribute showing when disabled. Fixed showing HTML encoded values. Fixed main product attributes not showing.
 
 = 4.1.0 =
 
