@@ -328,17 +328,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			foreach ( $md_config as $md_key => $cfg ) {
 
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( 'maybe showing ' . $md_key );
-				}
-
 				if ( empty( $cfg[ 'filters' ][ $filter_name ] ) ) {
-
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( 'skipping ' . $md_key . ': no ' . $filter_name . ' filter' );
-					}
 
 					continue;
 				}
@@ -355,7 +345,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					$label_transl = sprintf( $label_transl, $unit_transl );
 					$meta_value   = $this->get_show_meta_keys_values( $meta_keys, $cfg, $product );
 
-					if ( '' !== $meta_value || ! empty( $vars_meta[ '*' ][ $md_key ] ) ) {
+					if ( '' !== $meta_value || isset( $vars_meta[ '*' ][ $md_key ] ) ) {
 
 						$product_attributes[ $md_key ] = array(
 							'label' => '<span class="wcmd_vars_metadata_label">' . $label_transl . '</span>',
@@ -413,27 +403,17 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 			if ( $meta_key = $this->get_enabled_metadata_key( $md_key, $context = 'show' ) ) {	// Always returns a string.
 
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( $md_key . ' is enabled' );
-				}
-			
 				$meta_keys = array( $meta_key );
 
 			} elseif ( ! empty( $this->p->options[ 'wcmd_show_' . $md_key ] ) ) {
 
 				if ( ! empty( $md_config[ $md_key ][ 'implode' ][ 'md_keys' ] ) ) {
 
-					if ( $this->p->debug->enabled ) {
-
-						$this->p->debug->log( $md_key . ' is enabled and has multiple keys' );
-					}
-
 					foreach ( $md_config[ $md_key ][ 'implode' ][ 'md_keys' ] as $k ) {
 
 						if ( $meta_key = $this->get_enabled_metadata_key( $k, $context = false ) ) {	// Always returns a string.
 
-							$meta_keys[] = SucomUtil::sanitize_hookname( $meta_key );
+							$meta_keys[] = $meta_key;
 						}
 					}
 				}
