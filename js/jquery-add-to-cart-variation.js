@@ -30,7 +30,7 @@
 
 		for ( var varID in form.varsMetaData ) {
 
-			if ( $.isNumeric( varID ) ) {	// Just in case.
+			if ( varID && ! isNaN( varID ) ) {	// Just in case.
 
 				for ( var metaDataKey in form.varsMetaData[ varID ] ) {
 
@@ -71,7 +71,7 @@
 
 		if ( undefined !== this.attr( 'data-o_content' ) ) {
 
-			this.text( this.attr( 'data-o_content' ) );
+			this.html( this.attr( 'data-o_content' ) );
 		}
 
 		this.removeClass( 'is_variation_metadata' );
@@ -81,10 +81,10 @@
 
 		if ( undefined === this.attr( 'data-o_content' ) ) {
 
-			this.attr( 'data-o_content', this.text() );
+			this.attr( 'data-o_content', this.html() );
 		}
 
-		this.text( content );
+		this.html( content );
 
 		this.addClass( 'is_variation_metadata' );
 	};
