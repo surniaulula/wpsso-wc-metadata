@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '17.12.0',
+							'min_version'   => '17.12.1',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
