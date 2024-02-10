@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.1.1-dev.3 (2024/02/09)**
+**Version 4.1.1-b.1 (2024/02/10)**
 
 * **New Features**
 	* None.
@@ -207,9 +207,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.1.1-dev.3 =
+= 4.1.1-b.1 =
 
-(2024/02/09) Fixed "Net Dimensions (L x W x H)" attribute showing when disabled. Fixed showing HTML encoded values. Fixed main product attributes not showing.
+(2024/02/10) Fixed "Net Dimensions (L x W x H)" attribute showing when disabled. Fixed showing HTML encoded values. Fixed main product attributes not showing.
 
 = 4.1.0 =
 
