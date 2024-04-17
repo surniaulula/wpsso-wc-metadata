@@ -139,8 +139,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				if ( $meta_key = $this->get_edit_metadata_key( $md_key ) ) {	// Always returns a string.
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_edit_label_' . $md_key, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_edit_holder_' . $md_key, $this->p->options );
+					$label_transl  = SucomUtilOptions::get_key_value( 'wcmd_edit_label_' . $md_key, $this->p->options );
+					$holder_transl = SucomUtilOptions::get_key_value( 'wcmd_edit_holder_' . $md_key, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
 					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$label_transl  = sprintf( $label_transl, $unit_transl );
@@ -209,8 +209,8 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				if ( $meta_key = $this->get_edit_metadata_key( $md_key ) ) {	// Always returns a string.
 
-					$label_transl  = SucomUtil::get_key_value( 'wcmd_edit_label_' . $md_key, $this->p->options );
-					$holder_transl = SucomUtil::get_key_value( 'wcmd_edit_holder_' . $md_key, $this->p->options );
+					$label_transl  = SucomUtilOptions::get_key_value( 'wcmd_edit_label_' . $md_key, $this->p->options );
+					$holder_transl = SucomUtilOptions::get_key_value( 'wcmd_edit_holder_' . $md_key, $this->p->options );
 					$desc_transl   = isset( $cfg[ 'desc' ] ) ? $cfg[ 'desc' ] : '';
 					$unit_transl   = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
 					$var_obj       = $this->p->util->wc->get_product( $variation->ID );
@@ -341,7 +341,7 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					}
 
 					$unit_transl  = isset( $cfg[ 'unit_label' ] ) ? $cfg[ 'unit_label' ] : '';
-					$label_transl = SucomUtil::get_key_value( 'wcmd_show_label_' . $md_key, $this->p->options );
+					$label_transl = SucomUtilOptions::get_key_value( 'wcmd_show_label_' . $md_key, $this->p->options );
 					$label_transl = sprintf( $label_transl, $unit_transl );
 					$meta_value   = $this->get_show_meta_keys_values( $meta_keys, $cfg, $product );
 
