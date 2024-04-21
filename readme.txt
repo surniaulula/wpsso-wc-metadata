@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-dev.2 (2024/04/18)**
+**Version 4.2.0-b.1 (2024/04/21)**
 
 * **New Features**
 	* None.
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.17.0-dev.2.
+	* WPSSO Core v17.17.0-b.1.
 	* WooCommerce v6.0.0.
 
 **Version 4.1.1 (2024/02/10)**
@@ -223,9 +223,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.2.0-dev.2 =
+= 4.2.0-b.1 =
 
-(2024/04/18) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
+(2024/04/21) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
 
 = 4.1.1 =
 
