@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-rc.1 (2024/04/22)**
+**Version 4.2.0 (2024/04/23)**
 
 * **New Features**
 	* None.
@@ -148,7 +148,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.17.0-rc.1.
+	* WPSSO Core v17.17.0.
 	* WooCommerce v6.0.0.
 
 **Version 4.1.1 (2024/02/10)**
@@ -201,31 +201,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 	* WooCommerce v6.0.0.
 
-**Version 3.2.0 (2023/07/26)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a new private `WpssoWcmdWooCommerce->sanitize_save_value()` method.
-	* Added a new private `WpssoWcmdWooCommerce->sanitize_show_value()` method.
-	* Refactored the `WpssoWcmdWooCommerce->save_metadata_options()` method.
-	* Refactored the `WpssoWcmdWooCommerce->save_metadata_options_variation()` method.
-	* Refactored the `WpssoWcmdWooCommerce->get_show_meta_keys_values()` method.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.17.2.
-	* WooCommerce v5.0.
-
 == Upgrade Notice ==
 
-= 4.2.0-rc.1 =
+= 4.2.0 =
 
-(2024/04/22) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
+(2024/04/23) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
 
 = 4.1.1 =
 
@@ -238,8 +218,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 4.0.0 =
 
 (2023/11/08) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
-
-= 3.2.0 =
-
-(2023/07/26) Added support for the WooCommerce Settings &gt; Currency Options &gt; Decimal Separator value since it is also used for decimal input fields.
 
