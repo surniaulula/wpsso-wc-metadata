@@ -46,6 +46,9 @@ if ( ! class_exists( 'WpssoWcmdFiltersOptions' ) ) {
 			return $defs;
 		}
 
+		/*
+		 * Return the sanitation type for a given option key.
+		 */
 		public function filter_option_type( $type, $base_key ) {
 
 			/*
