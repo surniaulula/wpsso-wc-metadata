@@ -16,7 +16,7 @@
  * Requires At Least: 5.8
  * Tested Up To: 6.6.1
  * WC Tested Up To: 9.2.2
- * Version: 4.2.0
+ * Version: 4.3.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -42,9 +42,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 	class WpssoWcmd extends WpssoAbstractAddOn {
 
-		public $filters;	// WpssoWcmdFilters class object.
-		public $search;		// WpssoWcmdSearch class object.
-		public $wc;		// WpssoWcmdWooCommerce class object.
+		public $wc;	// WpssoWcmdWooCommerce class object.
 
 		protected $p;	// Wpsso class object.
 
@@ -73,7 +71,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 		/*
 		 * Called by Wpsso->set_objects() which runs at init priority 10.
 		 */
-		public function init_objects() {
+		public function init_objects_preloader() {
 
 			$this->p =& Wpsso::get_instance();
 
@@ -87,11 +85,20 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				return;	// Stop here.
 			}
 
-			$this->filters = new WpssoWcmdFilters( $this->p, $this );
-			$this->search  = new WpssoWcmdSearch( $this->p, $this );
-			$this->wc      = new WpssoWcmdWooCommerce( $this->p, $this );
+			new WpssoWcmdFilters( $this->p, $this );
+			new WpssoWcmdSearch( $this->p, $this );
+
+			/*
+			 * See WpssoWcmdSearch->get_sql_meta_keys().
+			 */
+			$this->wc = new WpssoWcmdWooCommerce( $this->p, $this );
 		}
 
+		/*
+		 * Runs at admin_init priority -1000.
+		 *
+		 * See WpssoAdmin->init_check_options().
+		 */
 		public function init_check_options() {
 
 			if ( $this->get_missing_requirements() ) {	// Returns false or an array of missing requirements.
