@@ -9,8 +9,8 @@ Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
 Tags: gtin, upc, ean, isbn, mpn
 Contributors: jsmoriss
 Requires Plugins: wpsso, woocommerce
-Requires PHP: 7.2.34
-Requires At Least: 5.8
+Requires PHP: 7.4.33
+Requires At Least: 5.9
 Tested Up To: 6.6.2
 WC Tested Up To: 9.3.1
 Stable Tag: 4.3.0
@@ -146,75 +146,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
 * **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v18.5.0.
-	* WooCommerce v6.0.0.
-
-**Version 4.2.0 (2024/04/23)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.18.0.
-	* WooCommerce v6.0.0.
-
-**Version 4.1.1 (2024/02/10)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed "Net Dimensions (L x W x H)" attribute showing when disabled.
-	* Fixed showing HTML encoded values for variation "Net Dimensions (L x W x H)".
-	* Fixed main product attributes not showing when they have no value but a variation has a value.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.13.0.
-	* WooCommerce v6.0.0.
-
-**Version 4.1.0 (2024/02/05)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for the new `SucomUtilWP::doing_dev()` method.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.12.0.
-	* WooCommerce v6.0.0.
-
-**Version 4.0.0 (2023/11/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.0.0.
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.7.3.
 	* WooCommerce v6.0.0.
 
 == Upgrade Notice ==
@@ -222,20 +156,4 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 = 4.3.0 =
 
 (2024/08/25) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
-
-= 4.2.0 =
-
-(2024/04/23) Added support for the new `SucomUtilOptions` class in WPSSO Core v17.17.0.
-
-= 4.1.1 =
-
-(2024/02/10) Fixed "Net Dimensions (L x W x H)" attribute showing when disabled. Fixed showing HTML encoded values. Fixed main product attributes not showing.
-
-= 4.1.0 =
-
-(2024/02/05) Added support for the new `SucomUtilWP::doing_dev()` method.
-
-= 4.0.0 =
-
-(2023/11/08) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
