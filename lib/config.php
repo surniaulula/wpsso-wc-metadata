@@ -83,9 +83,6 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			),
 		);
 
-		/*
-		 * Since WPSSO WCMD v3.0.0.
-		 */
 		public static function is_editable( $md_key ) {
 
 			$md_config = self::get_md_config();
@@ -93,9 +90,6 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 			return isset( $md_config[ $md_key ][ 'prefixes' ][ 'defaults' ][ 'wcmd_edit' ] ) ? true : false;
 		}
 
-		/*
-		 * Since WPSSO WCMD v3.0.0.
-		 */
 		public static function is_showable( $md_key ) {
 
 			$md_config = self::get_md_config();

@@ -63,9 +63,6 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 			$this->disable_options_keys();
 		}
 
-		/*
-		 * Since WPSSO WCMD v2.0.0.
-		 */
 		public function disable_options_keys() {
 
 			if ( $this->p->debug->enabled ) {

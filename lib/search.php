@@ -127,9 +127,6 @@ if ( ! class_exists( 'WpssoWcmdSearch' ) ) {
 			return $search;
 		}
 
-		/*
-		 * Since WPSSO WCMD v1.13.2.
-		 */
 		public function filter_posts_request( $request ) {
 
 			if ( $this->p->debug->enabled ) {
