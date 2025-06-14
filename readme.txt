@@ -1,5 +1,5 @@
 === WPSSO Product Metadata (aka Custom Fields) for WooCommerce SEO - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
-Plugin Name: WPSSO Product Metadata for WooCommerce SEO
+Plugin Name: WPSSO Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
 Domain Path: /languages
@@ -42,7 +42,7 @@ The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disabl
 
 The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.
 
-The WPSSO Product Metadata for WooCommerce SEO add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
+The WPSSO Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
@@ -87,14 +87,14 @@ Automatically provides additional Schema Product and Offer properties for enable
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Product Metadata for WooCommerce SEO (WPSSO WCMD) is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
+WPSSO Product Metadata for WooCommerce is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Product Metadata for WooCommerce SEO add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
-* [Uninstall the WPSSO Product Metadata for WooCommerce SEO add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
+* [Install the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
+* [Uninstall the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
