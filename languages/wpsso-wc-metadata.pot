@@ -1,8 +1,8 @@
-# Copyright (C) 2025 WPSSO Product Metadata for WooCommerce SEO
-# This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce SEO package.
+# Copyright (C) 2025 WPSSO Product Metadata for WooCommerce
+# This file is distributed under the same license as the WPSSO Product Metadata for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Product Metadata for WooCommerce SEO 4.3.0\n"
+"Project-Id-Version: WPSSO Product Metadata for WooCommerce 4.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-"
 "metadata\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "plugin name"
-msgid "WPSSO Product Metadata for WooCommerce SEO"
+msgid "WPSSO Product Metadata for WooCommerce"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:7
@@ -236,7 +236,7 @@ msgid "This controls what unit you will define fluid volumes in."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Product Metadata for WooCommerce SEO"
+msgid "WPSSO Product Metadata for WooCommerce"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

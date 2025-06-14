@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: WPSSO Product Metadata for WooCommerce SEO
+ * Plugin Name: WPSSO Product Metadata for WooCommerce
  * Plugin Slug: wpsso-wc-metadata
  * Text Domain: wpsso-wc-metadata
  * Domain Path: /languages
