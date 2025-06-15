@@ -1,4 +1,4 @@
-=== WPSSO Product Metadata (aka Custom Fields) for WooCommerce SEO - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
+=== WPSSO Product Metadata (aka Custom Fields) for WooCommerce - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
 Plugin Name: WPSSO Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
