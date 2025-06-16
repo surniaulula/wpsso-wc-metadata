@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: WPSSO Product Metadata for WooCommerce
+ * Plugin Name: WPSSO Schema Product Metadata for WooCommerce
  * Plugin Slug: wpsso-wc-metadata
  * Text Domain: wpsso-wc-metadata
  * Domain Path: /languages
@@ -16,7 +16,7 @@
  * Requires At Least: 5.9
  * Tested Up To: 6.8.1
  * WC Tested Up To: 9.9.3
- * Version: 4.3.0
+ * Version: 5.0.0-dev.2
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *

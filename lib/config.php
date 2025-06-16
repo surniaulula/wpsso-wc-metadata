@@ -17,10 +17,10 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '4.3.0',	// Plugin version.
+					'version'     => '5.0.0-dev.2',	// Plugin version.
 					'opt_version' => '22',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
-					'name'        => 'WPSSO Product Metadata for WooCommerce',
+					'name'        => 'WPSSO Schema Product Metadata for WooCommerce',
 					'desc'        => 'MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.',
 					'slug'        => 'wpsso-wc-metadata',
 					'base'        => 'wpsso-wc-metadata/wpsso-wc-metadata.php',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.20.0',
+							'min_version'   => '20.1.0-dev.2',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
