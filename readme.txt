@@ -1,5 +1,5 @@
-=== WPSSO Product Metadata (aka Custom Fields) for WooCommerce - MPN, ISBN, GTIN, UPC, EAN, Global Identifiers ===
-Plugin Name: WPSSO Product Metadata for WooCommerce
+=== WPSSO Schema Product Metadata for WooCommerce ===
+Plugin Name: WPSSO Schema Product Metadata for WooCommerce
 Plugin Slug: wpsso-wc-metadata
 Text Domain: wpsso-wc-metadata
 Domain Path: /languages
@@ -38,11 +38,11 @@ Provides additional fields in the WooCommerce "Product data" metabox and under t
 
 <!-- /about -->
 
-The *SSO &gt; WooCommerce Metadata* settings page allows you to enable or disable each product metadata (aka custom field), along with customizing the label and placeholder values for the available languages (aka WordPress locales).
+The *SSO &gt; WC Metadata* settings page allows you to enable or disable each product metadata (aka custom field), along with customizing the label and placeholder values for the available languages (aka WordPress locales).
 
 The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.
 
-The WPSSO Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
+The WPSSO Schema Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
@@ -87,14 +87,14 @@ Automatically provides additional Schema Product and Offer properties for enable
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Product Metadata for WooCommerce is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
+WPSSO Schema Product Metadata for WooCommerce is an add-on for [WooCommerce](https://wordpress.org/plugins/woocommerce/) and the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/), which creates extensive and complete structured data to present your content at its best for social sites and search results – no matter how URLs are shared, reshared, messaged, posted, embedded, or crawled.
 
 == Installation ==
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
-* [Uninstall the WPSSO Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
+* [Install the WPSSO Schema Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/install-the-plugin/).
+* [Uninstall the WPSSO Schema Product Metadata for WooCommerce add-on](https://wpsso.com/docs/plugins/wpsso-wc-metadata/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
@@ -135,6 +135,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.0.0-dev.2 (2025/06/15)**
+
+* **New Features**
+	* Renamed the add-on to WPSSO Schema Product Metadata for WooCommerce.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v20.1.0-dev.2.
+	* WooCommerce v6.0.0.
+
 **Version 4.3.0 (2024/08/25)**
 
 * **New Features**
@@ -152,6 +168,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v6.0.0.
 
 == Upgrade Notice ==
+
+= 5.0.0-dev.2 =
+
+(2025/06/15) Renamed the add-on to WPSSO Schema Product Metadata for WooCommerce.
 
 = 4.3.0 =
 
