@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 5.0.0-dev.2 (2025/06/15)**
 
 * **New Features**
-	* Renamed the add-on to WPSSO Schema Product Metadata for WooCommerce.
+	* Renamed the add-on to "WPSSO Schema Product Metadata for WooCommerce".
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -171,7 +171,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.0.0-dev.2 =
 
-(2025/06/15) Renamed the add-on to WPSSO Schema Product Metadata for WooCommerce.
+(2025/06/15) Renamed the add-on to "WPSSO Schema Product Metadata for WooCommerce".
 
 = 4.3.0 =
 
