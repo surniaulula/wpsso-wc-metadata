@@ -12,7 +12,7 @@ Requires Plugins: wpsso, woocommerce
 Requires PHP: 7.4.33
 Requires At Least: 5.9
 Tested Up To: 6.8.2
-WC Tested Up To: 10.1.0
+WC Tested Up To: 10.1.1
 Stable Tag: 5.0.0
 
 MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
