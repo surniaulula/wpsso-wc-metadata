@@ -135,12 +135,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0 (2025/06/18)**
+**Version 5.1.0-rc.1 (2025/12/24)**
 
 * **New Features**
-	* Renamed the add-on to "WPSSO Schema Product Metadata for WooCommerce".
-* **Improvements**
 	* None.
+* **Improvements**
+	* No longer changes the custom field option value if the input field is disabled.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -148,32 +148,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v21.0.0.
-	* WooCommerce v6.0.0.
-
-**Version 4.3.0 (2024/08/25)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
-* **Requires At Least**
-	* PHP v7.4.33.
-	* WordPress v5.9.
-	* WPSSO Core v18.20.0.
+	* WPSSO Core v21.11.1.
 	* WooCommerce v6.0.0.
 
 == Upgrade Notice ==
 
-= 5.0.0 =
+= 5.1.0-rc.1 =
 
-(2025/06/18) Renamed the add-on to "WPSSO Schema Product Metadata for WooCommerce".
-
-= 4.3.0 =
-
-(2024/08/25) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
+(2025/12/24) No longer changes the custom field option value if the input field is disabled.
 
