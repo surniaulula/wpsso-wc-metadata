@@ -179,14 +179,14 @@ msgstr ""
 
 #: lib/filters-messages.php:47
 msgid ""
-"Edit enables metadata is included in the WooCommerce product data metabox "
-"when editing a product."
+"The <strong>Edit</strong> column enables metadata in the WooCommerce product "
+"editing page."
 msgstr ""
 
 #: lib/filters-messages.php:49
 msgid ""
-"Show enables metadata is included in the WooCommerce product page under the "
-"additional information tab."
+"The <strong>Show</strong> column enables metadata in the WooCommerce product "
+"front-end page, under the additional information tab."
 msgstr ""
 
 #: lib/filters-messages.php:73
