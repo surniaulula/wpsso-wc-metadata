@@ -39,6 +39,14 @@ if ( ! class_exists( 'WpssoWcmdFiltersOptions' ) ) {
 
 				foreach ( $cfg[ 'prefixes' ][ 'defaults' ] as $opt_pre => $opt_val ) {
 
+					/*
+					 * Don't change the default custom field name if the input field is disabled.
+					 */
+					if ( 'plugin_cf' === $opt_pre && empty( $this->p->options[ 'wcmd_edit_' . $md_key ] ) ) {
+
+						continue;
+					} 
+
 					$defs[ $opt_pre . '_' . $md_key ] = $opt_val;
 				}
 			}
