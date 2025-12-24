@@ -44,9 +44,9 @@ if ( ! class_exists( 'WpssoWcmdFiltersMessages' ) ) {
 
 					$text .= '<blockquote class="top-info">';
 
-					$text .= '<p>' . __( 'Edit enabled metadata is included in the WooCommerce product data metabox when editing a product.', 'wpsso-wc-metadata' ) . '</p>';
+					$text .= '<p>' . __( 'Edit enables metadata is included in the WooCommerce product data metabox when editing a product.', 'wpsso-wc-metadata' ) . '</p>';
 
-					$text .= '<p>' . __( 'Show enabled metadata is included in the WooCommerce product page under the additional information tab.', 'wpsso-wc-metadata' ) . '</p>';
+					$text .= '<p>' . __( 'Show enables metadata is included in the WooCommerce product page under the additional information tab.', 'wpsso-wc-metadata' ) . '</p>';
 
 					$text .= '</blockquote>';
 
