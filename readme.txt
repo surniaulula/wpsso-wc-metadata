@@ -141,6 +141,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Improvements**
 	* No longer changes the custom field option value if the input field is disabled.
+	* Updated the default "Product GTIN" custom field name from '_wpsso_product_gtin' to '_global_unique_id'.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
