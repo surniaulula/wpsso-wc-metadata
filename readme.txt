@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-rc.1 (2025/12/25)**
+**Version 6.0.0 (2025/12/25)**
 
 Note that WPSSO WCMD requires WooCommerce 9.2+.
 
@@ -152,7 +152,7 @@ Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN,
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v21.11.2-rc.1.
+	* WPSSO Core v21.11.2.
 	* WooCommerce v9.2.0.
 
 **Version 5.1.0 (2025/12/24)**
@@ -174,7 +174,7 @@ Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN,
 
 == Upgrade Notice ==
 
-= 6.0.0-rc.1 =
+= 6.0.0 =
 
 (2025/12/25) Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN, or ISBN" input field. Moved main product dimensions and volume input fields after the WooCommerce "GTIN, UPC, EAN, or ISBN" input field.
 
