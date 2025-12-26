@@ -15,13 +15,13 @@ Tested Up To: 6.9
 WC Tested Up To: 10.4.3
 Stable Tag: 5.1.0
 
-MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
+MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
 
 == Description ==
 
 <!-- about -->
 
-Provides additional fields in the WooCommerce "Product data" metabox and under the product webpage "Additional information" section:
+Provides additional input fields in the WooCommerce "Product data" metabox and under the product webpage "Additional information" section:
 
 * MPN (Manufacturer Part Number)
 * ISBN
@@ -29,20 +29,21 @@ Provides additional fields in the WooCommerce "Product data" metabox and under t
 * GTIN-13 (EAN)
 * GTIN-12 (UPC)
 * GTIN-8
-* GTIN
 * Net Length / Depth
 * Net Width
 * Net Height
 * Net Weight
 * Fluid Volume
 
+Fully compatible with the WooCommerce "GTIN, UPC, EAN, or ISBN" input field - extends the basic WooCommerce global unique ID feature with several additional, and more precise, global unique ID input fields.
+
 <!-- /about -->
 
 The *SSO &gt; WC Metadata* settings page allows you to enable or disable each product metadata (aka custom field), along with customizing the label and placeholder values for the available languages (aka WordPress locales).
 
-The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.
+The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, and GTIN-8) are searchable from the front-end webpage and the admin WooCommerce Products page.
 
-The WPSSO Schema Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/) for Google Rich Results, Rich Snippets, and Structured Data.
+The WPSSO Schema Product Metadata for WooCommerce add-(aka WPSSO WCMD) on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values for Google Rich Results, Rich Snippets, and Structured Data.
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
@@ -77,7 +78,6 @@ Automatically provides additional Schema Product and Offer properties for enable
 * gtin13
 * gtin12
 * gtin8
-* gtin
 * productID isbn
 * depth (aka length)
 * width
@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-b.1 (2025/12/25)**
+**Version 6.0.0-rc.1 (2025/12/25)**
 
 Note that WPSSO WCMD requires WooCommerce 9.2+.
 
@@ -152,7 +152,7 @@ Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN,
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v6.0.
-	* WPSSO Core v21.11.2-b.1.
+	* WPSSO Core v21.11.2-rc.1.
 	* WooCommerce v9.2.0.
 
 **Version 5.1.0 (2025/12/24)**
@@ -174,7 +174,7 @@ Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN,
 
 == Upgrade Notice ==
 
-= 6.0.0-b.1 =
+= 6.0.0-rc.1 =
 
 (2025/12/25) Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN, or ISBN" input field. Moved main product dimensions and volume input fields after the WooCommerce "GTIN, UPC, EAN, or ISBN" input field.
 
