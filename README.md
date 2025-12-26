@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Schema Product Metadata for WooCommerce</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>5.1.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>6.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>6.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.9</td></tr>
