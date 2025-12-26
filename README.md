@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Schema Product Metadata for WooCommerce</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>5.1.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.4.33 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>6.0 or newer</td></tr>
@@ -17,7 +17,7 @@
 
 <!-- about -->
 
-<p>Provides additional fields in the WooCommerce "Product data" metabox and under the product webpage "Additional information" section:</p>
+<p>Provides additional input fields in the WooCommerce "Product data" metabox and under the product webpage "Additional information" section:</p>
 
 <ul>
 <li>MPN (Manufacturer Part Number)</li>
@@ -26,7 +26,6 @@
 <li>GTIN-13 (EAN)</li>
 <li>GTIN-12 (UPC)</li>
 <li>GTIN-8</li>
-<li>GTIN</li>
 <li>Net Length / Depth</li>
 <li>Net Width</li>
 <li>Net Height</li>
@@ -34,13 +33,15 @@
 <li>Fluid Volume</li>
 </ul>
 
+<p>Fully compatible with the WooCommerce "GTIN, UPC, EAN, or ISBN" input field - extends the basic WooCommerce global unique ID feature with several additional, and more precise, global unique ID input fields.</p>
+
 <!-- /about -->
 
 <p>The <em>SSO &gt; WC Metadata</em> settings page allows you to enable or disable each product metadata (aka custom field), along with customizing the label and placeholder values for the available languages (aka WordPress locales).</p>
 
-<p>The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, GTIN-8, and GTIN) are searchable from both the front-end webpage, and the admin WooCommerce Products page.</p>
+<p>The product global identifier values (ie. MPN, ISBN, GTIN-14, GTIN-13, GTIN-12, and GTIN-8) are searchable from the front-end webpage and the admin WooCommerce Products page.</p>
 
-<p>The WPSSO Schema Product Metadata for WooCommerce add-on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values to the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a> for Google Rich Results, Rich Snippets, and Structured Data.</p>
+<p>The WPSSO Schema Product Metadata for WooCommerce add-(aka WPSSO WCMD) on provides Schema (aka Schema.org) mpn, gtin14, gtin13, gtin12, gtin8, gtin, productID isbn, depth (aka length), width, height, weight, and additionalProperty fluid_volume values for Google Rich Results, Rich Snippets, and Structured Data.</p>
 
 <h3>Includes WooCommerce Fluid Volume Units</h3>
 
@@ -80,7 +81,6 @@
 <li>gtin13</li>
 <li>gtin12</li>
 <li>gtin8</li>
-<li>gtin</li>
 <li>productID isbn</li>
 <li>depth (aka length)</li>
 <li>width</li>
