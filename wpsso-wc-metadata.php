@@ -10,7 +10,7 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
+ * Description: MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup.
  * Requires Plugins: wpsso, woocommerce
  * Requires PHP: 7.4.33
  * Requires At Least: 6.0

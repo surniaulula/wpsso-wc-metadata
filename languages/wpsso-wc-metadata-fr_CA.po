@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Schema Product Metadata for WooCommerce 6.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-12-26 10:40-0800\n"
+"PO-Revision-Date: 2025-12-26 10:57-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -34,8 +34,8 @@ msgstr "WPSSO Métadonnées de Schéma Product pour WooCommerce"
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
-msgid "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations."
-msgstr "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour les produits et variantes WooCommerce."
+msgid "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup."
+msgstr "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour un meilleur balisage de Schéma WooCommerce."
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
@@ -209,8 +209,8 @@ msgid "https://wpsso.com/extend/plugins/wpsso-wc-metadata/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-wc-metadata/"
 
 #. Description of the plugin/theme
-msgid "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations."
-msgstr "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour les produits et variantes WooCommerce."
+msgid "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup."
+msgstr "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour un meilleur balisage de Schéma WooCommerce."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
