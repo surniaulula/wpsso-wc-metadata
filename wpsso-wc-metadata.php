@@ -13,10 +13,10 @@
  * Description: MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
  * Requires Plugins: wpsso, woocommerce
  * Requires PHP: 7.4.33
- * Requires At Least: 5.9
+ * Requires At Least: 6.0
  * Tested Up To: 6.9
  * WC Tested Up To: 10.4.3
- * Version: 5.1.0
+ * Version: 6.0.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 
 					foreach ( $cfg[ 'prefixes' ][ 'options' ] as $opt_pre => $opt_val ) {
 
-						$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin' (attribute name).
+						$opt_key = $opt_pre . '_' . $md_key;	// Example: 'plugin_attr_product_gtin8' (attribute name).
 
 						if ( ! isset( $this->p->options[ $opt_key ] ) || $opt_val !== $this->p->options[ $opt_key ] ) {
 
@@ -136,7 +136,7 @@ if ( ! class_exists( 'WpssoWcmd' ) ) {
 				 */
 				if ( WpssoWcmdConfig::is_editable( $md_key ) ) {
 
-					$opt_key = 'plugin_cf_' . $md_key;	// Example: 'plugin_cf_product_gtin' (custom field name).
+					$opt_key = 'plugin_cf_' . $md_key;	// Example: 'plugin_cf_product_gtin8' (custom field name).
 
 					if ( ! empty( $this->p->options[ 'wcmd_edit_' . $md_key ] ) ) {	// Input field is enabled.
 

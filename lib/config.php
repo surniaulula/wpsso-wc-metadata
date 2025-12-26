@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssowcmd' => array(			// Plugin acronym.
-					'version'     => '5.1.0',	// Plugin version.
-					'opt_version' => '22',		// Increment when changing default option values.
+					'version'     => '6.0.0-dev.1',	// Plugin version.
+					'opt_version' => '23',		// Increment when changing default option values.
 					'short'       => 'WPSSO WCMD',	// Short plugin name.
 					'name'        => 'WPSSO Schema Product Metadata for WooCommerce',
 					'desc'        => 'MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.',
@@ -37,14 +37,14 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '21.11.1',
+							'min_version'   => '21.11.2-dev.1',
 						),
 						'woocommerce' => array(
 							'name'          => 'WooCommerce',
 							'home'          => 'https://wordpress.org/plugins/woocommerce/',
 							'plugin_class'  => 'WooCommerce',
 							'version_const' => 'WC_VERSION',
-							'min_version'   => '6.0.0',
+							'min_version'   => '9.2.0',
 						),
 					),
 
@@ -130,8 +130,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'searchable' => true,
 					'type'       => 'text',
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -156,8 +156,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'searchable' => true,
 					'type'       => 'text',
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -182,8 +182,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'type'       => 'text',
 					'searchable' => true,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -208,8 +208,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'type'       => 'text',
 					'searchable' => true,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -234,8 +234,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'type'       => 'text',
 					'searchable' => true,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -260,8 +260,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'searchable' => true,
 					'type'       => 'text',
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_sku'       => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_pricing' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -280,32 +280,6 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 						),
 					),
 				),
-				'product_gtin' => array(
-					'label'      => _x( 'Product GTIN', 'option label', 'wpsso-wc-metadata' ),
-					'desc'       => __( '%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14).', 'wpsso-wc-metadata' ),
-					'searchable' => true,
-					'type'       => 'text',
-					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
-					),
-					'filters' => array(
-						'woocommerce_display_product_attributes' => true,
-					),
-					'prefixes' => array(
-						'defaults' => array(
-							'wcmd_edit'        => 0,
-							'wcmd_edit_label'  => 'GTIN',
-							'wcmd_edit_holder' => 'Bar code',		// Capitalize the first word.
-							'wcmd_show'        => 0,
-							'wcmd_show_label'  => 'GTIN',
-							'plugin_cf'        => '_global_unique_id',
-						),
-						'options' => array(
-							'plugin_attr' => '',
-						),
-					),
-				),
 				'product_length_value' => array(
 					'label'      => _x( 'Product Net Length', 'option label', 'wpsso-wc-metadata' ),
 					'desc'       => __( '%1$s refers to a product\'s net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations.', 'wpsso-wc-metadata' ),
@@ -313,8 +287,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_global_unique_id' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_dimensions'     => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -340,8 +314,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_global_unique_id' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_dimensions'     => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -367,8 +341,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $dimension_unit_label,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_global_unique_id' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_dimensions'     => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -416,8 +390,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $weight_unit_label,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_global_unique_id' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_dimensions'     => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,
@@ -443,8 +417,8 @@ if ( ! class_exists( 'WpssoWcmdConfig' ) ) {
 					'data_type'  => 'decimal',	// Uses the WooCommerce decimal separator.
 					'unit_label' => $fl_vol_unit_label,
 					'actions'    => array(
-						'woocommerce_product_options_sku'       => true,
-						'woocommerce_variation_options_pricing' => true,
+						'woocommerce_product_options_global_unique_id' => true,	// See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
+						'woocommerce_variation_options_dimensions'     => true,	// See woocommerce/includes/admin/meta-boxes/views/html-variation-admin.php.
 					),
 					'filters' => array(
 						'woocommerce_display_product_attributes' => true,

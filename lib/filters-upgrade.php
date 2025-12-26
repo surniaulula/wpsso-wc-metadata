@@ -85,6 +85,13 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 					'wcmd_info_label_product_weight_value'         => 'wcmd_show_label_product_weight_value',
 					'wcmd_info_label_product_fluid_volume_value'   => 'wcmd_show_label_product_fluid_volume_value',
 				),
+				22 => array(
+					'wcmd_edit_product_gtin'        => '',
+					'wcmd_edit_label_product_gtin'  => '',
+					'wcmd_edit_holder_product_gtin' => '',
+					'wcmd_show_product_gtin'        => '',
+					'wcmd_show_label_product_gtin'  => '',
+				),
 			);
 
 			return $rename_options;
@@ -106,7 +113,6 @@ if ( ! class_exists( 'WpssoWcmdFiltersUpgrade' ) ) {
 					'wcmd_edit_product_gtin13'                   => 'wcmd_show_product_gtin13',
 					'wcmd_edit_product_gtin12'                   => 'wcmd_show_product_gtin12',
 					'wcmd_edit_product_gtin8'                    => 'wcmd_show_product_gtin8',
-					'wcmd_edit_product_gtin'                     => 'wcmd_show_product_gtin',
 					'wcmd_edit_product_length_value'             => 'wcmd_show_product_length_value',
 					'wcmd_edit_product_width_value'              => 'wcmd_show_product_width_value',
 					'wcmd_edit_product_height_value'             => 'wcmd_show_product_height_value',

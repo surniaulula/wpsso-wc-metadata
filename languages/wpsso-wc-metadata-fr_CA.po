@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Product Metadata for WooCommerce 5.0.0\n"
+"Project-Id-Version: WPSSO Schema Product Metadata for WooCommerce 5.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-06-17 19:59-0700\n"
+"PO-Revision-Date: 2025-12-24 16:18-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: .\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:235
@@ -161,12 +161,12 @@ msgid "%1$s refers to a product's fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de liquide d'un produit (en %2$s)."
 
 #: lib/filters-messages.php:47
-msgid "Edit enabled metadata is included in the WooCommerce product data metabox when editing a product."
-msgstr "Les métadonnées activées pour la modification sont incluses dans la métabox des données de produit WooCommerce lors de la modification d'un produit."
+msgid "The <strong>Edit</strong> column enables metadata in the WooCommerce product editing page."
+msgstr "La colonne <strong>Modifier</strong> permet d'afficher les métadonnées sur la page d'édition des produits WooCommerce."
 
 #: lib/filters-messages.php:49
-msgid "Show enabled metadata is included in the WooCommerce product page under the additional information tab."
-msgstr "Les métadonnées activées pour l'affichage sont incluses dans la page de produit WooCommerce sous l'onglet d'informations supplémentaires."
+msgid "The <strong>Show</strong> column enables metadata in the WooCommerce product front-end page, under the additional information tab."
+msgstr "La colonne <strong>Afficher</strong> permet d'afficher les métadonnées sur la page Web du produit WooCommerce, sous l'onglet Informations supplémentaires."
 
 #: lib/filters-messages.php:73
 msgid "Enable or disable the %s metadata field, modify the editing field label, the editing field placeholder, and the information label shown in the WooCommerce product page under the additional information tab."

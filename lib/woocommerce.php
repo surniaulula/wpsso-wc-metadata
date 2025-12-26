@@ -40,8 +40,11 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				/*
 				 * Product data.
+				 *
+				 * See woocommerce/includes/admin/meta-boxes/views/html-product-data-inventory.php.
 				 */
 				add_action( 'woocommerce_product_options_sku', array( $this, 'edit_metadata_options' ), -1000, 0 );
+				add_action( 'woocommerce_product_options_global_unique_id', array( $this, 'edit_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_product_options_dimensions', array( $this, 'edit_metadata_options' ), -1000, 0 );
 				add_action( 'woocommerce_admin_process_product_object', array( $this, 'save_metadata_options'), -1000, 1 );
 
@@ -131,7 +134,17 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 
 				if ( empty( $cfg[ 'actions' ][ $action_name ] ) ) {
 
+					if ( $this->p->debug->enabled ) {
+
+						$this->p->debug->log( $md_key . ' action hook ' . $action_name . ' is disabled (ie. false)' );
+					}
+
 					continue;
+				}
+
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( $md_key . ' action hook ' . $action_name . ' is enabled (ie. true)' );
 				}
 
 				if ( $meta_key = $this->get_edit_metadata_key( $md_key ) ) {	// Always returns a string.
@@ -143,6 +156,11 @@ if ( ! class_exists( 'WpssoWcmdWooCommerce' ) ) {
 					$label_transl  = sprintf( $label_transl, $unit_transl );
 					$holder_transl = sprintf( $holder_transl, $unit_transl );
 					$desc_transl   = sprintf( $desc_transl, $label_transl, $unit_transl );
+
+					if ( $this->p->debug->enabled ) {
+
+						$this->p->debug->log( $md_key . ' calling woocommerce_wp_text_input()' );
+					}
 
 					woocommerce_wp_text_input( array(
 						'name'              => $meta_key,
