@@ -10,7 +10,7 @@ Tags: gtin, upc, ean, isbn, mpn
 Contributors: jsmoriss
 Requires Plugins: wpsso, woocommerce
 Requires PHP: 7.4.33
-Requires At Least: 5.9
+Requires At Least: 6.0
 Tested Up To: 6.9
 WC Tested Up To: 10.4.3
 Stable Tag: 5.1.0
@@ -135,6 +135,26 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.0.0-dev.1 (2025/12/25)**
+
+Note that WPSSO WCMD requires WooCommerce 9.2+.
+
+Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN, or ISBN" input field. The MPN, ISBN, GTIN-14, GTIN-13 (EAN), GTIN-12 (UPC), and GTIN-8 input fields from the WPSSO WCMD add-on are still preferred, as they allow for multiple globally unique IDs (not just one) to be included in the Schema Product markup. You can enable all WPSSO WCMD input fields from the SSO &gt; WC Metadata settings page.
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Moved main product dimensions and volume input fields (ie. Net Product Length/Width/Height/Weight/Fluid Volume) after the WooCommerce "GTIN, UPC, EAN, or ISBN" input field.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v6.0.
+	* WPSSO Core v21.11.2-dev.1.
+	* WooCommerce v9.2.0.
+
 **Version 5.1.0 (2025/12/24)**
 
 * **New Features**
@@ -153,6 +173,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WooCommerce v6.0.0.
 
 == Upgrade Notice ==
+
+= 6.0.0-dev.1 =
+
+(2025/12/25) Removed the "GTIN" input field as WooCommerce 9.2+ offers a new "GTIN, UPC, EAN, or ISBN" input field. Moved main product dimensions and volume input fields after the WooCommerce "GTIN, UPC, EAN, or ISBN" input field.
 
 = 5.1.0 =
 
