@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-wc-metadata/assets/
-Tags: gtin, upc, ean, isbn, mpn
+Tags: schema, upc, ean, isbn, mpn
 Contributors: jsmoriss
 Requires Plugins: wpsso, woocommerce
 Requires PHP: 7.4.33
@@ -15,7 +15,7 @@ Tested Up To: 6.9
 WC Tested Up To: 10.4.3
 Stable Tag: 5.1.0
 
-MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations.
+MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup.
 
 == Description ==
 
