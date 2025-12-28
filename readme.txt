@@ -35,7 +35,7 @@ Provides additional input fields in the WooCommerce "Product data" metabox and u
 * Net Weight
 * Fluid Volume
 
-Fully compatible with the WooCommerce "GTIN, UPC, EAN, or ISBN" input field - extends the basic WooCommerce global unique ID feature with several additional, and more precise, global unique ID input fields.
+**Fully compatible with the WooCommerce "GTIN, UPC, EAN, or ISBN" input field** - extends the basic WooCommerce global unique ID feature with several additional, and more precise, global unique ID input fields.
 
 <!-- /about -->
 
