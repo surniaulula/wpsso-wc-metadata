@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Schema Product Metadata for WooCommerce 6.0.0\n"
+"Project-Id-Version: WPSSO Schema Product Metadata for WooCommerce 5.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-wc-metadata\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-12-26 10:57-0800\n"
+"PO-Revision-Date: 2025-06-17 19:59-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: .\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:235
@@ -34,8 +34,8 @@ msgstr "WPSSO Métadonnées de Schéma Product pour WooCommerce"
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
-msgid "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup."
-msgstr "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour un meilleur balisage de Schéma WooCommerce."
+msgid "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations."
+msgstr "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour les produits et variantes WooCommerce."
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
@@ -103,61 +103,70 @@ msgstr "%1$s fait référence à un code de produit GTIN-8 (EAN / UCC-8 ou EAN �
 
 #: lib/config.php:284
 msgctxt "option label"
+msgid "Product GTIN"
+msgstr "GTIN du produit"
+
+#: lib/config.php:285
+msgid "%1$s refers to a product GTIN code (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, or GTIN-14)."
+msgstr "%1$s fait référence à un code de produit GTIN (GTIN-8, GTIN-12/UPC, GTIN-13/EAN, ou GTIN-14)."
+
+#: lib/config.php:310
+msgctxt "option label"
 msgid "Product Net Length"
 msgstr "Longueur nette du produit"
 
-#: lib/config.php:285
+#: lib/config.php:311
 msgid "%1$s refers to a product's net length (in %2$s), as opposed to a shipping or packaged length used for shipping cost calculations."
 msgstr "%1$s fait référence à la longueur nette d'un produit (en %2$s), contrairement à une longueur d'expédition ou emballée utilisée pour le calcul des frais d'expédition."
 
-#: lib/config.php:311
+#: lib/config.php:337
 msgctxt "option label"
 msgid "Product Net Width"
 msgstr "Largeur nette du produit"
 
-#: lib/config.php:312
+#: lib/config.php:338
 msgid "%1$s refers to a product's net width (in %2$s), as opposed to a shipping or packaged width used for shipping cost calculations."
 msgstr "%1$s fait référence à la largeur nette d'un produit (en %2$s), contrairement à une largeur d'expédition ou emballée utilisée pour le calcul des frais d'expédition."
 
-#: lib/config.php:338
+#: lib/config.php:364
 msgctxt "option label"
 msgid "Product Net Height"
 msgstr "Hauteur nette du produit"
 
-#: lib/config.php:339
+#: lib/config.php:365
 msgid "%1$s refers to a product's net height (in %2$s), as opposed to a shipping or packaged height used for shipping cost calculations."
 msgstr "%1$s fait référence à la hauteur nette d'un produit (en %2$s), contrairement à une hauteur d'expédition ou emballée utilisée pour le calcul des frais d'expédition."
 
-#: lib/config.php:365
+#: lib/config.php:391
 msgctxt "option label"
 msgid "Product Net Dimensions"
 msgstr "Dimensions nettes du produit"
 
-#: lib/config.php:387
+#: lib/config.php:413
 msgctxt "option label"
 msgid "Product Net Weight"
 msgstr "Poids net du produit"
 
-#: lib/config.php:388
+#: lib/config.php:414
 msgid "%1$s refers to a product's net weight (in %2$s), as opposed to a shipping or packaged weight used for shipping cost calculations."
 msgstr "%1$s fait référence au poids net d'un produit (en %2$s), contrairement au poids d'expédition ou emballé utilisé pour le calcul des frais d'expédition."
 
-#: lib/config.php:414
+#: lib/config.php:440
 msgctxt "option label"
 msgid "Product Fluid Volume"
 msgstr "Volume fluide du produit"
 
-#: lib/config.php:415
+#: lib/config.php:441
 msgid "%1$s refers to a product's fluid volume (in %2$s)."
 msgstr "%1$s fait référence au volume de liquide d'un produit (en %2$s)."
 
 #: lib/filters-messages.php:47
-msgid "The <strong>Edit</strong> column enables metadata in the WooCommerce product editing page."
-msgstr "La colonne <strong>Modifier</strong> permet d'afficher les métadonnées sur la page d'édition des produits WooCommerce."
+msgid "Edit enabled metadata is included in the WooCommerce product data metabox when editing a product."
+msgstr "Les métadonnées activées pour la modification sont incluses dans la métabox des données de produit WooCommerce lors de la modification d'un produit."
 
 #: lib/filters-messages.php:49
-msgid "The <strong>Show</strong> column enables metadata in the WooCommerce product front-end page, under the additional information tab."
-msgstr "La colonne <strong>Afficher</strong> permet d'afficher les métadonnées sur la page Web du produit WooCommerce, sous l'onglet Informations supplémentaires."
+msgid "Show enabled metadata is included in the WooCommerce product page under the additional information tab."
+msgstr "Les métadonnées activées pour l'affichage sont incluses dans la page de produit WooCommerce sous l'onglet d'informations supplémentaires."
 
 #: lib/filters-messages.php:73
 msgid "Enable or disable the %s metadata field, modify the editing field label, the editing field placeholder, and the information label shown in the WooCommerce product page under the additional information tab."
@@ -192,11 +201,11 @@ msgstr "Afficher"
 msgid "Additional Information Label"
 msgstr "Étiquette d'informations supplémentaires"
 
-#: lib/woocommerce.php:98
+#: lib/woocommerce.php:95
 msgid "Fluid volume unit"
 msgstr "Unité de volume fluide"
 
-#: lib/woocommerce.php:103
+#: lib/woocommerce.php:100
 msgid "This controls what unit you will define fluid volumes in."
 msgstr "Cela détermine dans quelle unité vous définirez les volumes fluide."
 
@@ -209,8 +218,8 @@ msgid "https://wpsso.com/extend/plugins/wpsso-wc-metadata/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-wc-metadata/"
 
 #. Description of the plugin/theme
-msgid "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for better WooCommerce Schema markup."
-msgstr "MPN, ISBN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour un meilleur balisage de Schéma WooCommerce."
+msgid "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, net dimensions, and fluid volume for WooCommerce products and variations."
+msgstr "MPN, ISBN, GTIN, GTIN-8, UPC, EAN, GTIN-14, dimensions nettes et volume de fluide pour les produits et variantes WooCommerce."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
